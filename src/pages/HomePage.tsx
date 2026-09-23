@@ -29,9 +29,9 @@ export const HomePage: React.FC = () => {
       className="flex flex-col"
     >
       {/* ======================================================== */}
-      {/* 1. HERO SECTION (Two-column, premium personal intro)    */}
+      {/* 1. HERO SECTION (Expansive, elegant serif typography)    */}
       {/* ======================================================== */}
-      <section className="relative py-12 md:py-20 lg:py-24 border-b border-[#E7E5E4] overflow-hidden bg-[#FAF8F5]">
+      <section className="relative py-16 sm:py-20 lg:py-28 border-b border-[#E7E5E4] overflow-hidden bg-[#FAF8F5]">
         {/* Subtle background coordinate grid */}
         <div 
           className="absolute inset-0 pointer-events-none opacity-[0.035]" 
@@ -42,51 +42,51 @@ export const HomePage: React.FC = () => {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             
             {/* Left Column: Personal Introduction & Actions */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="lg:col-span-7 space-y-6"
+              className="lg:col-span-7 space-y-7"
             >
-              {/* Small label */}
+              {/* Small eyebrow label: 13-14px */}
               <div className="inline-flex items-center gap-2">
-                <span className="text-xs font-mono font-bold text-[#78350F] tracking-widest uppercase">
-                  AI & ML ENGINEERING &middot; 2026
+                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#78350F] tracking-widest uppercase">
+                  AI &middot; ML &middot; DATA ANALYTICS &middot; 2026
                 </span>
               </div>
 
-              {/* Main heading */}
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#1C1917] tracking-tight uppercase leading-[1.08]">
+              {/* Main heading: 60-76px serif display with strong presence */}
+              <div className="space-y-4">
+                <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[74px] font-bold text-[#1C1917] tracking-tight uppercase leading-[1.04]">
                   {personal.name}
                 </h1>
 
-                {/* Small burgundy horizontal line */}
-                <div className="w-16 h-0.5 bg-[#78350F]" />
+                {/* Burgundy horizontal line */}
+                <div className="w-20 h-0.5 bg-[#78350F]" />
 
-                {/* Sub-roles */}
-                <div className="text-sm sm:text-base font-mono font-bold text-[#1C1917] tracking-wider uppercase space-y-1">
-                  <div>AI & ML STUDENT</div>
+                {/* Sub-roles: 18-22px, clearly readable */}
+                <div className="text-base sm:text-lg md:text-[20px] font-mono font-bold text-[#1C1917] tracking-wider uppercase space-y-1">
+                  <div>AI &amp; ML STUDENT</div>
                   <div className="text-[#78350F]">ASPIRING DATA ANALYST</div>
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-xl">
+              {/* Description: 16-18px, generous line-height */}
+              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed max-w-xl">
                 Final-year Artificial Intelligence and Machine Learning student interested in Data Analytics, Machine Learning and building practical technology solutions.
               </p>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
+              {/* Action Buttons: comfortable padding */}
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <Link
                   to="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/btn"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/btn"
                 >
                   <span>VIEW MY WORK</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                 </Link>
 
                 <a
@@ -94,23 +94,23 @@ export const HomePage: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   download="B_RITHIKASHREE_Resume.pdf"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-[#F5EFE6] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4] text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/res"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white hover:bg-[#F5EFE6] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/res"
                 >
                   <span>DOWNLOAD RESUME</span>
-                  <ArrowDownToLine className="w-3.5 h-3.5 text-[#78350F] group-hover/res:translate-y-0.5 transition-transform" />
+                  <ArrowDownToLine className="w-4 h-4 text-[#78350F] group-hover/res:translate-y-0.5 transition-transform" />
                 </a>
               </div>
 
-              {/* Small Social Icons */}
-              <div className="pt-2 flex items-center gap-5 text-xs text-[#57534E]">
+              {/* Social Icons: larger text/icons (14-15px) */}
+              <div className="pt-2 flex items-center gap-6 text-sm text-[#57534E]">
                 <a
                   href={personal.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-[#78350F] transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-[#78350F] transition-colors"
                   aria-label="LinkedIn Profile"
                 >
-                  <Linkedin className="w-4 h-4 text-[#78350F]" />
+                  <Linkedin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#78350F]" />
                   <span className="font-semibold">LinkedIn</span>
                 </a>
 
@@ -118,32 +118,32 @@ export const HomePage: React.FC = () => {
                   href={personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-[#78350F] transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-[#78350F] transition-colors"
                   aria-label="GitHub Profile"
                 >
-                  <Github className="w-4 h-4 text-[#78350F]" />
+                  <Github className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#78350F]" />
                   <span className="font-semibold">GitHub</span>
                 </a>
 
                 <a
                   href={`mailto:${personal.email}`}
-                  className="inline-flex items-center gap-1.5 hover:text-[#78350F] transition-colors"
+                  className="inline-flex items-center gap-2 hover:text-[#78350F] transition-colors"
                   aria-label="Send Email"
                 >
-                  <Mail className="w-4 h-4 text-[#78350F]" />
+                  <Mail className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#78350F]" />
                   <span className="font-semibold">Email</span>
                 </a>
               </div>
             </motion.div>
 
-            {/* Right Column: Large Strong Vertical Portrait */}
+            {/* Right Column: Strong Vertical Portrait (400-450px wide, 560-620px tall on desktop) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
               className="lg:col-span-5 flex justify-center lg:justify-end items-center"
             >
-              <div className="relative w-[300px] sm:w-[320px] lg:w-[420px] xl:w-[440px] max-w-full">
+              <div className="relative w-[320px] sm:w-[360px] lg:w-[420px] xl:w-[440px] max-w-full">
                 
                 {/* Behind the photo: subtle decorative circles & data grid */}
                 <div 
@@ -163,9 +163,9 @@ export const HomePage: React.FC = () => {
                 <div className="absolute -top-3 -left-3 text-[#78350F]/40 font-mono text-xs select-none pointer-events-none">+</div>
                 <div className="absolute -bottom-3 -right-3 text-[#78350F]/40 font-mono text-xs select-none pointer-events-none">+</div>
 
-                {/* Clean Professional Photo Crop - Strong Vertical Portrait with Thin Burgundy Border */}
+                {/* Clean Professional Photo Crop - Vertical Portrait with Thin Burgundy Border */}
                 <div className="relative rounded-2xl overflow-hidden border border-[#78350F]/40 bg-white p-1.5 shadow-md">
-                  <div className="relative rounded-xl overflow-hidden w-full h-[420px] sm:h-[450px] lg:h-[580px] xl:h-[600px] bg-[#FAF8F5]">
+                  <div className="relative rounded-xl overflow-hidden w-full h-[460px] sm:h-[500px] lg:h-[580px] xl:h-[600px] bg-[#FAF8F5]">
                     <img
                       src="/assets/profile.jpg"
                       alt="B. Rithikashree — Professional Portrait"
@@ -177,8 +177,8 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Handwritten-style decorative phrase near photo */}
-                <div className="absolute -bottom-5 -left-3 sm:-left-5 px-3.5 py-1.5 bg-white/95 backdrop-blur-xs rounded-xl border border-[#E7E5E4] shadow-xs select-none">
-                  <p className="font-serif italic text-xs text-[#78350F] leading-tight">
+                <div className="absolute -bottom-5 -left-3 sm:-left-5 px-4 py-2 bg-white/95 backdrop-blur-xs rounded-xl border border-[#E7E5E4] shadow-xs select-none">
+                  <p className="font-serif italic text-xs sm:text-sm text-[#78350F] leading-tight">
                     &ldquo;good ideas,<br />better tomorrow&rdquo;
                   </p>
                 </div>
@@ -191,73 +191,73 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 2. AT A GLANCE (Horizontal 4-column compact strip)       */}
+      {/* 2. AT A GLANCE (Substantial height, generous py, prominent) */}
       {/* ======================================================== */}
-      <section className="border-b border-[#E7E5E4] bg-white py-8 md:py-10">
+      <section className="border-b border-[#E7E5E4] bg-white py-14 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#E7E5E4]">
             
             {/* 01: Final Year */}
-            <div className="py-4 sm:py-0 sm:px-6 first:pl-0 space-y-2">
+            <div className="py-6 sm:py-2 sm:px-8 first:pl-0 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
+                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
                   01
                 </span>
-                <GraduationCap className="w-4 h-4 text-[#78350F]" />
+                <GraduationCap className="w-5 h-5 text-[#78350F]" />
               </div>
-              <h3 className="text-xs font-mono font-bold text-[#1C1917] uppercase tracking-wider">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] uppercase tracking-wide">
                 FINAL YEAR
               </h3>
-              <p className="text-xs text-[#57534E] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
                 B.E. Artificial Intelligence and Machine Learning
               </p>
             </div>
 
             {/* 02: Focus */}
-            <div className="py-4 sm:py-0 sm:px-6 space-y-2">
+            <div className="py-6 sm:py-2 sm:px-8 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
+                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
                   02
                 </span>
-                <Target className="w-4 h-4 text-[#78350F]" />
+                <Target className="w-5 h-5 text-[#78350F]" />
               </div>
-              <h3 className="text-xs font-mono font-bold text-[#1C1917] uppercase tracking-wider">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] uppercase tracking-wide">
                 FOCUS
               </h3>
-              <p className="text-xs text-[#57534E] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
                 Data Analytics &middot; Machine Learning &middot; Real-world Solutions
               </p>
             </div>
 
             {/* 03: Toolkit */}
-            <div className="py-4 sm:py-0 sm:px-6 space-y-2">
+            <div className="py-6 sm:py-2 sm:px-8 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
+                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
                   03
                 </span>
-                <Wrench className="w-4 h-4 text-[#78350F]" />
+                <Wrench className="w-5 h-5 text-[#78350F]" />
               </div>
-              <h3 className="text-xs font-mono font-bold text-[#1C1917] uppercase tracking-wider">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] uppercase tracking-wide">
                 TOOLKIT
               </h3>
-              <p className="text-xs text-[#57534E] leading-relaxed">
-                Python &middot; SQL &middot; Excel<br />
+              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
+                Python &middot; SQL &middot; Excel<br className="hidden sm:inline" />
                 Power BI &middot; GitHub &middot; VS Code
               </p>
             </div>
 
             {/* 04: Open To */}
-            <div className="py-4 sm:py-0 sm:px-6 last:pr-0 space-y-2">
+            <div className="py-6 sm:py-2 sm:px-8 last:pr-0 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
+                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#78350F] uppercase tracking-wider">
                   04
                 </span>
-                <Sparkles className="w-4 h-4 text-[#78350F]" />
+                <Sparkles className="w-5 h-5 text-[#78350F]" />
               </div>
-              <h3 className="text-xs font-mono font-bold text-[#1C1917] uppercase tracking-wider">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] uppercase tracking-wide">
                 OPEN TO
               </h3>
-              <p className="text-xs text-[#57534E] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#57534E] leading-relaxed">
                 Internships &middot; Entry-level opportunities &middot; Real-world projects
               </p>
             </div>
@@ -267,46 +267,46 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 3. WHAT I ENJOY BUILDING (3 clean cards, no screenshots) */}
+      {/* 3. WHAT I ENJOY BUILDING (44-52px serif heading, large cards) */}
       {/* ======================================================== */}
-      <section className="py-16 md:py-24 border-b border-[#E7E5E4] bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section className="py-20 md:py-28 border-b border-[#E7E5E4] bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E7E5E4] pb-6">
             <div>
-              <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block mb-1">
+              <span className="text-xs sm:text-[13px] font-mono font-bold text-[#78350F] uppercase tracking-wider block mb-2">
                 Areas of Interest
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1C1917] tracking-tight uppercase">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-bold text-[#1C1917] tracking-tight uppercase leading-tight">
                 WHAT I ENJOY BUILDING
               </h2>
             </div>
-            <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
+            <span className="text-xs sm:text-sm font-mono font-bold text-[#78350F] uppercase tracking-wider">
               IDEAS &rarr; ANALYSIS &rarr; IMPACT
             </span>
           </div>
 
-          {/* Three Clean Cards in One Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Three Clean Cards in One Row (Generous padding p-8 to p-10) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* 01: DATA ANALYSIS */}
             <motion.div
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl border border-[#E7E5E4] p-7 shadow-xs hover:border-[#78350F]/30 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-4"
+              className="bg-white rounded-2xl border border-[#E7E5E4] p-8 md:p-10 shadow-xs hover:border-[#78350F]/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-6 min-h-[250px]"
             >
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-[#78350F]">
+                  <span className="text-sm font-mono font-bold text-[#78350F]">
                     01
                   </span>
-                  <BarChart3 className="w-5 h-5 text-[#78350F]" />
+                  <BarChart3 className="w-6 h-6 text-[#78350F]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#78350F] uppercase tracking-tight">
+                <h3 className="font-serif text-2xl lg:text-[26px] font-bold text-[#78350F] uppercase tracking-tight">
                   DATA ANALYSIS
                 </h3>
-                <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed italic">
+                <p className="text-base sm:text-lg text-[#57534E] leading-relaxed italic">
                   &ldquo;Finding patterns and insights from raw data.&rdquo;
                 </p>
               </div>
@@ -314,21 +314,21 @@ export const HomePage: React.FC = () => {
 
             {/* 02: DATA VISUALIZATION */}
             <motion.div
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl border border-[#E7E5E4] p-7 shadow-xs hover:border-[#78350F]/30 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-4"
+              className="bg-white rounded-2xl border border-[#E7E5E4] p-8 md:p-10 shadow-xs hover:border-[#78350F]/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-6 min-h-[250px]"
             >
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-[#78350F]">
+                  <span className="text-sm font-mono font-bold text-[#78350F]">
                     02
                   </span>
-                  <PieChart className="w-5 h-5 text-[#78350F]" />
+                  <PieChart className="w-6 h-6 text-[#78350F]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#78350F] uppercase tracking-tight">
+                <h3 className="font-serif text-2xl lg:text-[26px] font-bold text-[#78350F] uppercase tracking-tight">
                   DATA VISUALIZATION
                 </h3>
-                <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed italic">
+                <p className="text-base sm:text-lg text-[#57534E] leading-relaxed italic">
                   &ldquo;Turning complex information into clear and meaningful dashboards.&rdquo;
                 </p>
               </div>
@@ -336,21 +336,21 @@ export const HomePage: React.FC = () => {
 
             {/* 03: INTELLIGENT SYSTEMS */}
             <motion.div
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl border border-[#E7E5E4] p-7 shadow-xs hover:border-[#78350F]/30 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-4"
+              className="bg-white rounded-2xl border border-[#E7E5E4] p-8 md:p-10 shadow-xs hover:border-[#78350F]/40 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-6 min-h-[250px]"
             >
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-[#78350F]">
+                  <span className="text-sm font-mono font-bold text-[#78350F]">
                     03
                   </span>
-                  <Cpu className="w-5 h-5 text-[#78350F]" />
+                  <Cpu className="w-6 h-6 text-[#78350F]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#78350F] uppercase tracking-tight">
+                <h3 className="font-serif text-2xl lg:text-[26px] font-bold text-[#78350F] uppercase tracking-tight">
                   INTELLIGENT SYSTEMS
                 </h3>
-                <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed italic">
+                <p className="text-base sm:text-lg text-[#57534E] leading-relaxed italic">
                   &ldquo;Exploring machine learning and AI applications to solve real-world problems.&rdquo;
                 </p>
               </div>
@@ -361,22 +361,22 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 4. CURRENTLY FOCUSED ON / OPEN TO (Clean 2-column strip) */}
+      {/* 4. CURRENTLY FOCUSED ON / OPEN TO (Larger 15-16px pills)  */}
       {/* ======================================================== */}
-      <section className="py-16 md:py-20 border-b border-[#E7E5E4] bg-white">
+      <section className="py-20 md:py-24 border-b border-[#E7E5E4] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             
             {/* Left: CURRENTLY FOCUSED ON */}
-            <div className="space-y-4">
-              <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
+            <div className="space-y-5">
+              <span className="text-sm sm:text-base font-mono font-bold text-[#78350F] uppercase tracking-wider block">
                 CURRENTLY FOCUSED ON
               </span>
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className="flex flex-wrap gap-3 pt-1">
                 {['SQL', 'Power BI', 'Excel', 'Python', 'Machine Learning'].map((item) => (
                   <span
                     key={item}
-                    className="px-4 py-2 rounded-full text-xs font-semibold bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4] hover:border-[#78350F]/40 transition-colors"
+                    className="px-5 py-2.5 rounded-full text-[15px] sm:text-base font-semibold bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4] hover:border-[#78350F]/50 transition-colors shadow-2xs"
                   >
                     {item}
                   </span>
@@ -385,11 +385,11 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right: OPEN TO */}
-            <div className="space-y-4">
-              <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
+            <div className="space-y-5">
+              <span className="text-sm sm:text-base font-mono font-bold text-[#78350F] uppercase tracking-wider block">
                 OPEN TO
               </span>
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className="flex flex-wrap gap-3 pt-1">
                 {[
                   'Data Analyst Internships',
                   'AI/ML Internships',
@@ -398,7 +398,7 @@ export const HomePage: React.FC = () => {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="px-4 py-2 rounded-full text-xs font-semibold bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4] hover:border-[#78350F]/40 transition-colors"
+                    className="px-5 py-2.5 rounded-full text-[15px] sm:text-base font-semibold bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4] hover:border-[#78350F]/50 transition-colors shadow-2xs"
                   >
                     {item}
                   </span>
@@ -411,11 +411,11 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 5. SHORT PERSONAL CTA (Wide, elegant, with botanical art)*/}
+      {/* 5. SHORT PERSONAL CTA (Large serif display & spacious)   */}
       {/* ======================================================== */}
-      <section className="py-16 md:py-24 bg-[#FAF8F5]">
+      <section className="py-20 md:py-28 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl border border-[#E7E5E4] bg-white p-8 sm:p-12 md:p-16 shadow-xs overflow-hidden">
+          <div className="relative rounded-3xl border border-[#E7E5E4] bg-white p-10 sm:p-14 md:p-18 lg:p-20 shadow-xs overflow-hidden">
             
             {/* Subtle decorative botanical line illustration on the right */}
             <div className="absolute right-0 top-0 bottom-0 w-1/3 pointer-events-none opacity-20 hidden md:block select-none overflow-hidden">
@@ -442,39 +442,39 @@ export const HomePage: React.FC = () => {
               </svg>
             </div>
 
-            <div className="relative z-10 max-w-2xl space-y-6">
-              {/* Small label */}
-              <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
+            <div className="relative z-10 max-w-2xl space-y-7">
+              {/* Small label: 13-14px */}
+              <span className="text-xs sm:text-sm font-mono font-bold text-[#78350F] uppercase tracking-wider block">
                 LET&apos;S BUILD SOMETHING MEANINGFUL
               </span>
 
-              {/* Large heading */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase leading-tight">
+              {/* Large heading: 40-50px in serif display */}
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-[#1C1917] tracking-tight uppercase leading-[1.12]">
                 CURIOUS BY NATURE.<br />
                 BUILDING WITH PURPOSE.
               </h2>
 
-              {/* Short text */}
-              <p className="text-sm sm:text-base text-[#57534E] leading-relaxed">
+              {/* Description text: 17-19px */}
+              <p className="text-base sm:text-lg md:text-[19px] text-[#57534E] leading-relaxed">
                 &ldquo;I&apos;m always excited to learn, collaborate and work on projects that create real impact.&rdquo;
               </p>
 
-              {/* Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
+              {/* Buttons with comfortable sizing */}
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <Link
                   to="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/btn"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/btn"
                 >
                   <span>EXPLORE PROJECTS</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                 </Link>
 
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#FAF8F5] hover:bg-[#F5EFE6] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4] text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#FAF8F5] hover:bg-[#F5EFE6] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
                 >
                   <span>ABOUT ME</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#78350F]" />
+                  <ArrowRight className="w-4 h-4 text-[#78350F]" />
                 </Link>
               </div>
             </div>

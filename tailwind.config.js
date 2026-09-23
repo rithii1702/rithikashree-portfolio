@@ -41,7 +41,14 @@ export default {
         },
       },
       fontFamily: {
+        serif: [
+          '"Playfair Display"',
+          'Georgia',
+          'Cambria',
+          'serif',
+        ],
         sans: [
+          'Manrope',
           '"Plus Jakarta Sans"',
           'Inter',
           '-apple-system',
