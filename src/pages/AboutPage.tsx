@@ -275,6 +275,12 @@ export const AboutPage: React.FC = () => {
               <span>View Projects</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white hover:bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4] text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors"
+            >
+              <span>Contact Me</span>
+            </Link>
           </div>
         </motion.div>
 

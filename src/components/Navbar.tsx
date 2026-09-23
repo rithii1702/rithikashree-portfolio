@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Nav Items (14-15px) */}
-        <nav className="hidden md:flex items-center gap-7 text-sm uppercase font-semibold tracking-wider text-[#6D625C]">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm uppercase font-semibold tracking-wider text-[#6D625C]">
           {navItems.map((item) => {
             const isActive =
               item.path === '/'
