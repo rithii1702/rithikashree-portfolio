@@ -5,8 +5,7 @@ import {
   ArrowLeft, 
   Github, 
   CheckCircle2, 
-  ArrowRight,
-  ArrowUpRight
+  ArrowRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -50,11 +49,6 @@ export const ProjectDetailPage: React.FC = () => {
             <span className="px-2.5 py-1 rounded bg-[#FAF8F5] border border-[#E7E5E4] text-xs font-mono font-bold text-[#78350F]">
               PROJECT {project.number}
             </span>
-            {project.featured && (
-              <span className="px-2.5 py-1 rounded bg-[#78350F]/10 border border-[#78350F]/20 text-xs font-mono font-bold text-[#78350F]">
-                FEATURED
-              </span>
-            )}
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
@@ -75,8 +69,7 @@ export const ProjectDetailPage: React.FC = () => {
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1C1917] hover:bg-[#292524] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
               >
                 <Github className="w-4 h-4" />
-                <span>GitHub</span>
-                <ArrowUpRight className="w-4 h-4 text-[#FAF8F5]" />
+                <span>GitHub &rarr;</span>
               </a>
             )}
           </div>
@@ -92,7 +85,7 @@ export const ProjectDetailPage: React.FC = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-contain p-2"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
@@ -197,7 +190,7 @@ export const ProjectDetailPage: React.FC = () => {
           </div>
         )}
 
-        {/* GitHub Link Callout */}
+        {/* GitHub Link Callout (only if real repo exists) */}
         {project.githubUrl && (
           <div className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>

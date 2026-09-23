@@ -4,7 +4,6 @@ export interface ProjectItem {
   slug: string;
   title: string;
   subtitle: string;
-  quote?: string;
   shortDescription: string;
   overview: string;
   problem: string;
@@ -13,11 +12,10 @@ export interface ProjectItem {
   keyFeatures: string[];
   resumePoints: string[];
   highlight: string;
-  highlightsList?: string[];
+  highlightsList: string[];
   outcome?: string;
   image: string;
   githubUrl?: string;
-  featured?: boolean;
 }
 
 export interface SkillGroup {
@@ -137,12 +135,10 @@ export const portfolioData: PortfolioData = {
       id: 'data-detective',
       number: '01',
       slug: 'data-detective',
-      title: 'Data Detective AI',
+      title: 'DATA DETECTIVE AI',
       subtitle: 'Intelligent Data Analysis & Automated Exploration Platform',
-      quote:
-        'An intelligent data analysis platform that helps users upload datasets, explore their data, perform exploratory data analysis, and generate meaningful insights.',
       shortDescription:
-        'Data Detective AI is a data analysis platform designed to simplify dataset exploration, exploratory data analysis, visualization and insight generation.',
+        'An intelligent data analysis platform that helps users upload datasets, explore their data, perform exploratory data analysis and generate meaningful insights.',
       overview:
         'Data Detective AI is a data analysis platform designed to simplify dataset exploration, exploratory data analysis, visualization and insight generation. It provides an intuitive and intelligent interface where users can upload tabular datasets, examine automated exploratory data profiles, clean missing values, visualize distributions, and generate meaningful analytical insights.',
       problem:
@@ -164,20 +160,19 @@ export const portfolioData: PortfolioData = {
       ],
       resumePoints: [
         'Developed Data Detective AI, an intelligent data analysis platform to simplify dataset exploration and uncover actionable patterns.',
-        'Implemented exploratory data analysis workflows and interactive visualization to detect statistical trends and anomalies.',
+        'Implemented automated exploratory data analysis workflows and interactive visualization to detect statistical trends and anomalies.',
       ],
       highlight: 'Dataset Upload · Automated Data Exploration · Insight Generation',
       outcome:
         'Provides an intuitive, end-to-end interface for data analysts and teams to go from raw CSV files to interactive exploration, automated data quality assessment, and AI-generated insights without tedious manual setup.',
       image: '/projects/data-detective.png',
       githubUrl: 'https://github.com/rithii1702/data-detective-ai',
-      featured: true,
     },
     {
       id: 'bagbill',
       number: '02',
       slug: 'bagbill',
-      title: 'BagBill',
+      title: 'BAGBILL',
       subtitle: 'Digital Billing & Calculation Business System',
       shortDescription:
         'A digital billing and calculation system designed to help businesses manage bag sales, billing information, GST calculations and invoice records digitally.',
@@ -196,12 +191,19 @@ export const portfolioData: PortfolioData = {
         'Product Management module with pricing records',
         'Interactive business dashboard & calculation summary',
       ],
+      highlightsList: [
+        'GST Billing & Invoicing',
+        'Sequential Numbering System',
+        'Party Ledger & Records',
+      ],
       resumePoints: [
         'Developed BagBill, a digital billing and calculation application to replace manual business billing and record management.',
         'Implemented GST invoice generation, automated calculations, payment tracking, and sequential invoice numbering.',
         'Built Bill Book, Party Ledger, and Product Management modules with Express and Node.js REST APIs.',
       ],
-      highlight: 'Digitalizes traditional manual billing and business record management.',
+      highlight: 'GST Billing · Sequential Numbering · Party Ledger',
+      outcome:
+        'Digitalizes traditional paper billing, eliminating calculation discrepancies, enforcing sequential invoice integrity, and providing instant ledger visibility for business owners.',
       image: '/projects/bagbill.png',
       githubUrl: 'https://github.com/rithii1702/BagBill',
     },
@@ -209,7 +211,7 @@ export const portfolioData: PortfolioData = {
       id: 'ecommerce-sales',
       number: '03',
       slug: 'ecommerce-sales',
-      title: 'E-Commerce Sales Analysis',
+      title: 'E-COMMERCE SALES ANALYSIS',
       subtitle: 'Sales Performance, Revenue Trends & Business Insights',
       shortDescription:
         'A data analysis and visualization project focused on understanding sales performance, revenue trends, products and business insights.',
@@ -227,19 +229,25 @@ export const portfolioData: PortfolioData = {
         'Sales pattern identification and customer purchasing behavior',
         'Interactive KPI dashboard visualizing core business metrics in Power BI',
       ],
+      highlightsList: [
+        'Sales Performance',
+        'Revenue Analysis',
+        'Business Insights',
+      ],
       resumePoints: [
         'Analyzed e-commerce sales data to identify revenue trends, product performance, and sales patterns.',
         'Built interactive dashboards to visualize key performance indicators and derive data-driven business insights.',
       ],
-      highlight: 'Interactive KPI dashboards visualizing revenue trends and product performance.',
+      highlight: 'Sales Performance · Revenue Analysis · Business Insights',
+      outcome:
+        'Delivered executive-level clarity into top revenue contributors, cyclical purchasing behaviors, and high-margin product categories through interactive Power BI reports.',
       image: '/projects/ecommerce-sales.png',
-      githubUrl: 'https://github.com/rithii1702',
     },
     {
       id: 'pizza-dashboard',
       number: '04',
       slug: 'pizza-dashboard',
-      title: 'Pizza Sales Dashboard',
+      title: 'PIZZA SALES DASHBOARD',
       subtitle: 'Interactive Restaurant Sales Analytics & Order Trends',
       shortDescription:
         'An interactive Power BI dashboard analyzing pizza orders, revenue, product performance and sales trends.',
@@ -257,13 +265,19 @@ export const portfolioData: PortfolioData = {
         'Product performance ranking highlighting best-selling items',
         'Interactive dashboard controls for filtering and deep-dive analysis',
       ],
+      highlightsList: [
+        'Sales Analysis',
+        'Revenue Insights',
+        'Product Performance',
+      ],
       resumePoints: [
         'Analyzed sales data to evaluate revenue, order trends, customer preferences, and product performance.',
         'Built an interactive Power BI dashboard highlighting best-selling products, peak order periods, and category performance.',
       ],
-      highlight: 'Interactive Power BI dashboard evaluating orders, peak periods, and product rankings.',
+      highlight: 'Sales Analysis · Revenue Insights · Product Performance',
+      outcome:
+        'Enabled management to pinpoint peak order hours, optimize kitchen staffing schedules, and tailor inventory purchases based on proven customer size and flavor preferences.',
       image: '/projects/pizza-sales.png',
-      githubUrl: 'https://github.com/rithii1702',
     },
   ],
 
