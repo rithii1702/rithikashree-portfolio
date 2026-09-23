@@ -55,6 +55,10 @@ export default {
           'BlinkMacSystemFont',
           'sans-serif',
         ],
+        script: [
+          'Caveat',
+          'cursive',
+        ],
       },
       letterSpacing: {
         'technical': '0.12em',
