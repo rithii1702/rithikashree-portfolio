@@ -61,12 +61,12 @@ export const SkillsPage: React.FC = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="min-h-screen py-10 md:py-16"
+      className="min-h-screen pt-5 sm:pt-7 md:pt-8 pb-10 sm:pb-12"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 sm:space-y-8">
 
         {/* Breadcrumb & Page Heading */}
-        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-2.5 sm:space-y-3 border-b border-[#E7E5E4] pb-5 sm:pb-6">
           <nav className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#78716C] uppercase">
             <Link to="/" className="hover:text-[#78350F] transition-colors">
               Home
@@ -80,11 +80,11 @@ export const SkillsPage: React.FC = () => {
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1917] tracking-tight uppercase">
                 Technical Skills & Toolkit
               </h1>
-              <p className="text-sm sm:text-base text-[#57534E] mt-2 max-w-2xl">
+              <p className="text-[15px] sm:text-[16px] text-[#57534E] mt-2 max-w-2xl leading-relaxed">
                 Practical competencies across data analytics, machine learning, application development, and workflow tools.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E7E5E4] text-xs font-mono font-semibold text-[#78350F] shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E7E5E4] text-[13px] font-mono font-semibold text-[#78350F] shadow-2xs shrink-0">
               <Terminal className="w-3.5 h-3.5" />
               <span>4 Core Domains</span>
             </div>
@@ -92,11 +92,11 @@ export const SkillsPage: React.FC = () => {
         </motion.div>
 
         {/* 4 Core Skills Domains Grid */}
-        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
           {skills.map((group) => (
             <div
               key={group.name}
-              className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6 hover:shadow-md transition-shadow duration-200"
+              className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-5 hover:shadow-md transition-shadow duration-200"
             >
               {/* Card Header */}
               <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4">
@@ -106,7 +106,7 @@ export const SkillsPage: React.FC = () => {
                   </span>
                   <div className="flex items-center gap-2.5">
                     {categoryIcons[group.name] || <BarChart3 className="w-5 h-5 text-[#78350F]" />}
-                    <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] tracking-tight">
+                    <h2 className="font-serif text-xl sm:text-[22px] font-bold text-[#1C1917] tracking-tight">
                       {group.name}
                     </h2>
                   </div>
@@ -117,7 +117,7 @@ export const SkillsPage: React.FC = () => {
               </div>
 
               {/* Group Description */}
-              <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              <p className="text-[14.5px] sm:text-[15.5px] text-[#57534E] leading-relaxed">
                 {group.description}
               </p>
 
@@ -126,7 +126,7 @@ export const SkillsPage: React.FC = () => {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] text-xs font-semibold text-[#1C1917] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] text-[13px] sm:text-[14px] font-semibold text-[#1C1917] transition-colors"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#78350F]" />
                     <span>{skill}</span>
@@ -138,24 +138,24 @@ export const SkillsPage: React.FC = () => {
         </motion.div>
 
         {/* Analytical Workflow & Methodologies */}
-        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
+        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-5 sm:space-y-6">
           <div className="space-y-1 border-b border-[#E7E5E4] pb-4">
             <span className="text-[11px] font-mono font-semibold text-[#78350F] uppercase tracking-wider block">
               Methodology
             </span>
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] tracking-tight uppercase">
+            <h2 className="font-serif text-xl sm:text-[22px] font-bold text-[#1C1917] tracking-tight uppercase">
               How I Apply These Skills
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {methodologies.map((m) => (
-              <div key={m.title} className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] space-y-2">
+              <div key={m.title} className="p-4 sm:p-5 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] space-y-2">
                 <div className="flex items-center gap-2">
                   {m.icon}
-                  <h3 className="font-serif text-sm font-bold text-[#1C1917]">{m.title}</h3>
+                  <h3 className="font-serif text-[15px] font-bold text-[#1C1917]">{m.title}</h3>
                 </div>
-                <p className="text-[11px] text-[#57534E] leading-relaxed">
+                <p className="text-[13px] sm:text-[14px] text-[#57534E] leading-relaxed">
                   {m.desc}
                 </p>
               </div>
@@ -166,16 +166,16 @@ export const SkillsPage: React.FC = () => {
         {/* Bottom CTA to Projects */}
         <motion.div variants={fadeInUp} className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
+            <h3 className="font-serif text-lg sm:text-[20px] font-bold text-[#1C1917]">
               Interested in seeing these skills applied to real datasets?
             </h3>
-            <p className="text-xs text-[#57534E]">
+            <p className="text-xs sm:text-sm text-[#57534E]">
               Browse the projects catalog to inspect interactive dashboards, machine learning models, and code repositories.
             </p>
           </div>
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
           >
             <span>Explore Projects</span>
             <ArrowRight className="w-3.5 h-3.5" />

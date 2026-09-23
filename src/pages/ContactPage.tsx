@@ -46,12 +46,12 @@ export const ContactPage: React.FC = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="min-h-screen py-10 md:py-16"
+      className="min-h-screen pt-5 sm:pt-7 md:pt-8 pb-10 sm:pb-12"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 sm:space-y-8">
 
         {/* Breadcrumb & Page Heading */}
-        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-5 sm:pb-6">
           <nav className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#78716C] uppercase">
             <Link to="/" className="hover:text-[#78350F] transition-colors">
               Home
@@ -83,7 +83,7 @@ export const ContactPage: React.FC = () => {
           <motion.div variants={fadeInUp} className="lg:col-span-5 space-y-6">
             
             {/* Open for Opportunities Card */}
-            <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-4">
+            <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-4">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
                 <Sparkles className="w-4 h-4" />
                 <span>Career Opportunities</span>
@@ -93,11 +93,11 @@ export const ContactPage: React.FC = () => {
                 Seeking Data Analyst & Analytics Internships
               </h2>
 
-              <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              <p className="text-[14.5px] sm:text-[15.5px] text-[#57534E] leading-relaxed">
                 I am actively looking for internship and entry-level opportunities in <strong>Data Analytics, Business Intelligence, and AI/ML</strong>. I bring hands-on experience in <strong>Power BI, Excel, SQL, and Python</strong>, ready to create immediate analytical value for your team.
               </p>
 
-              <div className="pt-4 border-t border-[#E7E5E4] space-y-2 text-xs text-[#57534E]">
+              <div className="pt-4 border-t border-[#E7E5E4] space-y-2 text-xs sm:text-[13px] text-[#57534E]">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#78350F]" />
                   <span>Immediate availability for internships</span>
@@ -110,21 +110,21 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Direct Contact Cards */}
-            <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-4">
+            <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-4">
               <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
                 Direct Channels
               </div>
 
               <div className="space-y-3">
                 {/* Email card */}
-                <div className="p-3.5 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] flex items-center justify-between gap-3">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 overflow-hidden">
                     <div className="p-2 rounded-lg bg-white border border-[#E7E5E4] text-[#78350F]">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div className="overflow-hidden">
                       <span className="text-[10px] font-mono text-[#78716C] block uppercase">Email</span>
-                      <a href={`mailto:${personal.email}`} className="text-xs font-bold text-[#1C1917] hover:text-[#78350F] truncate block">
+                      <a href={`mailto:${personal.email}`} className="text-xs sm:text-sm font-bold text-[#1C1917] hover:text-[#78350F] truncate block">
                         {personal.email}
                       </a>
                     </div>
@@ -143,7 +143,7 @@ export const ContactPage: React.FC = () => {
                   href={personal.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] flex items-center justify-between gap-3 transition-colors"
+                  className="p-3.5 sm:p-4 rounded-xl bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] flex items-center justify-between gap-3 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-white border border-[#E7E5E4] text-[#78350F]">
@@ -151,7 +151,7 @@ export const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-[10px] font-mono text-[#78716C] block uppercase">LinkedIn</span>
-                      <span className="text-xs font-bold text-[#1C1917]">B. Rithikashree</span>
+                      <span className="text-xs sm:text-sm font-bold text-[#1C1917]">B. Rithikashree</span>
                     </div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-[#78350F]" />
@@ -162,7 +162,7 @@ export const ContactPage: React.FC = () => {
                   href={personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] flex items-center justify-between gap-3 transition-colors"
+                  className="p-3.5 sm:p-4 rounded-xl bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] flex items-center justify-between gap-3 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-white border border-[#E7E5E4] text-[#1C1917]">
@@ -170,14 +170,14 @@ export const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-[10px] font-mono text-[#78716C] block uppercase">GitHub</span>
-                      <span className="text-xs font-bold text-[#1C1917]">rithii1702</span>
+                      <span className="text-xs sm:text-sm font-bold text-[#1C1917]">rithii1702</span>
                     </div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-[#78350F]" />
                 </a>
 
                 {/* Location & Phone */}
-                <div className="pt-2 grid grid-cols-2 gap-3 text-xs">
+                <div className="pt-1 grid grid-cols-2 gap-3 text-xs sm:text-[13px]">
                   <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] space-y-1">
                     <span className="text-[10px] font-mono text-[#78716C] uppercase block">Location</span>
                     <span className="font-bold text-[#1C1917] flex items-center gap-1">
@@ -201,7 +201,7 @@ export const ContactPage: React.FC = () => {
 
           {/* Right Column: Clean Simple Contact Form */}
           <motion.div variants={fadeInUp} className="lg:col-span-7">
-            <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
+            <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-5">
               <div className="space-y-1 border-b border-[#E7E5E4] pb-4">
                 <span className="text-[11px] font-mono font-semibold text-[#78350F] uppercase tracking-wider block">
                   Message Form
@@ -239,7 +239,7 @@ export const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-[#1C1917] block">
+                      <label className="text-xs sm:text-[13px] font-semibold text-[#1C1917] block">
                         Your Name
                       </label>
                       <input
@@ -248,11 +248,11 @@ export const ContactPage: React.FC = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Hiring Manager"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E7E5E4] text-xs focus:outline-none focus:border-[#78350F] bg-[#FAF8F5]"
+                        className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-[#E7E5E4] text-xs sm:text-sm focus:outline-none focus:border-[#78350F] bg-[#FAF8F5]"
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-[#1C1917] block">
+                      <label className="text-xs sm:text-[13px] font-semibold text-[#1C1917] block">
                         Your Email
                       </label>
                       <input
@@ -261,13 +261,13 @@ export const ContactPage: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. recruiter@company.com"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E7E5E4] text-xs focus:outline-none focus:border-[#78350F] bg-[#FAF8F5]"
+                        className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-[#E7E5E4] text-xs sm:text-sm focus:outline-none focus:border-[#78350F] bg-[#FAF8F5]"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-[#1C1917] block">
+                    <label className="text-xs sm:text-[13px] font-semibold text-[#1C1917] block">
                       Message
                     </label>
                     <textarea
@@ -276,13 +276,13 @@ export const ContactPage: React.FC = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Hi Rithikashree, we are interested in discussing an opportunity..."
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-[#E7E5E4] text-xs focus:outline-none focus:border-[#78350F] bg-[#FAF8F5]"
+                      className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-[#E7E5E4] text-xs sm:text-sm focus:outline-none focus:border-[#78350F] bg-[#FAF8F5]"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13.5px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
                   >
                     <span>Send Message</span>
                     <Send className="w-3.5 h-3.5" />

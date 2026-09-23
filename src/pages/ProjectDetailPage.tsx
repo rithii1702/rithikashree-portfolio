@@ -36,9 +36,9 @@ export const ProjectDetailPage: React.FC = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="min-h-screen py-10 md:py-16"
+      className="min-h-screen pt-5 sm:pt-7 md:pt-8 pb-10 sm:pb-12"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 sm:space-y-8">
 
         {/* Back to Projects Button */}
         <motion.div variants={fadeInUp}>
@@ -52,7 +52,7 @@ export const ProjectDetailPage: React.FC = () => {
         </motion.div>
 
         {/* Header Title Section */}
-        <motion.div variants={fadeInUp} className="space-y-4 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-4 border-b border-[#E7E5E4] pb-5 sm:pb-6">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-1 rounded bg-[#FAF8F5] border border-[#E7E5E4] text-xs font-mono font-bold text-[#78350F]">
               PROJECT {project.number}
@@ -100,52 +100,52 @@ export const ProjectDetailPage: React.FC = () => {
         </motion.div>
 
         {/* Overview */}
-        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
+        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-3">
           <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
             About the Project
           </div>
           <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
             Overview
           </h3>
-          <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+          <p className="text-[15px] sm:text-[16px] text-[#57534E] leading-relaxed">
             {project.overview}
           </p>
         </motion.div>
 
         {/* Problem & Solution Cards */}
-        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-2">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-2.5">
             <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
               The Context
             </span>
             <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               The Problem
             </h3>
-            <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            <p className="text-[14.5px] sm:text-[15.5px] text-[#57534E] leading-relaxed">
               {project.problem}
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-2">
+          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-2.5">
             <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
               The Implementation
             </span>
             <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               The Solution
             </h3>
-            <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            <p className="text-[14.5px] sm:text-[15.5px] text-[#57534E] leading-relaxed">
               {project.solution}
             </p>
           </div>
         </motion.div>
 
         {/* Key Features & Tech Stack */}
-        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-3">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-3">
             <h3 className="text-sm font-bold text-[#1C1917] uppercase tracking-wider font-mono">
               Key Features
             </h3>
-            <ul className="space-y-2 text-xs text-[#57534E]">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#57534E]">
               {project.keyFeatures.map((f, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#78350F] shrink-0 mt-0.5" />
@@ -155,7 +155,7 @@ export const ProjectDetailPage: React.FC = () => {
             </ul>
           </div>
 
-          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-3">
+          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-3">
             <h3 className="text-sm font-bold text-[#1C1917] uppercase tracking-wider font-mono">
               Technologies Used
             </h3>
@@ -163,7 +163,7 @@ export const ProjectDetailPage: React.FC = () => {
               {project.technologies.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1.5 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] text-xs font-semibold text-[#1C1917]"
+                  className="px-3.5 py-1.5 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] text-[13px] sm:text-[13.5px] font-semibold text-[#1C1917]"
                 >
                   {t}
                 </span>
@@ -175,7 +175,7 @@ export const ProjectDetailPage: React.FC = () => {
                 <span className="text-[11px] font-mono text-[#78716C] uppercase block font-semibold">
                   Highlight
                 </span>
-                <p className="text-xs font-medium text-[#78350F]">
+                <p className="text-xs sm:text-[13.5px] font-medium text-[#78350F]">
                   {project.highlight}
                 </p>
               </div>
@@ -185,14 +185,14 @@ export const ProjectDetailPage: React.FC = () => {
 
         {/* Project Outcome */}
         {project.outcome && (
-          <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
+          <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-3">
             <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
               Results & Impact
             </div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
               Project Outcome
             </h3>
-            <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            <p className="text-[15px] sm:text-[16px] text-[#57534E] leading-relaxed">
               {project.outcome}
             </p>
           </motion.div>
@@ -200,12 +200,12 @@ export const ProjectDetailPage: React.FC = () => {
 
         {/* GitHub Link Callout (only if real repo exists) */}
         {project.githubUrl && (
-          <motion.div variants={fadeInUp} className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <motion.div variants={fadeInUp} className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <h4 className="font-serif text-base font-bold text-[#1C1917]">
                 Explore Source Code on GitHub
               </h4>
-              <p className="text-xs text-[#57534E] mt-0.5">
+              <p className="text-xs sm:text-sm text-[#57534E] mt-0.5">
                 Review the repository implementation, documentation, and architecture.
               </p>
             </div>
@@ -213,7 +213,7 @@ export const ProjectDetailPage: React.FC = () => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1C1917] hover:bg-[#292524] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-2xs whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1C1917] hover:bg-[#292524] text-white text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs whitespace-nowrap"
             >
               <Github className="w-4 h-4" />
               <span>GitHub &rarr;</span>
@@ -222,10 +222,10 @@ export const ProjectDetailPage: React.FC = () => {
         )}
 
         {/* Next Project Footer Link */}
-        <motion.div variants={fadeInUp} className="pt-8 border-t border-[#E7E5E4] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <motion.div variants={fadeInUp} className="pt-6 sm:pt-7 border-t border-[#E7E5E4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#57534E] hover:text-[#78350F] transition-colors"
+            className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#57534E] hover:text-[#78350F] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to All Projects</span>
@@ -233,7 +233,7 @@ export const ProjectDetailPage: React.FC = () => {
 
           <Link
             to={`/projects/${nextProject.slug}`}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] rounded-lg text-xs font-bold uppercase tracking-wider text-[#1C1917] hover:text-[#78350F] transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] rounded-lg text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#1C1917] hover:text-[#78350F] transition-colors"
           >
             <span>Next: {nextProject.number} &mdash; {nextProject.title}</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#78350F]" />
