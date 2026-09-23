@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowDownToLine, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,35 +17,24 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { label: 'About', target: 'about' },
-    { label: 'Skills', target: 'skills' },
-    { label: 'Projects', target: 'projects' },
-    { label: 'Education', target: 'education' },
-    { label: 'Certifications', target: 'certifications' },
-    { label: 'Contact', target: 'contact' },
-  ];
-
-  const handleNavClick = (e: React.MouseEvent, target: string) => {
-    e.preventDefault();
+  useEffect(() => {
     setMobileMenuOpen(false);
+  }, [location.pathname]);
 
-    if (location.pathname !== '/') {
-      navigate('/#' + target);
-    } else {
-      const elem = document.getElementById(target);
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
+  const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Contact', path: '/contact' },
+  ];
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-[#E7E5E4]'
-          : 'bg-[#FAF8F5] border-b border-[#E7E5E4]/60'
+          ? 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-xs border-b border-[#E7E5E4]'
+          : 'bg-[#FAF8F5] border-b border-[#E7E5E4]/70'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -53,11 +42,6 @@ export const Navbar: React.FC = () => {
         <Link
           to="/"
           className="flex items-center gap-2 group text-left"
-          onClick={() => {
-            if (location.pathname === '/') {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-          }}
         >
           <span className="w-2.5 h-2.5 rounded-full bg-[#78350F] group-hover:scale-125 transition-transform duration-200"></span>
           <div>
@@ -71,17 +55,38 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs uppercase font-semibold tracking-wider text-[#57534E]">
-          {navItems.map((item) => (
-            <a
-              key={item.target}
-              href={`#${item.target}`}
-              onClick={(e) => handleNavClick(e, item.target)}
-              className="hover:text-[#78350F] transition-colors py-1 relative hover:-translate-y-0.5"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="hidden md:flex items-center gap-7 text-xs uppercase font-semibold tracking-wider text-[#57534E]">
+          {navItems.map((item) => {
+            const isActive =
+              item.path === '/'
+                ? location.pathname === '/'
+                : location.pathname.startsWith(item.path);
+
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className="relative py-1.5 transition-colors duration-200 hover:text-[#78350F]"
+              >
+                <span
+                  className={
+                    isActive ? 'text-[#78350F] font-bold' : 'text-[#57534E]'
+                  }
+                >
+                  {item.label}
+                </span>
+
+                {/* Subtle burgundy active underline indicator */}
+                {isActive && (
+                  <motion.div
+                    layoutId="navbar-active-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#78350F] rounded-full"
+                    transition={{ type: 'spring', stiffness: 450, damping: 32 }}
+                  />
+                )}
+              </NavLink>
+            );
+          })}
         </nav>
 
         {/* Desktop Actions */}
@@ -90,23 +95,23 @@ export const Navbar: React.FC = () => {
             href={portfolioData.personal.resumePath}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#F5EFE6] border border-[#E7E5E4] text-[#1C1917] text-xs font-semibold uppercase tracking-wider rounded transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#F5EFE6] border border-[#E7E5E4] text-[#1C1917] text-xs font-semibold uppercase tracking-wider rounded transition-colors shadow-2xs"
           >
-            <span>View Resume</span>
+            <span>Resume</span>
             <ExternalLink className="w-3.5 h-3.5 text-[#78350F]" />
           </a>
           <a
             href={portfolioData.personal.resumePath}
             download="B_RITHIKASHREE_Resume.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors shadow-xs"
           >
             <ArrowDownToLine className="w-3.5 h-3.5" />
-            <span>Download Resume</span>
+            <span>Download</span>
           </a>
         </div>
 
         {/* Mobile menu button */}
-        <div className="flex sm:hidden items-center gap-2">
+        <div className="flex md:hidden items-center gap-2">
           <a
             href={portfolioData.personal.resumePath}
             download="B_RITHIKASHREE_Resume.pdf"
@@ -127,25 +132,36 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#FAF8F5] border-b border-[#E7E5E4] px-4 pt-3 pb-6 space-y-3">
-          <div className="flex flex-col space-y-2">
-            {navItems.map((item) => (
-              <a
-                key={item.target}
-                href={`#${item.target}`}
-                onClick={(e) => handleNavClick(e, item.target)}
-                className="px-3 py-2 text-sm font-medium text-[#1C1917] hover:bg-[#F5EFE6] rounded transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+        <div className="md:hidden bg-[#FAF8F5] border-b border-[#E7E5E4] px-4 pt-3 pb-6 space-y-3">
+          <div className="flex flex-col space-y-1.5">
+            {navItems.map((item) => {
+              const isActive =
+                item.path === '/'
+                  ? location.pathname === '/'
+                  : location.pathname.startsWith(item.path);
+
+              return (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-3 py-2 text-sm font-semibold rounded transition-colors ${
+                    isActive
+                      ? 'bg-[#F5EFE6] text-[#78350F] border-l-2 border-[#78350F]'
+                      : 'text-[#57534E] hover:bg-[#F5EFE6] hover:text-[#1C1917]'
+                  }`}
+                >
+                  {item.label}
+                </NavLink>
+              );
+            })}
           </div>
 
           <div className="pt-4 border-t border-[#E7E5E4] space-y-2">
             <a
               href={portfolioData.personal.resumePath}
               download="B_RITHIKASHREE_Resume.pdf"
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#78350F] text-white text-xs font-semibold uppercase tracking-wider rounded shadow-sm"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#78350F] text-white text-xs font-semibold uppercase tracking-wider rounded shadow-xs"
             >
               <ArrowDownToLine className="w-4 h-4" />
               <span>Download Resume</span>
@@ -156,34 +172,9 @@ export const Navbar: React.FC = () => {
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white border border-[#E7E5E4] text-[#1C1917] text-xs font-semibold uppercase tracking-wider rounded"
             >
-              <span>View Resume</span>
+              <span>View Resume ↗</span>
               <ExternalLink className="w-3.5 h-3.5 text-[#78350F]" />
             </a>
-
-            <div className="flex justify-around pt-2 text-xs font-semibold text-[#78350F]">
-              <a
-                href={portfolioData.personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline flex items-center gap-1"
-              >
-                GitHub <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href={portfolioData.personal.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline flex items-center gap-1"
-              >
-                LinkedIn <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href={`mailto:${portfolioData.personal.email}`}
-                className="hover:underline"
-              >
-                Email
-              </a>
-            </div>
           </div>
         </div>
       )}

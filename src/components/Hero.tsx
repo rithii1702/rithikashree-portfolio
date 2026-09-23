@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowDownToLine, ExternalLink, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
@@ -109,13 +110,13 @@ export const Hero: React.FC = () => {
 
             {/* Action buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors shadow-sm"
               >
                 <span>View My Projects</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
 
               <a
                 href={personal.resumePath}

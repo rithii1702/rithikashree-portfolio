@@ -4,7 +4,7 @@ export interface ProjectItem {
   title: string;
   subtitle: string;
   category: string;
-  categoryBadge: 'Full-Stack' | 'AI & Analytics' | 'Data Analytics' | 'Business Intelligence';
+  categoryBadge: string;
   featured?: boolean;
   shortDescription: string;
   overview: string;
@@ -85,68 +85,296 @@ export const portfolioData: PortfolioData = {
 
   skills: [
     {
-      name: 'Data Analytics',
+      name: 'DATA & ANALYTICS',
       code: 'ANALYTICS // 01',
-      description: 'Core analytical methods, spreadsheet modeling, business reporting, and dashboard visualization.',
+      description: 'Foundational analytical programming, SQL querying, spreadsheet modeling, and business intelligence dashboards.',
       skills: [
+        'Python',
+        'SQL',
         'Excel',
-        'Google Sheets',
         'Power BI',
-        'Tableau',
-        'Data Cleaning',
-        'Data Analysis',
+        'Pandas',
+        'NumPy',
         'Data Visualization',
-        'KPI Analysis',
       ],
     },
     {
-      name: 'Programming',
-      code: 'CODE // 02',
-      description: 'Foundational programming and relational query syntax for analytical data manipulation.',
-      skills: ['Python', 'SQL (Basics)'],
+      name: 'AI / MACHINE LEARNING',
+      code: 'AI-ML // 02',
+      description: 'Machine learning fundamentals, deep learning neural networks, computer vision, and predictive workflows.',
+      skills: [
+        'Machine Learning',
+        'Scikit-learn',
+        'Deep Learning',
+        'U-Net',
+        'Computer Vision',
+      ],
     },
     {
-      name: 'Databases',
-      code: 'DATASTORE // 03',
-      description: 'Document database management and persistent storage for business record records.',
-      skills: ['MongoDB'],
-    },
-    {
-      name: 'Web & Backend',
-      code: 'FULLSTACK // 04',
-      description: 'Full-stack application development for data entry, transaction systems, and reporting interfaces.',
+      name: 'DEVELOPMENT',
+      code: 'FULLSTACK // 03',
+      description: 'Full-stack web application development, reactive user interfaces, and backend REST APIs.',
       skills: [
         'React',
         'TypeScript',
-        'Node.js',
-        'Express.js',
-        'REST APIs',
-        'HTML',
-        'CSS',
+        'Tailwind CSS',
+        'Flask',
+        'FastAPI',
+        'MongoDB',
       ],
     },
     {
-      name: 'AI & Machine Learning',
-      code: 'AI-ML // 05',
-      description: 'Machine learning fundamentals and intelligent workflows for dataset exploration and anomaly detection.',
-      skills: ['Machine Learning (Basics)', 'AI-Assisted Analytics'],
-    },
-    {
-      name: 'Tools',
-      code: 'WORKFLOW // 06',
-      description: 'Version control, code editors, and communication tools for analytical and design workflows.',
-      skills: ['Git', 'GitHub', 'VS Code', 'PowerPoint', 'Canva'],
+      name: 'TOOLS',
+      code: 'WORKFLOW // 04',
+      description: 'Version control, interactive notebooks, developer environments, and analytical sharing platforms.',
+      skills: [
+        'GitHub',
+        'VS Code',
+        'Jupyter',
+        'Kaggle',
+        'Streamlit',
+      ],
     },
   ],
 
   projects: [
+    {
+      id: 'nishkaamkrishi',
+      slug: 'nishkaamkrishi',
+      title: 'NishkaamKrishi',
+      subtitle: 'AI Agriculture Platform for Crop & Soil Disease Prediction',
+      category: 'AI & Machine Learning',
+      categoryBadge: 'AI / Machine Learning',
+      shortDescription:
+        'An AI-assisted agricultural platform engineered to detect plant diseases from leaf imagery and recommend soil nutrient treatments to optimize crop yields.',
+      overview:
+        'NishkaamKrishi is an artificial intelligence-driven agriculture support platform developed to assist farmers and agronomists in rapid disease diagnosis. The system processes visual leaf data and soil indicators using machine learning models to identify crop pathology, evaluate disease severity, and provide actionable treatment recommendations.',
+      problem:
+        'Crop diseases and soil nutrient deficiencies cause severe agricultural loss when detected late. Traditional laboratory testing is inaccessible for many farmers, leading to delayed interventions.',
+      solution:
+        'Built an intelligent diagnostics pipeline using Python and Scikit-learn integrated with Flask and Streamlit, enabling instant identification of crop diseases and dynamic recommendation workflows.',
+      technologies: ['Python', 'Machine Learning', 'Scikit-learn', 'Flask', 'Pandas', 'Streamlit'],
+      keyFeatures: [
+        'Multi-class crop disease detection from image inputs',
+        'Soil nutrient diagnostic and balancing recommendations',
+        'Interactive Streamlit user interface with real-time feedback',
+        'Lightweight Python Flask backend for model inference',
+        'Comprehensive dataset processing with Pandas and NumPy',
+      ],
+      resumePoints: [
+        'Engineered an AI-assisted smart agriculture platform providing crop disease identification and soil nutrient analysis.',
+        'Integrated Scikit-learn machine learning models with a Streamlit interface and Flask REST endpoints.',
+      ],
+      highlights: [
+        'AI Agriculture',
+        'Disease Detection',
+        'Scikit-learn',
+        'Flask API',
+        'Streamlit UI',
+      ],
+      image: '/projects/nishkaamkrishi.png',
+      githubUrl: 'https://github.com/rithii1702/NishkaamKrishi',
+      liveDemoUrl: 'https://github.com/rithii1702/NishkaamKrishi',
+    },
+    {
+      id: 'road-extraction',
+      slug: 'road-extraction',
+      title: 'Road Extraction from Satellite Images',
+      subtitle: 'Deep Learning with U-Net & Computer Vision for Remote Sensing Analysis',
+      category: 'Computer Vision & Deep Learning',
+      categoryBadge: 'AI / Machine Learning',
+      shortDescription:
+        'A semantic segmentation pipeline leveraging the U-Net deep learning architecture to extract road networks from high-resolution satellite imagery.',
+      overview:
+        'A remote sensing deep learning application designed to automate the extraction of complex road networks from satellite and aerial photography. Utilizing an encoder-decoder U-Net architecture with skip connections, the pipeline performs pixel-level semantic segmentation across diverse urban and rural terrains.',
+      problem:
+        'Manual road mapping from satellite imagery is time-consuming and prone to human error, hindering disaster response planning and automated urban navigation updates.',
+      solution:
+        'Implemented a deep convolutional neural network based on U-Net in Python with PyTorch/TensorFlow, achieving robust feature segmentation across varying lighting and surface conditions.',
+      technologies: ['Python', 'Deep Learning', 'U-Net', 'Computer Vision', 'PyTorch', 'NumPy'],
+      keyFeatures: [
+        'Encoder-decoder U-Net architecture with skip connections',
+        'Pixel-wise binary semantic road mask generation',
+        'Data augmentation pipelines for satellite aerial imagery',
+        'Evaluation metrics including Intersection over Union (IoU) and Dice coefficient',
+        'GPU-accelerated inference for high-resolution tiles',
+      ],
+      resumePoints: [
+        'Implemented a deep learning semantic segmentation pipeline using U-Net architecture to extract road networks from satellite imagery.',
+        'Optimized computer vision data preprocessing and evaluation metrics using NumPy and PyTorch.',
+      ],
+      highlights: [
+        'U-Net Architecture',
+        'Computer Vision',
+        'Satellite Imagery',
+        'Semantic Segmentation',
+        'Deep Learning',
+      ],
+      image: '/projects/road-extraction.png',
+      githubUrl: 'https://github.com/rithii1702/road-extraction-satellite',
+      liveDemoUrl: 'https://github.com/rithii1702/road-extraction-satellite',
+    },
+    {
+      id: 'ecommerce-sales',
+      slug: 'ecommerce-sales',
+      title: 'E-Commerce Sales Analysis',
+      subtitle: 'Revenue Trends, Product Performance & Sales Pattern Analytics',
+      category: 'Data Analytics & Business Reporting',
+      categoryBadge: 'Data & Analytics',
+      shortDescription:
+        'Comprehensive data analytics project analyzing e-commerce transactions to identify revenue trends, product performance, and sales patterns through interactive dashboards.',
+      overview:
+        'This project focuses on turning raw e-commerce transaction records into strategic business intelligence. Utilizing Excel for data cleaning and preliminary modeling alongside Power BI for dynamic visualization, the analysis reveals product sales distributions, customer buying cycles, and key revenue indicators.',
+      problem:
+        'Modern e-commerce platforms generate high volumes of transactional records across diverse product lines and regions. Without centralized reporting and KPI visualization, businesses struggle to recognize seasonal sales trends and evaluate product performance.',
+      solution:
+        'Executed rigorous data cleaning and structuring in Excel, followed by the development of an interactive Power BI dashboard highlighting key performance indicators, revenue movements, product rankings, and purchase patterns to drive data-driven decision-making.',
+      technologies: ['Excel', 'Power BI', 'SQL', 'Data Cleaning', 'Data Visualization', 'KPI Analysis'],
+      keyFeatures: [
+        'Data cleaning and preparation of transactional e-commerce records',
+        'Revenue trend analysis across operational cycles',
+        'Product performance evaluation and category breakdown',
+        'Sales pattern identification and customer purchasing behavior',
+        'Interactive KPI dashboard visualizing core business metrics',
+        'Actionable data-driven business insights for inventory and sales strategy',
+      ],
+      resumePoints: [
+        'Analyzed e-commerce sales data to identify revenue trends, product performance, and sales patterns.',
+        'Built interactive dashboards to visualize key performance indicators and derive data-driven business insights.',
+      ],
+      highlights: [
+        'Revenue Trends',
+        'Product Performance',
+        'Sales Patterns',
+        'KPI Dashboard',
+        'Power BI Visuals',
+      ],
+      image: '/projects/ecommerce-sales.png',
+      githubUrl: 'https://github.com/rithii1702/ecommerce-sales-analysis',
+      liveDemoUrl: 'https://github.com/rithii1702/ecommerce-sales-analysis',
+    },
+    {
+      id: 'pizza-dashboard',
+      slug: 'pizza-dashboard',
+      title: 'Pizza Sales Dashboard',
+      subtitle: 'Interactive Power BI Restaurant Sales & Customer Preference Analytics',
+      category: 'Power BI / Business Intelligence',
+      categoryBadge: 'Data & Analytics',
+      shortDescription:
+        'An interactive Power BI dashboard analyzing sales data to evaluate revenue, order trends, customer preferences, and product performance.',
+      overview:
+        'A dedicated business intelligence project developed in Power BI to evaluate the operational and sales performance of a restaurant business. The dashboard synthesizes order transactions to identify best-selling menu items, customer size preferences, peak ordering periods, and category revenue share.',
+      problem:
+        'Restaurant managers need precise visibility into customer demand cycles, peak ordering times, and underperforming menu categories to optimize staffing, manage ingredient inventory, and maximize daily revenue.',
+      solution:
+        'Analyzed comprehensive sales records and created a dynamic, interactive Power BI dashboard delivering clear visibility into revenue performance, order volume patterns, best-selling products, and peak operational windows.',
+      technologies: ['Power BI', 'Excel', 'DAX', 'Data Analysis', 'Data Visualization', 'KPI Analysis'],
+      keyFeatures: [
+        'Revenue analysis across order cycles and pizza categories',
+        'Order volume trends and peak order periods identification',
+        'Customer preferences breakdown by pizza size and crust type',
+        'Product performance ranking highlighting best-selling items',
+        'Category performance evaluation across classic, specialty, and supreme pizzas',
+        'Interactive dashboard controls for filtering and deep-dive analysis',
+      ],
+      resumePoints: [
+        'Analyzed sales data to evaluate revenue, order trends, customer preferences, and product performance.',
+        'Built an interactive Power BI dashboard highlighting best-selling products, peak order periods, and category performance.',
+      ],
+      highlights: [
+        'Revenue Analysis',
+        'Order Trends',
+        'Customer Preferences',
+        'Best-Selling Products',
+        'DAX Measures',
+      ],
+      image: '/projects/pizza-sales.png',
+      githubUrl: 'https://github.com/rithii1702/pizza-sales-analysis',
+      liveDemoUrl: 'https://github.com/rithii1702/pizza-sales-analysis',
+    },
+    {
+      id: 'global-population-dashboard',
+      slug: 'global-population-dashboard',
+      title: 'Global Population Dashboard',
+      subtitle: 'Demographic Trends, Growth Projections & Geospatial Distribution Analytics',
+      category: 'Data Analytics & Visualization',
+      categoryBadge: 'Data & Analytics',
+      shortDescription:
+        'An interactive demographic analytics dashboard visualizing global population trends, fertility metrics, regional distributions, and future growth projections.',
+      overview:
+        'The Global Population Dashboard consolidates multi-decade demographic datasets to provide comprehensive insights into global human development patterns. Utilizing Power BI and advanced Excel modeling, the project analyzes population shifts across 195+ countries, urban vs. rural growth, median age indicators, and regional dependency ratios.',
+      problem:
+        'Global demographic trends are recorded in dense, disparate statistical repositories that make it difficult for researchers and policy analysts to identify regional shifts and demographic aging trends.',
+      solution:
+        'Standardized diverse international datasets into clean relational schemas and built an interactive Power BI dashboard with dynamic geospatial maps, time-series projections, and regional drill-downs.',
+      technologies: ['Power BI', 'Excel', 'Data Modeling', 'Data Visualization', 'DAX', 'Geospatial Analytics'],
+      keyFeatures: [
+        'Multi-decade demographic trend analysis spanning 195+ countries',
+        'Interactive geospatial mapping showing density and migration trends',
+        'Fertility, mortality, and median age correlation dashboards',
+        'DAX measures for rolling averages and regional growth rates',
+        'Dynamic filtering by continent, income bracket, and developmental stage',
+      ],
+      resumePoints: [
+        'Developed an interactive Power BI demographic dashboard evaluating global population dynamics and regional growth projections.',
+        'Modeled complex time-series datasets and formulated DAX expressions for demographic indicators.',
+      ],
+      highlights: [
+        'Demographic Modeling',
+        'Power BI Mapping',
+        'DAX Expressions',
+        'Global Trends',
+        'Time-Series',
+      ],
+      image: '/projects/global-population.png',
+      githubUrl: 'https://github.com/rithii1702/global-population-analytics',
+      liveDemoUrl: 'https://github.com/rithii1702/global-population-analytics',
+    },
+    {
+      id: 'pathiq',
+      slug: 'pathiq',
+      title: 'PathIQ',
+      subtitle: 'Intelligent Workflow & Decision Analytics Engine',
+      category: 'AI-Driven Systems & Analytics',
+      categoryBadge: 'Development',
+      shortDescription:
+        'An intelligent recommendation and decision pathing application leveraging Python APIs, machine learning heuristics, and interactive interfaces.',
+      overview:
+        'PathIQ is an intelligent guidance system engineered to assist learners and technical professionals in discovering optimal learning and career pathways. By combining algorithmic scoring with responsive interfaces, PathIQ generates structured milestone paths tailored to candidate goals and skill proficiencies.',
+      problem:
+        'Students and aspiring technical professionals face information overload when charting career roadmaps, lacking structured, data-driven milestones aligned with market skill demands.',
+      solution:
+        'Architected an end-to-end full-stack platform using React, TypeScript, and FastAPI that evaluates user competency inputs against curriculum nodes to recommend personalized learning trajectories.',
+      technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'Machine Learning', 'MongoDB', 'Tailwind CSS'],
+      keyFeatures: [
+        'Intelligent path recommendation algorithm based on user skill inputs',
+        'FastAPI backend providing low-latency scoring endpoints',
+        'Dynamic step-by-step roadmap visualization built with React & TypeScript',
+        'Persistent user progress and goal tracking in MongoDB',
+        'Integrated analytics for monitoring milestone completion rates',
+      ],
+      resumePoints: [
+        'Built PathIQ, an intelligent decision and pathway recommendation system using FastAPI, React, and Machine Learning.',
+        'Engineered responsive interfaces and REST API endpoints for real-time roadmap generation and user progress tracking.',
+      ],
+      highlights: [
+        'FastAPI Backend',
+        'React & TypeScript',
+        'Path Recommendation',
+        'MongoDB Storage',
+        'Machine Learning',
+      ],
+      image: '/projects/pathiq.png',
+      githubUrl: 'https://github.com/rithii1702/PathIQ',
+      liveDemoUrl: 'https://github.com/rithii1702/PathIQ',
+    },
     {
       id: 'bagbill',
       slug: 'bagbill',
       title: 'BagBill — Digital Billing and Business Record System',
       subtitle: 'Full-Stack Digital Billing Application & Business Record Management',
       category: 'Full-Stack Web & Business Systems',
-      categoryBadge: 'Full-Stack',
+      categoryBadge: 'Development',
       featured: false,
       shortDescription:
         'A full-stack digital billing application developed to replace manual business billing and record management with automated calculations, GST invoices, and cloud database persistence.',
@@ -182,17 +410,6 @@ export const portfolioData: PortfolioData = {
         'Built Bill Book, Party Ledger, Product Management, Dashboard, Reports, and Settings modules with persistent MongoDB storage.',
         'Integrated React frontend with Express.js REST APIs and MongoDB for storing and retrieving business records.',
       ],
-      architecture: {
-        frontend: 'React with TypeScript providing real-time responsive forms, automatic price/tax calculations, and dynamic ledger filtering.',
-        backend: 'Express.js on Node.js orchestrating RESTful endpoints for invoice sequencing, authentication, party management, and PDF compilation.',
-        database: 'MongoDB providing flexible document storage across collections for invoices, products, customer ledger transactions, and audit settings.',
-        workflows: [
-          'User inputs invoice items; frontend computes subtotal, GST rates, and grand total automatically',
-          'Express API validates input integrity and allocates the verified sequential invoice identifier',
-          'Record is committed to MongoDB, updating the customer ledger and Bill Book simultaneously',
-          'PDF invoice generator compiles clean, formatted billing receipts available for instant download',
-        ],
-      },
       highlights: [
         'Full-Stack Architecture',
         'GST Compliant',
@@ -203,131 +420,7 @@ export const portfolioData: PortfolioData = {
       ],
       image: '/projects/bagbill.png',
       githubUrl: 'https://github.com/rithii1702/BagBill',
-    },
-    {
-      id: 'data-detective-ai',
-      slug: 'data-detective-ai',
-      title: 'Data Detective AI — AI-Assisted Data Analytics',
-      subtitle: 'AI-Assisted Dataset Exploration, Pattern Recognition & Anomaly Detection',
-      category: 'AI-Assisted Data Analytics',
-      categoryBadge: 'AI & Analytics',
-      featured: false,
-      shortDescription:
-        'An AI-assisted data analytics application designed to simplify dataset exploration, identify trends and patterns, and uncover anomalies.',
-      overview:
-        'Data Detective AI is an analytical tool built to assist data professionals in rapidly understanding raw, complex datasets. By blending algorithmic data processing with analytical visualization, the application facilitates quick discovery of underlying trends, data distributions, and potential outliers.',
-      problem:
-        'Unfamiliar datasets often contain hidden distributions, skewed variables, and subtle anomalies that take hours of repetitive exploratory coding to identify. Analysts need a systematic way to accelerate preliminary data diagnostics.',
-      solution:
-        'Constructed an AI-assisted analytics workflow that expedites dataset exploration through automated statistical profiling, feature correlation analysis, and anomaly detection routines, allowing data analysts to uncover meaningful patterns faster.',
-      technologies: ['Python', 'AI/ML', 'Data Analysis', 'Data Visualization'],
-      keyFeatures: [
-        'AI-assisted dataset exploration workflow',
-        'Automated exploratory data analysis and trend identification',
-        'Pattern and relationship discovery across dataset variables',
-        'Potential anomaly and outlier detection workflows',
-        'Integrated analytical visualization for rapid decision support',
-      ],
-      resumePoints: [
-        'Developed an AI-assisted data analytics application to simplify dataset exploration and uncover meaningful insights.',
-        'Implemented data analysis and visualization workflows to identify trends, patterns, and potential anomalies in datasets.',
-      ],
-      highlights: [
-        'Automated Exploration',
-        'Pattern Discovery',
-        'Anomaly Detection',
-        'Data Visualization',
-        'Python Workflows',
-      ],
-      image: '/projects/data-detective.png',
-    },
-    {
-      id: 'ecommerce-sales-analysis',
-      slug: 'ecommerce-sales-analysis',
-      title: 'E-Commerce Sales Analysis',
-      subtitle: 'Revenue Trends, Product Performance & Sales Pattern Analytics',
-      category: 'Data Analytics & Business Reporting',
-      categoryBadge: 'Data Analytics',
-      featured: false,
-      shortDescription:
-        'Comprehensive data analytics project analyzing e-commerce sales to identify revenue trends, product performance, and sales patterns through interactive dashboards.',
-      overview:
-        'This project focuses on turning raw e-commerce transaction records into strategic business intelligence. Utilizing Excel for data cleaning and preliminary modeling alongside Power BI for dynamic visualization, the analysis reveals product sales distributions, customer buying cycles, and key revenue indicators.',
-      problem:
-        'Modern e-commerce platforms generate high volumes of transactional records across diverse product lines and regions. Without centralized reporting and KPI visualization, businesses struggle to recognize seasonal sales trends and evaluate product performance.',
-      solution:
-        'Executed rigorous data cleaning and structuring in Excel, followed by the development of an interactive Power BI dashboard highlighting key performance indicators, revenue movements, product rankings, and purchase patterns to drive data-driven decision-making.',
-      technologies: [
-        'Excel',
-        'Power BI',
-        'Data Cleaning',
-        'Data Analysis',
-        'KPI Analysis',
-      ],
-      keyFeatures: [
-        'Data cleaning and preparation of transactional e-commerce records',
-        'Revenue trend analysis across operational cycles',
-        'Product performance evaluation and category breakdown',
-        'Sales pattern identification and customer purchasing behavior',
-        'Interactive KPI dashboard visualizing core business metrics',
-        'Actionable data-driven business insights for inventory and sales strategy',
-      ],
-      resumePoints: [
-        'Analyzed e-commerce sales data to identify revenue trends, product performance, and sales patterns.',
-        'Built interactive dashboards to visualize key performance indicators and derive data-driven business insights.',
-      ],
-      highlights: [
-        'Revenue Trends',
-        'Product Performance',
-        'Sales Patterns',
-        'KPI Dashboard',
-        'Business Insights',
-      ],
-      image: '/projects/ecommerce-sales.png',
-    },
-    {
-      id: 'pizza-sales-dashboard',
-      slug: 'pizza-sales-dashboard',
-      title: 'Pizza Sales Analysis Dashboard',
-      subtitle: 'Power BI Business Intelligence Dashboard & Restaurant Sales Analytics',
-      category: 'Power BI / Business Intelligence',
-      categoryBadge: 'Business Intelligence',
-      featured: false,
-      shortDescription:
-        'An interactive Power BI dashboard analyzing sales data to evaluate revenue, order trends, customer preferences, and product performance.',
-      overview:
-        'A dedicated business intelligence project developed in Power BI to evaluate the operational and sales performance of a restaurant business. The dashboard synthesizes order transactions to identify best-selling menu items, customer size preferences, peak ordering periods, and category revenue share.',
-      problem:
-        'Restaurant managers need precise visibility into customer demand cycles, peak ordering times, and underperforming menu categories to optimize staffing, manage ingredient inventory, and maximize daily revenue.',
-      solution:
-        'Analyzed comprehensive sales records and created a dynamic, interactive Power BI dashboard delivering clear visibility into revenue performance, order volume patterns, best-selling products, and peak operational windows.',
-      technologies: [
-        'Power BI',
-        'Data Analysis',
-        'Data Visualization',
-        'KPI Analysis',
-      ],
-      keyFeatures: [
-        'Revenue analysis across order cycles and pizza categories',
-        'Order volume trends and peak order periods identification',
-        'Customer preferences breakdown by pizza size and crust type',
-        'Product performance ranking highlighting best-selling items',
-        'Category performance evaluation across classic, specialty, and supreme pizzas',
-        'Interactive dashboard controls for filtering and deep-dive analysis',
-      ],
-      resumePoints: [
-        'Analyzed sales data to evaluate revenue, order trends, customer preferences, and product performance.',
-        'Built an interactive Power BI dashboard highlighting best-selling products, peak order periods, and category performance.',
-      ],
-      highlights: [
-        'Revenue Analysis',
-        'Order Trends',
-        'Customer Preferences',
-        'Best-Selling Products',
-        'Peak Periods',
-        'Category Performance',
-      ],
-      image: '/projects/pizza-sales.png',
+      liveDemoUrl: 'https://github.com/rithii1702/BagBill',
     },
   ],
 
@@ -335,33 +428,30 @@ export const portfolioData: PortfolioData = {
     institution: 'RajaRajeswari College of Engineering',
     degree: 'Bachelor of Engineering — Artificial Intelligence and Machine Learning',
     location: 'Bangalore, India',
-    graduationYear: 'Expected 2027',
+    graduationYear: 'Expected Graduation: 2027',
     cgpa: '7.7',
     highlights: [
-      'Core focus on Artificial Intelligence, Machine Learning, and Data Analytics',
-      'Strong academic foundation with a cumulative grade point average of 7.7',
-      'Hands-on project work in Python, SQL, Power BI, and full-stack applications',
+      'Core coursework in Data Structures, Database Systems, Artificial Intelligence, and Machine Learning.',
+      'Active focus on applied Data Analytics, Business Intelligence dashboards, and automated computational models.',
+      'Academic and extracurricular projects combining predictive AI models with scalable full-stack web applications.',
     ],
   },
 
   certifications: [
     {
       title: 'Data Science and Analytics',
-      category: 'Data Science',
-      description:
-        'Comprehensive training covering data cleaning, statistical modeling, exploratory data analysis, and deriving actionable analytical insights.',
+      category: 'Data Analytics & Statistics',
+      description: 'Comprehensive study of data manipulation, statistical analysis, exploratory visualization, and analytical decision modeling.',
     },
     {
       title: 'Data Visualization using Power BI',
       category: 'Business Intelligence',
-      description:
-        'Focused on building interactive executive dashboards, DAX queries, data modeling, and KPI performance visualizations.',
+      description: 'Hands-on dashboard development, report formulation, DAX measures, and business KPI tracking using Microsoft Power BI.',
     },
     {
       title: 'AI for Beginners',
       category: 'Artificial Intelligence',
-      description:
-        'Foundational grounding in artificial intelligence concepts, machine learning algorithms, and real-world AI applications.',
+      description: 'Foundational concepts in artificial intelligence, neural networks, machine learning paradigms, and computer vision workflows.',
     },
   ],
 };
