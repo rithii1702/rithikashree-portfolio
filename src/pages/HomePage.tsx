@@ -136,14 +136,14 @@ export const HomePage: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Right Column: Professional Portrait Photo */}
+            {/* Right Column: Large Strong Vertical Portrait */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-              className="lg:col-span-5 flex justify-center lg:justify-end"
+              className="lg:col-span-5 flex justify-center lg:justify-end items-center"
             >
-              <div className="relative w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px]">
+              <div className="relative w-[300px] sm:w-[320px] lg:w-[420px] xl:w-[440px] max-w-full">
                 
                 {/* Behind the photo: subtle decorative circles & data grid */}
                 <div 
@@ -156,27 +156,28 @@ export const HomePage: React.FC = () => {
                 />
 
                 {/* Thin decorative circle art */}
-                <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full border border-[#78350F]/15 pointer-events-none -z-10" />
-                <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full border border-[#78350F]/10 pointer-events-none -z-10" />
+                <div className="absolute -top-6 -right-6 w-36 h-36 rounded-full border border-[#78350F]/15 pointer-events-none -z-10" />
+                <div className="absolute -bottom-8 -left-8 w-44 h-44 rounded-full border border-[#78350F]/10 pointer-events-none -z-10" />
 
                 {/* Delicate corner data crosshairs */}
                 <div className="absolute -top-3 -left-3 text-[#78350F]/40 font-mono text-xs select-none pointer-events-none">+</div>
                 <div className="absolute -bottom-3 -right-3 text-[#78350F]/40 font-mono text-xs select-none pointer-events-none">+</div>
 
-                {/* Clean Professional Photo Crop - Rounded Rectangle with Thin Burgundy Border */}
+                {/* Clean Professional Photo Crop - Strong Vertical Portrait with Thin Burgundy Border */}
                 <div className="relative rounded-2xl overflow-hidden border border-[#78350F]/40 bg-white p-1.5 shadow-md">
-                  <div className="relative rounded-xl overflow-hidden aspect-[4/5] w-full bg-[#FAF8F5]">
+                  <div className="relative rounded-xl overflow-hidden w-full h-[420px] sm:h-[450px] lg:h-[580px] xl:h-[600px] bg-[#FAF8F5]">
                     <img
                       src="/assets/profile.jpg"
                       alt="B. Rithikashree — Professional Portrait"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: 'center center' }}
                       loading="eager"
                     />
                   </div>
                 </div>
 
                 {/* Handwritten-style decorative phrase near photo */}
-                <div className="absolute -bottom-5 -left-3 sm:-left-5 px-3 py-1.5 bg-white/95 backdrop-blur-xs rounded-xl border border-[#E7E5E4] shadow-xs select-none">
+                <div className="absolute -bottom-5 -left-3 sm:-left-5 px-3.5 py-1.5 bg-white/95 backdrop-blur-xs rounded-xl border border-[#E7E5E4] shadow-xs select-none">
                   <p className="font-serif italic text-xs text-[#78350F] leading-tight">
                     &ldquo;good ideas,<br />better tomorrow&rdquo;
                   </p>
