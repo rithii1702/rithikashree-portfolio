@@ -8,7 +8,7 @@ import {
   Github, 
   Mail, 
   GraduationCap, 
-  Target, 
+  BarChart2, 
   Laptop, 
   Briefcase, 
   BarChart3, 
@@ -30,18 +30,18 @@ export const HomePage: React.FC = () => {
       className="flex flex-col bg-[#F5EFE6] text-[#241F1D]"
     >
       {/* ======================================================== */}
-      {/* 1. HERO SECTION — COMPACT, BALANCED & NATURAL PORTRAIT   */}
+      {/* 1. HERO SECTION (Compact, connected & balanced)          */}
       {/* ======================================================== */}
-      <section className="relative pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 overflow-hidden bg-[#F5EFE6]">
+      <section className="relative pt-4 sm:pt-6 pb-6 sm:pb-7 overflow-hidden bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
             
             {/* Left Column: Personal Introduction & Actions */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="lg:col-span-7 space-y-4 sm:space-y-4.5"
+              className="lg:col-span-7 space-y-3.5"
             >
               {/* Small uppercase label */}
               <div>
@@ -51,8 +51,8 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Main Heading & Sub-roles */}
-              <div className="space-y-2">
-                <h1 className="font-serif text-[36px] sm:text-[44px] md:text-[48px] lg:text-[54px] font-bold text-[#241F1D] tracking-tight uppercase leading-[1.04]">
+              <div className="space-y-1.5">
+                <h1 className="font-serif text-[38px] sm:text-[46px] md:text-[50px] lg:text-[56px] font-bold text-[#241F1D] tracking-tight uppercase leading-[1.04]">
                   {personal.name}
                 </h1>
 
@@ -67,12 +67,12 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Description */}
-              <p className="text-[15px] sm:text-base text-[#6D625C] leading-relaxed max-w-lg">
+              <p className="text-[15px] sm:text-[16px] text-[#6D625C] leading-relaxed max-w-lg">
                 Final-year Artificial Intelligence and Machine Learning student interested in Data Analytics, Machine Learning and building practical technology solutions.
               </p>
 
               {/* Action Buttons */}
-              <div className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="pt-0.5 flex flex-wrap items-center gap-3">
                 <Link
                   to="/projects"
                   className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 bg-[#6F1D2A] hover:bg-[#581721] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/btn"
@@ -93,8 +93,8 @@ export const HomePage: React.FC = () => {
                 </a>
               </div>
 
-              {/* Below buttons: Social Links */}
-              <div className="pt-2 flex items-center gap-5 text-sm text-[#241F1D]">
+              {/* Social Links */}
+              <div className="pt-1.5 flex items-center gap-5 text-sm text-[#241F1D]">
                 <a
                   href={personal.linkedin}
                   target="_blank"
@@ -132,7 +132,7 @@ export const HomePage: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Right Column: Natural Portrait (400-440px wide, 500-560px high) */}
+            {/* Right Column: Arched Portrait Photo (400-440px wide, 500-560px high) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -142,17 +142,17 @@ export const HomePage: React.FC = () => {
               <div className="relative flex items-center gap-3 sm:gap-5">
                 
                 {/* Center Arched Portrait Frame */}
-                <div className="relative w-[300px] sm:w-[350px] lg:w-[410px] xl:w-[430px]">
+                <div className="relative w-[290px] sm:w-[340px] lg:w-[390px] xl:w-[410px]">
                   
                   {/* Soft beige organic shape behind arch */}
                   <div 
-                    className="absolute -top-7 -left-7 -right-7 h-[90%] rounded-full bg-[#EBDED0]/80 pointer-events-none -z-10"
+                    className="absolute -top-6 -left-6 -right-6 h-[90%] rounded-full bg-[#EBDED0]/80 pointer-events-none -z-10"
                     style={{ transform: 'scale(1.04)' }}
                   />
 
                   {/* Botanical leaf branch curving along the left edge */}
                   <svg 
-                    className="absolute -top-6 -left-10 w-24 h-52 pointer-events-none select-none -z-10 text-[#6F1D2A]/35" 
+                    className="absolute -top-5 -left-10 w-24 h-52 pointer-events-none select-none -z-10 text-[#6F1D2A]/35" 
                     viewBox="0 0 100 200" 
                     fill="none" 
                     stroke="currentColor" 
@@ -181,12 +181,12 @@ export const HomePage: React.FC = () => {
 
                   {/* Arched Photo Container with Thin Burgundy Border */}
                   <div className="relative rounded-t-[160px] sm:rounded-t-[190px] rounded-b-[24px] overflow-hidden border border-[#6F1D2A]/50 bg-white p-1.5 shadow-md">
-                    <div className="relative rounded-t-[150px] sm:rounded-t-[180px] rounded-b-[18px] overflow-hidden w-full h-[430px] sm:h-[470px] lg:h-[510px] xl:h-[530px] bg-[#F5EFE6]">
+                    <div className="relative rounded-t-[150px] sm:rounded-t-[180px] rounded-b-[18px] overflow-hidden w-full h-[420px] sm:h-[460px] lg:h-[500px] xl:h-[520px] bg-[#F5EFE6]">
                       <img
                         src="/assets/profile.jpg"
                         alt="B. Rithikashree — Professional Portrait"
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center 12%' }}
+                        style={{ objectPosition: 'center 35%' }}
                         loading="eager"
                       />
                     </div>
@@ -194,8 +194,8 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Right Callout: Handwritten Script & Quote Column */}
-                <div className="flex flex-col items-start space-y-3 max-w-[130px] sm:max-w-[150px] select-none">
-                  {/* Handwritten script: good ideas better tomorrow + Heart */}
+                <div className="flex flex-col items-start space-y-3 max-w-[120px] sm:max-w-[145px] select-none">
+                  {/* Handwritten script: good ideas better tomorrow + Filled Heart */}
                   <div className="text-left">
                     <p className="font-script text-2xl sm:text-[28px] text-[#6F1D2A] leading-tight tracking-wide">
                       good<br />
@@ -204,7 +204,7 @@ export const HomePage: React.FC = () => {
                       tomorrow
                     </p>
                     <div className="pt-1 flex justify-start">
-                      <Heart className="w-4 h-4 text-[#6F1D2A] fill-[#6F1D2A]/15" />
+                      <Heart className="w-4 h-4 text-[#6F1D2A] fill-[#6F1D2A]" />
                     </div>
                   </div>
 
@@ -231,61 +231,81 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 2. FOUR-ITEM INFORMATION STRIP (ONE rounded container)   */}
+      {/* 2. FOUR-ITEM INFORMATION STRIP (~30px gap below hero)    */}
       {/* ======================================================== */}
-      <section className="py-8 sm:py-10 bg-[#F5EFE6]">
+      <section className="mb-9 sm:mb-10 bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-[#D8CEC4] bg-white p-6 sm:p-8 lg:p-9 shadow-xs">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#D8CEC4]">
               
               {/* COLUMN 01: FINAL YEAR */}
-              <div className="py-4 sm:py-2 sm:px-6 first:pl-0 space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-[#6F1D2A]" />
+              <div className="py-4 sm:py-2 sm:px-6 first:pl-0 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
+                    <GraduationCap className="w-6 h-6 text-[#6F1D2A]" />
+                  </div>
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                    01
+                  </span>
                 </div>
-                <h3 className="font-sans text-xs sm:text-[13px] font-bold text-[#6F1D2A] uppercase tracking-wider">
+                <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A] uppercase tracking-wide">
                   FINAL YEAR
                 </h3>
-                <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                <p className="text-[15px] sm:text-[16px] text-[#241F1D] leading-relaxed">
                   B.E. Artificial Intelligence<br />and Machine Learning
                 </p>
               </div>
 
               {/* COLUMN 02: FOCUS */}
-              <div className="py-4 sm:py-2 sm:px-6 space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
-                  <Target className="w-6 h-6 text-[#6F1D2A]" />
+              <div className="py-4 sm:py-2 sm:px-6 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
+                    <BarChart2 className="w-6 h-6 text-[#6F1D2A]" />
+                  </div>
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                    02
+                  </span>
                 </div>
-                <h3 className="font-sans text-xs sm:text-[13px] font-bold text-[#6F1D2A] uppercase tracking-wider">
+                <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A] uppercase tracking-wide">
                   FOCUS
                 </h3>
-                <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                <p className="text-[15px] sm:text-[16px] text-[#241F1D] leading-relaxed">
                   Data Analytics<br />Machine Learning<br />Real-world Solutions
                 </p>
               </div>
 
               {/* COLUMN 03: TOOLKIT */}
-              <div className="py-4 sm:py-2 sm:px-6 space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
-                  <Laptop className="w-6 h-6 text-[#6F1D2A]" />
+              <div className="py-4 sm:py-2 sm:px-6 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
+                    <Laptop className="w-6 h-6 text-[#6F1D2A]" />
+                  </div>
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                    03
+                  </span>
                 </div>
-                <h3 className="font-sans text-xs sm:text-[13px] font-bold text-[#6F1D2A] uppercase tracking-wider">
+                <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A] uppercase tracking-wide">
                   TOOLKIT
                 </h3>
-                <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                <p className="text-[15px] sm:text-[16px] text-[#241F1D] leading-relaxed">
                   Python &middot; SQL &middot; Excel<br />Power BI &middot; GitHub<br />VS Code
                 </p>
               </div>
 
               {/* COLUMN 04: OPEN TO */}
-              <div className="py-4 sm:py-2 sm:px-6 last:pr-0 space-y-3">
-                <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-[#6F1D2A]" />
+              <div className="py-4 sm:py-2 sm:px-6 last:pr-0 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF0EB] flex items-center justify-center">
+                    <Briefcase className="w-6 h-6 text-[#6F1D2A]" />
+                  </div>
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                    04
+                  </span>
                 </div>
-                <h3 className="font-sans text-xs sm:text-[13px] font-bold text-[#6F1D2A] uppercase tracking-wider">
+                <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A] uppercase tracking-wide">
                   OPEN TO
                 </h3>
-                <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                <p className="text-[15px] sm:text-[16px] text-[#241F1D] leading-relaxed">
                   Internships<br />Entry-level opportunities<br />Real-world projects
                 </p>
               </div>
@@ -296,19 +316,20 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 3. WHAT I ENJOY BUILDING (Title case, decorative cards)  */}
+      {/* 3. WHAT I ENJOY BUILDING (~40px gap from info strip)     */}
       {/* ======================================================== */}
-      <section className="py-14 sm:py-18 bg-[#F5EFE6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="mb-8 sm:mb-10 bg-[#F5EFE6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
             <div className="space-y-1">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
+                <span className="text-[#B88A78] text-sm select-none">✦</span>
                 <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C] uppercase tracking-wider">
                   WHAT DRIVES ME
                 </span>
-                <div className="w-16 h-px bg-[#D8CEC4]" />
+                <div className="w-14 h-px bg-[#D8CEC4]" />
               </div>
               <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[44px] font-bold text-[#241F1D] tracking-tight leading-tight">
                 What I Enjoy Building
@@ -319,20 +340,25 @@ export const HomePage: React.FC = () => {
             </span>
           </div>
 
-          {/* Three Equal Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
+          {/* Three Filled Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             
             {/* CARD 01: Data Analysis */}
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl border border-[#D8CEC4] p-7 sm:p-8 shadow-xs hover:border-[#6F1D2A]/40 hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between min-h-[220px]"
+              className="bg-white rounded-2xl border border-[#D8CEC4] p-7 sm:p-8 shadow-xs hover:border-[#6F1D2A]/40 hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between min-h-[200px]"
             >
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  {/* Left Icon Badge */}
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF0EB] flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-[#6F1D2A]" />
+                  {/* Left Icon Badge with Number */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-[#FAF0EB] flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6 text-[#6F1D2A]" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                      01
+                    </span>
                   </div>
                   {/* Decorative outline chart graphic */}
                   <div className="opacity-20 text-[#6F1D2A]">
@@ -344,11 +370,11 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A]">
                     Data Analysis
                   </h3>
-                  <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                  <p className="text-[15px] sm:text-[16px] text-[#6D625C] leading-relaxed">
                     Finding patterns and insights from raw data.
                   </p>
                 </div>
@@ -359,13 +385,18 @@ export const HomePage: React.FC = () => {
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl border border-[#D8CEC4] p-7 sm:p-8 shadow-xs hover:border-[#6F1D2A]/40 hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between min-h-[220px]"
+              className="bg-white rounded-2xl border border-[#D8CEC4] p-7 sm:p-8 shadow-xs hover:border-[#6F1D2A]/40 hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between min-h-[200px]"
             >
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  {/* Left Icon Badge */}
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF0EB] flex items-center justify-center">
-                    <PieChart className="w-6 h-6 text-[#6F1D2A]" />
+                  {/* Left Icon Badge with Number */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-[#FAF0EB] flex items-center justify-center">
+                      <PieChart className="w-6 h-6 text-[#6F1D2A]" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                      02
+                    </span>
                   </div>
                   {/* Decorative browser line chart graphic */}
                   <div className="opacity-20 text-[#6F1D2A]">
@@ -377,11 +408,11 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A]">
                     Data Visualization
                   </h3>
-                  <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                  <p className="text-[15px] sm:text-[16px] text-[#6D625C] leading-relaxed">
                     Turning complex information into clear and meaningful dashboards.
                   </p>
                 </div>
@@ -392,28 +423,34 @@ export const HomePage: React.FC = () => {
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl border border-[#D8CEC4] p-7 sm:p-8 shadow-xs hover:border-[#6F1D2A]/40 hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between min-h-[220px]"
+              className="bg-white rounded-2xl border border-[#D8CEC4] p-7 sm:p-8 shadow-xs hover:border-[#6F1D2A]/40 hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between min-h-[200px]"
             >
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
-                  {/* Left Icon Badge */}
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF0EB] flex items-center justify-center">
-                    <Brain className="w-6 h-6 text-[#6F1D2A]" />
+                  {/* Left Icon Badge with Number */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-[#FAF0EB] flex items-center justify-center">
+                      <Brain className="w-6 h-6 text-[#6F1D2A]" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6D625C]">
+                      03
+                    </span>
                   </div>
-                  {/* Decorative gear outline graphic */}
-                  <div className="opacity-20 text-[#6F1D2A]">
-                    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2">
+                  {/* Decorative gear outline graphic & sparkle */}
+                  <div className="flex items-center gap-1 opacity-25 text-[#6F1D2A]">
+                    <span className="text-xs">✦</span>
+                    <svg className="w-9 h-9" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="20" cy="20" r="7" />
                       <path d="M 20 4 L 20 9 M 20 31 L 20 36 M 4 20 L 9 20 M 31 20 L 36 20 M 8.7 8.7 L 12.2 12.2 M 27.8 27.8 L 31.3 31.3 M 8.7 31.3 L 12.2 27.8 M 27.8 12.2 L 31.3 8.7" strokeLinecap="round" />
                     </svg>
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#6F1D2A]">
                     Intelligent Systems
                   </h3>
-                  <p className="text-[14px] sm:text-[15px] text-[#6D625C] leading-relaxed">
+                  <p className="text-[15px] sm:text-[16px] text-[#6D625C] leading-relaxed">
                     Exploring machine learning and AI applications to solve real-world problems.
                   </p>
                 </div>
@@ -425,32 +462,41 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 4. CURRENTLY FOCUSED ON / OPEN TO (Two-column layout)    */}
+      {/* 4. CURRENTLY FOCUSED ON / OPEN TO (~35px gap from cards) */}
       {/* ======================================================== */}
-      <section className="py-12 sm:py-16 bg-[#F5EFE6]">
+      <section className="mb-9 sm:mb-10 bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 relative">
             
             {/* Left Column: Currently Focused On */}
-            <div className="space-y-4">
-              <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#241F1D]">
-                Currently Focused On
-              </h3>
-              <div className="space-y-3">
+            <div className="space-y-3.5">
+              <div className="flex items-center gap-3">
+                <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#241F1D]">
+                  Currently Focused On
+                </h3>
+                <div className="w-12 h-px bg-[#D8CEC4]" />
+              </div>
+
+              <div className="space-y-2.5">
                 <div className="flex flex-wrap gap-2.5">
-                  {['SQL', 'Power BI', 'Excel', 'Python'].map((item) => (
+                  {['SQL', 'Power BI', 'Excel'].map((item) => (
                     <span
                       key={item}
-                      className="px-5 py-2.5 rounded-full text-[14px] sm:text-[15px] font-medium bg-[#EBE2D8] text-[#241F1D] border border-[#DDD3C7] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
+                      className="px-5 py-2.5 rounded-full text-[15px] font-medium bg-[#EFE7DE] text-[#241F1D] border border-[#D8CEC4] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
-                <div>
-                  <span className="inline-block px-5 py-2.5 rounded-full text-[14px] sm:text-[15px] font-medium bg-[#EBE2D8] text-[#241F1D] border border-[#DDD3C7] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors">
-                    Machine Learning
-                  </span>
+                <div className="flex flex-wrap gap-2.5">
+                  {['Python', 'Machine Learning'].map((item) => (
+                    <span
+                      key={item}
+                      className="px-5 py-2.5 rounded-full text-[15px] font-medium bg-[#EFE7DE] text-[#241F1D] border border-[#D8CEC4] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -459,16 +505,17 @@ export const HomePage: React.FC = () => {
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#D8CEC4]" />
 
             {/* Right Column: Open To */}
-            <div className="space-y-4 md:pl-8">
+            <div className="space-y-3.5 md:pl-8">
               <h3 className="font-serif text-[20px] sm:text-[22px] font-bold text-[#241F1D]">
                 Open To
               </h3>
-              <div className="space-y-3">
+
+              <div className="space-y-2.5">
                 <div className="flex flex-wrap gap-2.5">
                   {['Data Analyst Internships', 'AI/ML Internships'].map((item) => (
                     <span
                       key={item}
-                      className="px-5 py-2.5 rounded-full text-[14px] sm:text-[15px] font-medium bg-[#EBE2D8] text-[#241F1D] border border-[#DDD3C7] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
+                      className="px-5 py-2.5 rounded-full text-[15px] font-medium bg-[#EFE7DE] text-[#241F1D] border border-[#D8CEC4] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
                     >
                       {item}
                     </span>
@@ -478,7 +525,7 @@ export const HomePage: React.FC = () => {
                   {['Entry-Level Opportunities', 'Real-World Projects'].map((item) => (
                     <span
                       key={item}
-                      className="px-5 py-2.5 rounded-full text-[14px] sm:text-[15px] font-medium bg-[#EBE2D8] text-[#241F1D] border border-[#DDD3C7] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
+                      className="px-5 py-2.5 rounded-full text-[15px] font-medium bg-[#EFE7DE] text-[#241F1D] border border-[#D8CEC4] shadow-2xs hover:border-[#6F1D2A]/40 transition-colors"
                     >
                       {item}
                     </span>
@@ -492,11 +539,11 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 5. FINAL CTA — MATCH REFERENCE PANEL                     */}
+      {/* 5. FINAL CTA (~40px gap from focus/open-to, ~25px to ft) */}
       {/* ======================================================== */}
-      <section className="py-14 sm:py-20 bg-[#F5EFE6]">
+      <section className="mb-6 sm:mb-7 bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl border border-[#D8CEC4] bg-gradient-to-r from-[#FAF4ED] via-[#F8ECE3] to-[#F5E2D6] p-8 sm:p-12 lg:p-14 shadow-xs overflow-hidden">
+          <div className="relative rounded-3xl border border-[#D8CEC4] bg-gradient-to-r from-[#FAF4ED] via-[#F8ECE3] to-[#F5E2D6] p-7 sm:p-10 lg:p-11 shadow-xs overflow-hidden">
             
             {/* Background decorative wave & graph line on the right */}
             <div className="absolute right-0 top-0 bottom-0 w-2/5 pointer-events-none opacity-80 hidden md:block select-none overflow-hidden">
@@ -526,37 +573,40 @@ export const HomePage: React.FC = () => {
               </svg>
             </div>
 
-            {/* Handwritten text: "Small steps Big Impact" */}
-            <div className="absolute right-8 sm:right-12 bottom-6 sm:bottom-8 select-none hidden md:block text-right z-10">
-              <p className="font-script text-2xl sm:text-3xl text-[#6F1D2A] leading-tight tracking-wide">
+            {/* Handwritten text: "Small steps Big Impact ♥" */}
+            <div className="absolute right-8 sm:right-12 bottom-5 sm:bottom-6 select-none hidden md:block text-right z-10">
+              <p className="font-script text-2xl sm:text-[28px] text-[#6F1D2A] leading-tight tracking-wide">
                 Small<br />
                 steps<br />
                 Big<br />
                 Impact
               </p>
+              <div className="pt-1 flex justify-end">
+                <Heart className="w-3.5 h-3.5 text-[#6F1D2A] fill-[#6F1D2A]" />
+              </div>
             </div>
 
             {/* Main Content Grid */}
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               
               {/* Left Column: Heading */}
-              <div className="lg:col-span-6 space-y-3">
+              <div className="lg:col-span-6 space-y-2.5">
                 <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider block">
                   LET&apos;S BUILD SOMETHING MEANINGFUL
                 </span>
                 
                 <div>
-                  <h2 className="font-serif text-[30px] sm:text-[38px] lg:text-[44px] font-bold text-[#241F1D] tracking-tight leading-[1.12]">
+                  <h2 className="font-serif text-[30px] sm:text-[36px] lg:text-[40px] font-bold text-[#241F1D] tracking-tight leading-[1.12]">
                     Curious by nature.<br />
                     Building with purpose.
                   </h2>
                   {/* Short burgundy underline */}
-                  <div className="w-16 h-0.5 bg-[#6F1D2A] mt-3" />
+                  <div className="w-16 h-0.5 bg-[#6F1D2A] mt-2.5" />
                 </div>
               </div>
 
               {/* Middle Column: Description & Action Buttons */}
-              <div className="lg:col-span-6 space-y-5">
+              <div className="lg:col-span-6 space-y-4">
                 <p className="text-[14px] sm:text-base text-[#6D625C] leading-relaxed max-w-md">
                   I&apos;m always excited to learn, collaborate and work on projects that create real impact.
                 </p>
@@ -564,7 +614,7 @@ export const HomePage: React.FC = () => {
                 <div className="flex flex-wrap items-center gap-3">
                   <Link
                     to="/projects"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#6F1D2A] hover:bg-[#581721] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/btn"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 bg-[#6F1D2A] hover:bg-[#581721] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/btn"
                   >
                     <span>EXPLORE PROJECTS</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
@@ -572,7 +622,7 @@ export const HomePage: React.FC = () => {
 
                   <Link
                     to="/about"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#F5EFE6] hover:bg-white text-[#241F1D] hover:text-[#6F1D2A] border border-[#D8CEC4] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 bg-[#F5EFE6] hover:bg-white text-[#241F1D] hover:text-[#6F1D2A] border border-[#D8CEC4] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
                   >
                     <span>ABOUT ME</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#6F1D2A]" />
