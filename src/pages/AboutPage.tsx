@@ -267,19 +267,13 @@ export const AboutPage: React.FC = () => {
               Explore Data Detective AI, BagBill, and Power BI dashboards.
             </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs shrink-0"
             >
               <span>View Projects</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white hover:bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4] text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors"
-            >
-              <span>Contact Me</span>
             </Link>
           </div>
         </motion.div>
