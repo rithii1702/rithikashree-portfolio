@@ -3,13 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
-  BarChart3, 
-  BrainCircuit, 
-  Layers, 
-  Wrench, 
-  Sparkles,
-  ExternalLink,
-  Github
+  Github,
+  CheckCircle2
 } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { ResumeCTA } from '../components/ResumeCTA';
@@ -17,9 +12,6 @@ import { portfolioData, ProjectItem } from '../data/portfolioData';
 
 export const HomePage: React.FC = () => {
   const { skills, projects, education } = portfolioData;
-
-  // Selected preview projects for landing page
-  const previewProjects = projects.slice(0, 3);
 
   return (
     <motion.div
@@ -86,14 +78,14 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Featured Projects Preview */}
+      {/* 3. Featured Projects Preview - Clean 2-Column Grid of the 4 Projects */}
       <section className="py-16 md:py-24 border-b border-[#E7E5E4] bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1">
               <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
-                02 // Projects Preview
+                02 // Projects
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1917] tracking-tight uppercase">
                 Featured Projects
@@ -103,59 +95,72 @@ export const HomePage: React.FC = () => {
               to="/projects"
               className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#78350F] hover:text-[#612A0C] transition-colors"
             >
-              <span>Explore All {projects.length} Projects</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>View All 4 Projects &rarr;</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {previewProjects.map((project: ProjectItem) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project: ProjectItem) => (
               <div
                 key={project.id}
-                className="bg-white rounded-2xl border border-[#E7E5E4] p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
               >
-                <div className="space-y-3">
-                  <span className="px-2 py-0.5 rounded bg-[#FAF8F5] border border-[#E7E5E4] text-[10px] font-mono text-[#78350F] inline-block font-semibold">
-                    {project.categoryBadge}
-                  </span>
-                  <h3 className="text-base font-bold text-[#1C1917]">
-                    <Link to={`/projects/${project.slug}`} className="hover:text-[#78350F] transition-colors">
-                      {project.title}
-                    </Link>
-                  </h3>
+                <div className="space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-xs font-mono font-bold text-[#78350F] tracking-wider block">
+                      {project.number} &mdash; PROJECT
+                    </span>
+                    <h3 className="text-xl font-bold text-[#1C1917] tracking-tight">
+                      <Link to={`/projects/${project.slug}`} className="hover:text-[#78350F] transition-colors">
+                        {project.title}
+                      </Link>
+                    </h3>
+                  </div>
                   
                   {/* Image */}
-                  <div className="w-full aspect-video rounded-lg overflow-hidden border border-[#E7E5E4] bg-[#FAF8F5]">
+                  <div className="w-full aspect-video rounded-xl overflow-hidden border border-[#E7E5E4] bg-[#FAF8F5]">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-contain p-1"
+                      className="w-full h-full object-contain p-2"
                       loading="lazy"
                     />
                   </div>
 
-                  <p className="text-xs text-[#57534E] leading-relaxed line-clamp-2">
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {project.technologies.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#FAF8F5] text-[#1C1917] border border-[#E7E5E4]"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
                     {project.shortDescription}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-[#E7E5E4] flex items-center justify-between">
+                <div className="pt-5 mt-5 border-t border-[#E7E5E4] flex items-center justify-between">
                   <Link
                     to={`/projects/${project.slug}`}
                     className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#78350F]"
                   >
-                    <span>View Details</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <span>View Project &rarr;</span>
                   </Link>
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-[#1C1917] hover:text-[#78350F] transition-colors"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#1C1917] hover:text-[#78350F] transition-colors"
                       title="GitHub"
                     >
                       <Github className="w-3.5 h-3.5" />
+                      <span>GitHub &rarr;</span>
                     </a>
                   )}
                 </div>
@@ -183,8 +188,7 @@ export const HomePage: React.FC = () => {
               to="/skills"
               className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#78350F] hover:text-[#612A0C] transition-colors"
             >
-              <span>View Complete Skillset</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>View Complete Skillset &rarr;</span>
             </Link>
           </div>
 

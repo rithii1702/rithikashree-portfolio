@@ -28,14 +28,14 @@ export const AboutPage: React.FC = () => {
       description: 'Advanced time-intelligence DAX measures, star schema architectures, and performance optimization.',
     },
     {
-      title: 'Deep Learning & Computer Vision (U-Net)',
+      title: 'Exploratory & Predictive Modeling',
       category: 'Artificial Intelligence',
-      description: 'Convolutional neural networks, semantic segmentation architectures, and model evaluation metrics.',
+      description: 'Automated data profiling, feature correlation discovery, and machine learning classification workflows.',
     },
     {
-      title: 'FastAPI & Analytical API Deployment',
+      title: 'REST API & Web Integration',
       category: 'Development',
-      description: 'Building asynchronous REST endpoints to serve ML predictions and analytical pipelines.',
+      description: 'Building asynchronous REST endpoints with Node.js, Express, and React for data-driven systems.',
     },
   ];
 
@@ -138,7 +138,7 @@ export const AboutPage: React.FC = () => {
                     <span>Machine Learning</span>
                   </div>
                   <p className="text-xs text-[#57534E] leading-relaxed">
-                    Applied machine learning for pattern discovery, classification, regression, and deep learning computer vision architectures for real-world automated systems.
+                    Applied machine learning for pattern discovery, classification, regression, and predictive workflows for automated analytical tools.
                   </p>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export const AboutPage: React.FC = () => {
               Want to see my practical projects in action?
             </h3>
             <p className="text-xs text-[#57534E]">
-              Explore dashboards, computer vision models, and full-stack systems.
+              Explore Data Detective AI, BagBill, and Power BI dashboards.
             </p>
           </div>
           <div className="flex items-center gap-3">

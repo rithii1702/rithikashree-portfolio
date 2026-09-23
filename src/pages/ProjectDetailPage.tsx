@@ -4,12 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Github, 
-  ExternalLink, 
   CheckCircle2, 
-  ArrowRight,
-  Database,
-  Layers,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -49,9 +45,9 @@ export const ProjectDetailPage: React.FC = () => {
 
         {/* Header Title Section */}
         <div className="space-y-4 border-b border-[#E7E5E4] pb-8">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="px-2.5 py-1 rounded bg-white border border-[#E7E5E4] text-xs font-mono font-semibold text-[#78350F]">
-              {project.categoryBadge}
+          <div className="flex items-center gap-2">
+            <span className="px-2.5 py-1 rounded bg-[#FAF8F5] border border-[#E7E5E4] text-xs font-mono font-bold text-[#78350F]">
+              PROJECT {project.number}
             </span>
           </div>
 
@@ -73,18 +69,7 @@ export const ProjectDetailPage: React.FC = () => {
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1C1917] hover:bg-[#292524] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
               >
                 <Github className="w-4 h-4" />
-                <span>View on GitHub</span>
-              </a>
-            )}
-            {project.liveDemoUrl && (
-              <a
-                href={project.liveDemoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>Live Demo</span>
+                <span>GitHub &rarr;</span>
               </a>
             )}
           </div>
@@ -94,7 +79,7 @@ export const ProjectDetailPage: React.FC = () => {
         <div className="bg-white rounded-2xl border border-[#E7E5E4] p-4 sm:p-6 shadow-xs space-y-4">
           <div className="flex items-center justify-between border-b border-[#E7E5E4] pb-3 text-xs">
             <span className="font-mono text-[#78716C] uppercase font-semibold">Visual Showcase</span>
-            <span className="font-mono text-[#78350F] font-semibold">{project.category}</span>
+            <span className="font-mono text-[#78350F] font-semibold">{project.title}</span>
           </div>
           <div className="w-full aspect-video rounded-xl overflow-hidden border border-[#E7E5E4] bg-[#FAF8F5] flex items-center justify-center">
             <img
@@ -174,21 +159,16 @@ export const ProjectDetailPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="pt-4 border-t border-[#E7E5E4] space-y-2">
-              <span className="text-[11px] font-mono text-[#78716C] uppercase block font-semibold">
-                Highlights
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {project.highlights.map((h) => (
-                  <span
-                    key={h}
-                    className="px-2 py-0.5 rounded bg-[#F5EFE6] border border-[#E8D5C4] text-[10px] font-mono font-semibold text-[#78350F]"
-                  >
-                    {h}
-                  </span>
-                ))}
+            {project.highlight && (
+              <div className="pt-4 border-t border-[#E7E5E4] space-y-1">
+                <span className="text-[11px] font-mono text-[#78716C] uppercase block font-semibold">
+                  Highlight
+                </span>
+                <p className="text-xs font-medium text-[#78350F]">
+                  {project.highlight}
+                </p>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
@@ -206,7 +186,7 @@ export const ProjectDetailPage: React.FC = () => {
             to={`/projects/${nextProject.slug}`}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] rounded-lg text-xs font-bold uppercase tracking-wider text-[#1C1917] hover:text-[#78350F] transition-colors"
           >
-            <span>Next: {nextProject.title}</span>
+            <span>Next: {nextProject.number} &mdash; {nextProject.title}</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#78350F]" />
           </Link>
         </div>
