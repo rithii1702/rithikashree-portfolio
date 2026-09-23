@@ -4,6 +4,7 @@ export interface ProjectItem {
   slug: string;
   title: string;
   subtitle: string;
+  quote?: string;
   shortDescription: string;
   overview: string;
   problem: string;
@@ -12,8 +13,11 @@ export interface ProjectItem {
   keyFeatures: string[];
   resumePoints: string[];
   highlight: string;
+  highlightsList?: string[];
+  outcome?: string;
   image: string;
   githubUrl?: string;
+  featured?: boolean;
 }
 
 export interface SkillGroup {
@@ -116,7 +120,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       name: 'TOOLS',
-      code: 'WORKFLOW // 04',
+      code: 'TOOLKIT // 04',
       description: 'Version control, interactive notebooks, developer environments, and analytical sharing platforms.',
       skills: [
         'GitHub',
@@ -135,29 +139,39 @@ export const portfolioData: PortfolioData = {
       slug: 'data-detective',
       title: 'Data Detective AI',
       subtitle: 'Intelligent Data Analysis & Automated Exploration Platform',
+      quote:
+        'An intelligent data analysis platform that helps users upload datasets, explore their data, perform exploratory data analysis, and generate meaningful insights.',
       shortDescription:
-        'An intelligent data analysis platform that allows users to upload datasets, explore data, perform exploratory data analysis, generate insights, and interact with their data.',
+        'Data Detective AI is a data analysis platform designed to simplify dataset exploration, exploratory data analysis, visualization and insight generation.',
       overview:
-        'Data Detective AI is an analytical tool built to assist data professionals in rapidly understanding raw, complex datasets. By blending algorithmic data processing with analytical visualization, the application facilitates quick discovery of underlying trends, data distributions, and potential outliers.',
+        'Data Detective AI is a data analysis platform designed to simplify dataset exploration, exploratory data analysis, visualization and insight generation. It provides an intuitive and intelligent interface where users can upload tabular datasets, examine automated exploratory data profiles, clean missing values, visualize distributions, and generate meaningful analytical insights.',
       problem:
-        'Unfamiliar datasets often contain hidden distributions, skewed variables, and subtle anomalies that take hours of repetitive exploratory coding to identify. Analysts need a systematic way to accelerate preliminary data diagnostics.',
+        'Raw datasets frequently arrive with missing values, inconsistent column types, and hidden patterns that demand hours of manual coding and repetitive exploratory data analysis routines before analysts can extract actionable takeaways.',
       solution:
-        'Constructed an AI-assisted analytics workflow that expedites dataset exploration through automated statistical profiling, feature correlation analysis, and anomaly detection routines, allowing data analysts to uncover meaningful patterns faster.',
-      technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'Data Analysis'],
+        'Engineered an integrated AI-assisted data analytics application combining an interactive web interface with backend data processing services. The system automates dataset uploading, schema profiling, missing value diagnostics, interactive charting, and automated insight generation to accelerate exploratory data workflows.',
+      technologies: ['React', 'Node.js', 'Express', 'Python', 'Data Analysis'],
       keyFeatures: [
-        'Interactive dataset upload and automated exploratory data analysis (EDA)',
-        'Statistical profiling and feature distribution analysis',
-        'Pattern and trend discovery across tabular variables',
-        'Potential anomaly and outlier detection workflows',
-        'Dynamic visualization interface built with React & TypeScript',
+        'Dataset Upload: Seamless CSV file intake with automated parsing and structure detection',
+        'Automated Data Exploration: Instant statistical profiling, column distributions, and metric summaries',
+        'Insight Generation: Automated analytical insights identifying key trends and data observations',
+        'Data Cleaning: Missing value detection and dataset sanitization tools',
+        'Interactive Visualizations: Dynamic charts for category distributions, correlations, and metric comparisons',
+      ],
+      highlightsList: [
+        'Dataset Upload',
+        'Automated Data Exploration',
+        'Insight Generation',
       ],
       resumePoints: [
         'Developed Data Detective AI, an intelligent data analysis platform to simplify dataset exploration and uncover actionable patterns.',
         'Implemented exploratory data analysis workflows and interactive visualization to detect statistical trends and anomalies.',
       ],
-      highlight: 'AI-powered data exploration and automated insights.',
+      highlight: 'Dataset Upload · Automated Data Exploration · Insight Generation',
+      outcome:
+        'Provides an intuitive, end-to-end interface for data analysts and teams to go from raw CSV files to interactive exploration, automated data quality assessment, and AI-generated insights without tedious manual setup.',
       image: '/projects/data-detective.png',
-      githubUrl: 'https://github.com/rithii1702',
+      githubUrl: 'https://github.com/rithii1702/data-detective-ai',
+      featured: true,
     },
     {
       id: 'bagbill',
@@ -258,29 +272,32 @@ export const portfolioData: PortfolioData = {
     degree: 'Bachelor of Engineering — Artificial Intelligence and Machine Learning',
     location: 'Bangalore, India',
     graduationYear: 'Expected Graduation: 2027',
-    cgpa: '7.7',
+    cgpa: '7.7 / 10',
     highlights: [
-      'Core coursework in Data Structures, Database Systems, Artificial Intelligence, and Machine Learning.',
-      'Active focus on applied Data Analytics, Business Intelligence dashboards, and automated computational models.',
-      'Academic and extracurricular projects combining predictive AI models with scalable full-stack web applications.',
+      'Core focus on Machine Learning, AI algorithms, database systems, and statistical data modeling.',
+      'Active participant in technical workshops, data hackathons, and analytics competitions.',
+      'Hands-on coursework covering Data Structures, Python for Data Science, and Database Management.',
     ],
   },
 
   certifications: [
     {
-      title: 'Data Science and Analytics',
-      category: 'Data Analytics & Statistics',
-      description: 'Comprehensive study of data manipulation, statistical analysis, exploratory visualization, and analytical decision modeling.',
+      title: 'Data Analytics and Visualization',
+      category: 'Accenture (Forage Virtual Experience)',
+      description:
+        'Completed practical simulation in data discovery, data modeling, clean dataset architecture, and stakeholder KPI presentation.',
     },
     {
-      title: 'Data Visualization using Power BI',
-      category: 'Business Intelligence',
-      description: 'Hands-on dashboard development, report formulation, DAX measures, and business KPI tracking using Microsoft Power BI.',
+      title: 'Data Analytics Course Training',
+      category: 'Professional Coursework',
+      description:
+        'Comprehensive practical training in Excel data manipulation, SQL relational querying, and Power BI business dashboard design.',
     },
     {
-      title: 'AI for Beginners',
-      category: 'Artificial Intelligence',
-      description: 'Foundational concepts in artificial intelligence, neural networks, machine learning paradigms, and computer vision workflows.',
+      title: 'Career Essentials in Data Analysis',
+      category: 'Microsoft and LinkedIn Learning',
+      description:
+        'Foundational principles in data exploration, modern business intelligence reporting, and structured analytical problem-solving.',
     },
   ],
 };

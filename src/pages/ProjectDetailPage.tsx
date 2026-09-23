@@ -5,7 +5,8 @@ import {
   ArrowLeft, 
   Github, 
   CheckCircle2, 
-  ArrowRight
+  ArrowRight,
+  ArrowUpRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -49,9 +50,14 @@ export const ProjectDetailPage: React.FC = () => {
             <span className="px-2.5 py-1 rounded bg-[#FAF8F5] border border-[#E7E5E4] text-xs font-mono font-bold text-[#78350F]">
               PROJECT {project.number}
             </span>
+            {project.featured && (
+              <span className="px-2.5 py-1 rounded bg-[#78350F]/10 border border-[#78350F]/20 text-xs font-mono font-bold text-[#78350F]">
+                FEATURED
+              </span>
+            )}
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
             {project.title}
           </h1>
 
@@ -69,7 +75,8 @@ export const ProjectDetailPage: React.FC = () => {
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1C1917] hover:bg-[#292524] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
               >
                 <Github className="w-4 h-4" />
-                <span>GitHub &rarr;</span>
+                <span>GitHub</span>
+                <ArrowUpRight className="w-4 h-4 text-[#FAF8F5]" />
               </a>
             )}
           </div>
@@ -91,14 +98,27 @@ export const ProjectDetailPage: React.FC = () => {
           </div>
         </div>
 
+        {/* Overview */}
+        <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
+          <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
+            About the Project
+          </div>
+          <h3 className="text-xl font-bold text-[#1C1917]">
+            Overview
+          </h3>
+          <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            {project.overview}
+          </p>
+        </div>
+
         {/* Problem & Solution Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-2">
             <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
-              The Challenge & Problem
+              The Context
             </span>
             <h3 className="text-base font-bold text-[#1C1917]">
-              Context & Inefficiencies Addressed
+              The Problem
             </h3>
             <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
               {project.problem}
@@ -106,26 +126,16 @@ export const ProjectDetailPage: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-2">
-            <span className="text-xs font-mono font-bold text-[#6D28D9] uppercase tracking-wider block">
-              The Solution
+            <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
+              The Implementation
             </span>
             <h3 className="text-base font-bold text-[#1C1917]">
-              Approach & Implementation
+              The Solution
             </h3>
             <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
               {project.solution}
             </p>
           </div>
-        </div>
-
-        {/* Overview */}
-        <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
-          <h3 className="text-lg font-bold text-[#1C1917]">
-            Project Overview
-          </h3>
-          <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            {project.overview}
-          </p>
         </div>
 
         {/* Key Features & Tech Stack */}
@@ -171,6 +181,44 @@ export const ProjectDetailPage: React.FC = () => {
             )}
           </div>
         </div>
+
+        {/* Project Outcome */}
+        {project.outcome && (
+          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
+            <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
+              Results & Impact
+            </div>
+            <h3 className="text-xl font-bold text-[#1C1917]">
+              Project Outcome
+            </h3>
+            <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              {project.outcome}
+            </p>
+          </div>
+        )}
+
+        {/* GitHub Link Callout */}
+        {project.githubUrl && (
+          <div className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <h4 className="text-sm font-bold text-[#1C1917]">
+                Explore Source Code on GitHub
+              </h4>
+              <p className="text-xs text-[#57534E] mt-0.5">
+                Review the repository implementation, documentation, and architecture.
+              </p>
+            </div>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1C1917] hover:bg-[#292524] text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-2xs whitespace-nowrap"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub &rarr;</span>
+            </a>
+          </div>
+        )}
 
         {/* Next Project Footer Link */}
         <div className="pt-8 border-t border-[#E7E5E4] flex flex-col sm:flex-row items-center justify-between gap-4">
