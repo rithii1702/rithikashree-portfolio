@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Github, 
@@ -8,10 +8,18 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { 
+  pageVariants, 
+  reducedPageVariants, 
+  fadeInUp, 
+  subtleImageFade 
+} from '../utils/animationVariants';
 
 export const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { projects } = portfolioData;
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? reducedPageVariants : pageVariants;
 
   const project = projects.find((p) => p.slug === slug);
 
@@ -24,16 +32,16 @@ export const ProjectDetailPage: React.FC = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="min-h-screen py-10 md:py-16"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Back to Projects Button */}
-        <div>
+        <motion.div variants={fadeInUp}>
           <Link
             to="/projects"
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-[#E7E5E4] bg-white hover:bg-[#FAF8F5] text-xs font-semibold uppercase tracking-wider text-[#1C1917] hover:text-[#78350F] transition-colors shadow-2xs"
@@ -41,10 +49,10 @@ export const ProjectDetailPage: React.FC = () => {
             <ArrowLeft className="w-4 h-4 text-[#78350F]" />
             <span>&larr; Back to Projects</span>
           </Link>
-        </div>
+        </motion.div>
 
         {/* Header Title Section */}
-        <div className="space-y-4 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-4 border-b border-[#E7E5E4] pb-8">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-1 rounded bg-[#FAF8F5] border border-[#E7E5E4] text-xs font-mono font-bold text-[#78350F]">
               PROJECT {project.number}
@@ -73,10 +81,10 @@ export const ProjectDetailPage: React.FC = () => {
               </a>
             )}
           </div>
-        </div>
+        </motion.div>
 
         {/* Screenshot Visual Showcase */}
-        <div className="bg-white rounded-2xl border border-[#E7E5E4] p-4 sm:p-6 shadow-xs space-y-4">
+        <motion.div variants={subtleImageFade} className="bg-white rounded-2xl border border-[#E7E5E4] p-4 sm:p-6 shadow-xs space-y-4">
           <div className="flex items-center justify-between border-b border-[#E7E5E4] pb-3 text-xs">
             <span className="font-mono text-[#78716C] uppercase font-semibold">Visual Showcase</span>
             <span className="font-mono text-[#78350F] font-semibold">{project.title}</span>
@@ -89,10 +97,10 @@ export const ProjectDetailPage: React.FC = () => {
               loading="lazy"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Overview */}
-        <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
+        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
           <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
             About the Project
           </div>
@@ -102,10 +110,10 @@ export const ProjectDetailPage: React.FC = () => {
           <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
             {project.overview}
           </p>
-        </div>
+        </motion.div>
 
         {/* Problem & Solution Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-2">
             <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
               The Context
@@ -129,10 +137,10 @@ export const ProjectDetailPage: React.FC = () => {
               {project.solution}
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Key Features & Tech Stack */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 shadow-xs space-y-3">
             <h3 className="text-sm font-bold text-[#1C1917] uppercase tracking-wider font-mono">
               Key Features
@@ -173,11 +181,11 @@ export const ProjectDetailPage: React.FC = () => {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
 
         {/* Project Outcome */}
         {project.outcome && (
-          <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
+          <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-3">
             <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
               Results & Impact
             </div>
@@ -187,12 +195,12 @@ export const ProjectDetailPage: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
               {project.outcome}
             </p>
-          </div>
+          </motion.div>
         )}
 
         {/* GitHub Link Callout (only if real repo exists) */}
         {project.githubUrl && (
-          <div className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <motion.div variants={fadeInUp} className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <h4 className="font-serif text-base font-bold text-[#1C1917]">
                 Explore Source Code on GitHub
@@ -210,11 +218,11 @@ export const ProjectDetailPage: React.FC = () => {
               <Github className="w-4 h-4" />
               <span>GitHub &rarr;</span>
             </a>
-          </div>
+          </motion.div>
         )}
 
         {/* Next Project Footer Link */}
-        <div className="pt-8 border-t border-[#E7E5E4] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <motion.div variants={fadeInUp} className="pt-8 border-t border-[#E7E5E4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link
             to="/projects"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#57534E] hover:text-[#78350F] transition-colors"
@@ -230,7 +238,7 @@ export const ProjectDetailPage: React.FC = () => {
             <span>Next: {nextProject.number} &mdash; {nextProject.title}</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#78350F]" />
           </Link>
-        </div>
+        </motion.div>
 
       </div>
     </motion.div>

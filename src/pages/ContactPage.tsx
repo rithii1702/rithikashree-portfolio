@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { 
   Mail, 
   Linkedin, 
@@ -14,9 +14,17 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { 
+  pageVariants, 
+  reducedPageVariants, 
+  fadeInUp 
+} from '../utils/animationVariants';
 
 export const ContactPage: React.FC = () => {
   const { personal } = portfolioData;
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? reducedPageVariants : pageVariants;
+
   const [copied, setCopied] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -34,16 +42,16 @@ export const ContactPage: React.FC = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="min-h-screen py-10 md:py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb & Page Heading */}
-        <div className="space-y-3 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-8">
           <nav className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#78716C] uppercase">
             <Link to="/" className="hover:text-[#78350F] transition-colors">
               Home
@@ -66,13 +74,13 @@ export const ContactPage: React.FC = () => {
               <span>Available for Roles</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
           {/* Left Column: Direct Contact & Opportunity Statement */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div variants={fadeInUp} className="lg:col-span-5 space-y-6">
             
             {/* Open for Opportunities Card */}
             <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 shadow-xs space-y-4">
@@ -189,10 +197,10 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Clean Simple Contact Form */}
-          <div className="lg:col-span-7">
+          <motion.div variants={fadeInUp} className="lg:col-span-7">
             <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
               <div className="space-y-1 border-b border-[#E7E5E4] pb-4">
                 <span className="text-[11px] font-mono font-semibold text-[#78350F] uppercase tracking-wider block">
@@ -282,7 +290,7 @@ export const ContactPage: React.FC = () => {
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

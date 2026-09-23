@@ -1,24 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Github, CheckCircle2 } from 'lucide-react';
 import { portfolioData, ProjectItem } from '../data/portfolioData';
+import { 
+  pageVariants, 
+  reducedPageVariants, 
+  fadeInUp, 
+  staggerContainer 
+} from '../utils/animationVariants';
 
 export const ProjectsPage: React.FC = () => {
   const { projects } = portfolioData;
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? reducedPageVariants : pageVariants;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="min-h-screen py-10 md:py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Section Header */}
-        <div className="space-y-3 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-8">
           <nav className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#78716C] uppercase">
             <Link to="/" className="hover:text-[#78350F] transition-colors">
               Home
@@ -40,7 +48,7 @@ export const ProjectsPage: React.FC = () => {
               04 Case Studies
             </span>
           </div>
-        </div>
+        </motion.div>
 
         {/* ======================================================== */}
         {/* ALL FOUR PROJECTS — UNIFIED FULL-WIDTH HORIZONTAL LAYOUT  */}
@@ -51,16 +59,14 @@ export const ProjectsPage: React.FC = () => {
         {/* Project 04: Image LEFT / Text RIGHT                      */}
         {/* Mobile: Text -> Image -> Buttons                         */}
         {/* ======================================================== */}
-        <div className="space-y-12 md:space-y-16">
+        <motion.div variants={staggerContainer} className="space-y-12 md:space-y-16">
           {projects.map((project: ProjectItem, index: number) => {
             const isEven = index % 2 === 1; // Project 02 (index 1), Project 04 (index 3)
 
             return (
               <motion.article
                 key={project.id}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.28, delay: index * 0.05, ease: 'easeOut' }}
+                variants={fadeInUp}
                 whileHover={{ y: -3 }}
                 className="bg-white rounded-2xl border border-[#E7E5E4] hover:border-[#78350F]/40 p-6 sm:p-8 md:p-10 shadow-xs hover:shadow-lg transition-all duration-300"
               >
@@ -185,7 +191,7 @@ export const ProjectsPage: React.FC = () => {
               </motion.article>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </motion.div>

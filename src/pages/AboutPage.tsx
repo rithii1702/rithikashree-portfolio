@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { 
   GraduationCap, 
   BrainCircuit, 
@@ -12,9 +12,16 @@ import {
   Award
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { 
+  pageVariants, 
+  reducedPageVariants, 
+  fadeInUp 
+} from '../utils/animationVariants';
 
 export const AboutPage: React.FC = () => {
   const { personal, education, certifications } = portfolioData;
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? reducedPageVariants : pageVariants;
 
   const currentLearning = [
     {
@@ -41,16 +48,16 @@ export const AboutPage: React.FC = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="min-h-screen py-10 md:py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb & Page Heading */}
-        <div className="space-y-3 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-8">
           <nav className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#78716C] uppercase">
             <Link to="/" className="hover:text-[#78350F] transition-colors">
               Home
@@ -73,10 +80,10 @@ export const AboutPage: React.FC = () => {
               <span>Bangalore, India &middot; Expected 2027</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Narrative & Career Interests Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Main Story Column */}
           <div className="lg:col-span-7 space-y-6">
@@ -214,10 +221,10 @@ export const AboutPage: React.FC = () => {
 
           </div>
 
-        </div>
+        </motion.div>
 
         {/* What I Am Currently Learning Section */}
-        <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
+        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E7E5E4] pb-4">
             <div className="flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[#78350F]" />
@@ -248,10 +255,10 @@ export const AboutPage: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Page Navigation CTA */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <motion.div variants={fadeInUp} className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
             <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               Want to see my practical projects in action?
@@ -275,7 +282,7 @@ export const AboutPage: React.FC = () => {
               <span>Contact Me</span>
             </Link>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </motion.div>

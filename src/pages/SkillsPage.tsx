@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { 
   BarChart3, 
   BrainCircuit, 
@@ -14,9 +14,16 @@ import {
   Terminal
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { 
+  pageVariants, 
+  reducedPageVariants, 
+  fadeInUp 
+} from '../utils/animationVariants';
 
 export const SkillsPage: React.FC = () => {
   const { skills } = portfolioData;
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? reducedPageVariants : pageVariants;
 
   const categoryIcons: Record<string, React.ReactNode> = {
     'DATA & ANALYTICS': <BarChart3 className="w-5 h-5 text-[#78350F]" />,
@@ -50,16 +57,16 @@ export const SkillsPage: React.FC = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="min-h-screen py-10 md:py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb & Page Heading */}
-        <div className="space-y-3 border-b border-[#E7E5E4] pb-8">
+        <motion.div variants={fadeInUp} className="space-y-3 border-b border-[#E7E5E4] pb-8">
           <nav className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#78716C] uppercase">
             <Link to="/" className="hover:text-[#78350F] transition-colors">
               Home
@@ -82,10 +89,10 @@ export const SkillsPage: React.FC = () => {
               <span>4 Core Domains</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* 4 Core Skills Domains Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((group) => (
             <div
               key={group.name}
@@ -121,17 +128,17 @@ export const SkillsPage: React.FC = () => {
                     key={skill}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FAF8F5] hover:bg-[#F5EFE6] border border-[#E7E5E4] hover:border-[#E8D5C4] text-xs font-semibold text-[#1C1917] transition-colors"
                   >
-                    <CheckCircle2 className="w-3 h-3 text-[#78350F]" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#78350F]" />
                     <span>{skill}</span>
                   </span>
                 ))}
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Analytical Workflow & Methodologies */}
-        <div className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
+        <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-8 shadow-xs space-y-6">
           <div className="space-y-1 border-b border-[#E7E5E4] pb-4">
             <span className="text-[11px] font-mono font-semibold text-[#78350F] uppercase tracking-wider block">
               Methodology
@@ -154,10 +161,10 @@ export const SkillsPage: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom CTA to Projects */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <motion.div variants={fadeInUp} className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
             <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               Interested in seeing these skills applied to real datasets?
@@ -173,7 +180,7 @@ export const SkillsPage: React.FC = () => {
             <span>Explore Projects</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
-        </div>
+        </motion.div>
 
       </div>
     </motion.div>

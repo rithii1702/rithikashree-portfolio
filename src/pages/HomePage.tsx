@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { 
   ArrowRight, 
   ArrowDownToLine, 
@@ -17,16 +17,25 @@ import {
   Heart 
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { 
+  pageVariants, 
+  reducedPageVariants, 
+  fadeInUp, 
+  subtleImageFade, 
+  staggerContainer 
+} from '../utils/animationVariants';
 
 export const HomePage: React.FC = () => {
   const { personal } = portfolioData;
+  const shouldReduceMotion = useReducedMotion();
+  const variants = shouldReduceMotion ? reducedPageVariants : pageVariants;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="flex flex-col bg-[#F5EFE6] text-[#241F1D]"
     >
       {/* ======================================================== */}
@@ -38,20 +47,18 @@ export const HomePage: React.FC = () => {
             
             {/* Left Column: Personal Introduction & Actions */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              variants={staggerContainer}
               className="lg:col-span-7 space-y-3.5"
             >
               {/* Small uppercase label */}
-              <div>
+              <motion.div variants={fadeInUp}>
                 <span className="text-xs sm:text-[13px] font-mono font-bold text-[#B88A78] tracking-widest uppercase">
                   TURNING IDEAS INTO INSIGHTS
                 </span>
-              </div>
+              </motion.div>
 
               {/* Main Heading & Sub-roles */}
-              <div className="space-y-1.5">
+              <motion.div variants={fadeInUp} className="space-y-1.5">
                 <h1 className="font-serif text-[38px] sm:text-[46px] md:text-[50px] lg:text-[56px] font-bold text-[#241F1D] tracking-tight uppercase leading-[1.04]">
                   {personal.name}
                 </h1>
@@ -64,15 +71,15 @@ export const HomePage: React.FC = () => {
 
                 {/* Short burgundy horizontal line */}
                 <div className="w-14 h-0.5 bg-[#6F1D2A] mt-2 mb-2" />
-              </div>
+              </motion.div>
 
               {/* Description */}
-              <p className="text-[15px] sm:text-[16px] text-[#6D625C] leading-relaxed max-w-lg">
+              <motion.p variants={fadeInUp} className="text-[15px] sm:text-[16px] text-[#6D625C] leading-relaxed max-w-lg">
                 Final-year Artificial Intelligence and Machine Learning student interested in Data Analytics, Machine Learning and building practical technology solutions.
-              </p>
+              </motion.p>
 
               {/* Action Buttons */}
-              <div className="pt-0.5 flex flex-wrap items-center gap-3">
+              <motion.div variants={fadeInUp} className="pt-0.5 flex flex-wrap items-center gap-3">
                 <Link
                   to="/projects"
                   className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 bg-[#6F1D2A] hover:bg-[#581721] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-colors shadow-xs group/btn"
@@ -91,10 +98,10 @@ export const HomePage: React.FC = () => {
                   <span>DOWNLOAD RESUME</span>
                   <ArrowDownToLine className="w-4 h-4 text-[#6F1D2A] group-hover/res:translate-y-0.5 transition-transform" />
                 </a>
-              </div>
+              </motion.div>
 
               {/* Social Links */}
-              <div className="pt-1.5 flex items-center gap-5 text-sm text-[#241F1D]">
+              <motion.div variants={fadeInUp} className="pt-1.5 flex items-center gap-5 text-sm text-[#241F1D]">
                 <a
                   href={personal.linkedin}
                   target="_blank"
@@ -129,14 +136,12 @@ export const HomePage: React.FC = () => {
                   </span>
                   <span>Email</span>
                 </a>
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Right Column: Arched Portrait Photo (400-440px wide, 500-560px high) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+              variants={subtleImageFade}
               className="lg:col-span-5 flex justify-center lg:justify-end items-center"
             >
               <div className="relative flex items-center gap-3 sm:gap-5">
@@ -234,7 +239,7 @@ export const HomePage: React.FC = () => {
       {/* 2. FOUR-ITEM INFORMATION STRIP (~30px gap below hero)    */}
       {/* ======================================================== */}
       <section className="mb-9 sm:mb-10 bg-[#F5EFE6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeInUp} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-[#D8CEC4] bg-white p-6 sm:p-8 lg:p-9 shadow-xs">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#D8CEC4]">
               
@@ -312,14 +317,14 @@ export const HomePage: React.FC = () => {
 
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ======================================================== */}
       {/* 3. WHAT I ENJOY BUILDING (~40px gap from info strip)     */}
       {/* ======================================================== */}
       <section className="mb-8 sm:mb-10 bg-[#F5EFE6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
+        <motion.div variants={fadeInUp} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
           
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
@@ -458,14 +463,14 @@ export const HomePage: React.FC = () => {
             </motion.div>
 
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ======================================================== */}
       {/* 4. CURRENTLY FOCUSED ON / OPEN TO (~35px gap from cards) */}
       {/* ======================================================== */}
       <section className="mb-9 sm:mb-10 bg-[#F5EFE6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeInUp} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 relative">
             
             {/* Left Column: Currently Focused On */}
@@ -535,14 +540,14 @@ export const HomePage: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ======================================================== */}
       {/* 5. FINAL CTA (~40px gap from focus/open-to, ~25px to ft) */}
       {/* ======================================================== */}
       <section className="mb-6 sm:mb-7 bg-[#F5EFE6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeInUp} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl border border-[#D8CEC4] bg-gradient-to-r from-[#FAF4ED] via-[#F8ECE3] to-[#F5E2D6] p-7 sm:p-10 lg:p-11 shadow-xs overflow-hidden">
             
             {/* Background decorative wave & graph line on the right */}
@@ -633,7 +638,7 @@ export const HomePage: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </section>
 
     </motion.div>
