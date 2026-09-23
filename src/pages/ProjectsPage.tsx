@@ -29,7 +29,7 @@ export const ProjectsPage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1917] tracking-tight uppercase">
                 Projects
               </h1>
               <p className="text-sm sm:text-base text-[#57534E] mt-2 max-w-2xl">
@@ -81,7 +81,7 @@ export const ProjectsPage: React.FC = () => {
                       </div>
 
                       {/* Project title */}
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1C1917] tracking-tight hover:text-[#78350F] transition-colors uppercase">
+                      <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1917] tracking-tight hover:text-[#78350F] transition-colors uppercase">
                         <Link to={`/projects/${project.slug}`}>
                           {project.title}
                         </Link>

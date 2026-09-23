@@ -41,6 +41,12 @@ export default {
         },
       },
       fontFamily: {
+        heading: [
+          '"Playfair Display"',
+          'Georgia',
+          'Cambria',
+          'serif',
+        ],
         serif: [
           '"Playfair Display"',
           'Georgia',

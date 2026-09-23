@@ -51,7 +51,7 @@ export const ProjectDetailPage: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1917] tracking-tight uppercase">
             {project.title}
           </h1>
 
@@ -96,7 +96,7 @@ export const ProjectDetailPage: React.FC = () => {
           <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
             About the Project
           </div>
-          <h3 className="text-xl font-bold text-[#1C1917]">
+          <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
             Overview
           </h3>
           <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
@@ -110,7 +110,7 @@ export const ProjectDetailPage: React.FC = () => {
             <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
               The Context
             </span>
-            <h3 className="text-base font-bold text-[#1C1917]">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               The Problem
             </h3>
             <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
@@ -122,7 +122,7 @@ export const ProjectDetailPage: React.FC = () => {
             <span className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider block">
               The Implementation
             </span>
-            <h3 className="text-base font-bold text-[#1C1917]">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               The Solution
             </h3>
             <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
@@ -181,7 +181,7 @@ export const ProjectDetailPage: React.FC = () => {
             <div className="text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
               Results & Impact
             </div>
-            <h3 className="text-xl font-bold text-[#1C1917]">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
               Project Outcome
             </h3>
             <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed">
@@ -194,7 +194,7 @@ export const ProjectDetailPage: React.FC = () => {
         {project.githubUrl && (
           <div className="bg-[#FAF8F5] rounded-2xl border border-[#E7E5E4] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <h4 className="text-sm font-bold text-[#1C1917]">
+              <h4 className="font-serif text-base font-bold text-[#1C1917]">
                 Explore Source Code on GitHub
               </h4>
               <p className="text-xs text-[#57534E] mt-0.5">

@@ -54,7 +54,7 @@ export const ContactPage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1917] tracking-tight uppercase">
                 Let's Connect
               </h1>
               <p className="text-sm sm:text-base text-[#57534E] mt-2 max-w-2xl">
@@ -81,7 +81,7 @@ export const ContactPage: React.FC = () => {
                 <span>Career Opportunities</span>
               </div>
               
-              <h2 className="text-xl font-bold text-[#1C1917] tracking-tight">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] tracking-tight">
                 Seeking Data Analyst & Analytics Internships
               </h2>
 
@@ -198,7 +198,7 @@ export const ContactPage: React.FC = () => {
                 <span className="text-[11px] font-mono font-semibold text-[#78350F] uppercase tracking-wider block">
                   Message Form
                 </span>
-                <h2 className="text-xl font-bold text-[#1C1917] tracking-tight">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] tracking-tight">
                   Send a Direct Note
                 </h2>
               </div>
@@ -208,7 +208,7 @@ export const ContactPage: React.FC = () => {
                   <div className="w-10 h-10 rounded-full bg-[#78350F] text-white flex items-center justify-center mx-auto">
                     <Check className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-[#1C1917]">
+                  <h3 className="font-serif text-lg font-bold text-[#1C1917]">
                     Thank you for reaching out!
                   </h3>
                   <p className="text-xs text-[#57534E] max-w-md mx-auto">

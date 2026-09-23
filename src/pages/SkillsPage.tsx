@@ -70,7 +70,7 @@ export const SkillsPage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1917] tracking-tight uppercase">
                 Technical Skills & Toolkit
               </h1>
               <p className="text-sm sm:text-base text-[#57534E] mt-2 max-w-2xl">
@@ -99,7 +99,7 @@ export const SkillsPage: React.FC = () => {
                   </span>
                   <div className="flex items-center gap-2.5">
                     {categoryIcons[group.name] || <BarChart3 className="w-5 h-5 text-[#78350F]" />}
-                    <h2 className="text-xl font-bold text-[#1C1917] tracking-tight">
+                    <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] tracking-tight">
                       {group.name}
                     </h2>
                   </div>
@@ -136,7 +136,7 @@ export const SkillsPage: React.FC = () => {
             <span className="text-[11px] font-mono font-semibold text-[#78350F] uppercase tracking-wider block">
               Methodology
             </span>
-            <h2 className="text-xl font-bold text-[#1C1917] tracking-tight uppercase">
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917] tracking-tight uppercase">
               How I Apply These Skills
             </h2>
           </div>
@@ -146,7 +146,7 @@ export const SkillsPage: React.FC = () => {
               <div key={m.title} className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] space-y-2">
                 <div className="flex items-center gap-2">
                   {m.icon}
-                  <h3 className="text-xs font-bold text-[#1C1917]">{m.title}</h3>
+                  <h3 className="font-serif text-sm font-bold text-[#1C1917]">{m.title}</h3>
                 </div>
                 <p className="text-[11px] text-[#57534E] leading-relaxed">
                   {m.desc}
@@ -159,7 +159,7 @@ export const SkillsPage: React.FC = () => {
         {/* Bottom CTA to Projects */}
         <div className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-base font-bold text-[#1C1917]">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               Interested in seeing these skills applied to real datasets?
             </h3>
             <p className="text-xs text-[#57534E]">

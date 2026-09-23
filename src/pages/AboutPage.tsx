@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1C1917] tracking-tight uppercase">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1C1917] tracking-tight uppercase">
                 About Me
               </h1>
               <p className="text-sm sm:text-base text-[#57534E] mt-2 max-w-2xl">
@@ -86,7 +86,7 @@ export const AboutPage: React.FC = () => {
                 <span>My Journey & Focus</span>
               </div>
               
-              <h2 className="text-2xl font-bold text-[#1C1917] tracking-tight">
+              <h2 className="font-serif text-2xl font-bold text-[#1C1917] tracking-tight">
                 Turning complex datasets into structured, actionable business intelligence.
               </h2>
 
@@ -155,7 +155,7 @@ export const AboutPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-[#1C1917] tracking-tight">
+                <h3 className="font-serif text-lg font-bold text-[#1C1917] tracking-tight">
                   {education.institution}
                 </h3>
                 <p className="text-xs font-semibold text-[#78350F] mt-1">
@@ -221,7 +221,7 @@ export const AboutPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E7E5E4] pb-4">
             <div className="flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[#78350F]" />
-              <h2 className="text-lg font-bold text-[#1C1917] tracking-tight uppercase">
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1C1917] tracking-tight uppercase">
                 What I Am Currently Learning
               </h2>
             </div>
@@ -239,7 +239,7 @@ export const AboutPage: React.FC = () => {
                 <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-white border border-[#E7E5E4] text-[#78350F] inline-block">
                   {item.category}
                 </span>
-                <h3 className="text-xs font-bold text-[#1C1917]">
+                <h3 className="font-serif text-sm font-bold text-[#1C1917]">
                   {item.title}
                 </h3>
                 <p className="text-[11px] text-[#57534E] leading-relaxed">
@@ -253,7 +253,7 @@ export const AboutPage: React.FC = () => {
         {/* Bottom Page Navigation CTA */}
         <div className="p-6 sm:p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8D5C4] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-base font-bold text-[#1C1917]">
+            <h3 className="font-serif text-base sm:text-lg font-bold text-[#1C1917]">
               Want to see my practical projects in action?
             </h3>
             <p className="text-xs text-[#57534E]">
