@@ -1,7 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowDownToLine, ExternalLink, Github, Linkedin, Mail, MapPin, Database, BarChart3, LineChart, Code2 } from 'lucide-react';
+import { ArrowRight, ArrowDownToLine, ExternalLink, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+
+interface HeroPortraitProps {
+  className?: string;
+  isMobile?: boolean;
+}
+
+const HeroPortrait: React.FC<HeroPortraitProps> = ({ className = '', isMobile = false }) => {
+  return (
+    <div
+      className={`relative mx-auto ${
+        isMobile
+          ? 'w-full max-w-[250px] sm:max-w-[280px]'
+          : 'w-full max-w-[360px] xl:max-w-[390px]'
+      } ${className}`}
+    >
+      {/* Behind the photo: subtle decorative data-grid pattern matching portfolio */}
+      <div
+        className="absolute -inset-2.5 sm:-inset-3.5 rounded-2xl border border-[#E7E5E4] bg-[#FAF8F5]/90 pointer-events-none -z-10"
+        style={{
+          backgroundImage: 'radial-gradient(#78350F 1px, transparent 1px)',
+          backgroundSize: '16px 16px',
+          opacity: 0.16,
+        }}
+      />
+
+      {/* Subtle technical corner markings */}
+      <div className="absolute -top-3.5 -left-3.5 text-[#78350F]/30 font-mono text-xs select-none pointer-events-none">+</div>
+      <div className="absolute -bottom-3.5 -right-3.5 text-[#78350F]/30 font-mono text-xs select-none pointer-events-none">+</div>
+
+      {/* Subtle rounded-rectangle crop with thin burgundy border */}
+      <div className="relative rounded-2xl overflow-hidden border border-[#78350F]/35 bg-white p-1 shadow-2xs">
+        <div className="relative rounded-xl overflow-hidden aspect-[4/5] w-full bg-[#FAF8F5]">
+          <img
+            src="/assets/profile.jpg"
+            alt="B. Rithikashree — Professional Portrait"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      {/* Clean, minimalist identifier tag */}
+      <div className="absolute -bottom-2.5 right-3 px-2 py-0.5 bg-white border border-[#E7E5E4] rounded text-[10px] font-mono font-medium text-[#78350F] shadow-2xs flex items-center gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#78350F]" />
+        <span>B. RITHIKASHREE</span>
+      </div>
+    </div>
+  );
+};
 
 export const Hero: React.FC = () => {
   const { personal } = portfolioData;
@@ -18,7 +67,7 @@ export const Hero: React.FC = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Bio & Core Info */}
           <motion.div
@@ -52,6 +101,11 @@ export const Hero: React.FC = () => {
             <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-2xl">
               {personal.summary}
             </p>
+
+            {/* Mobile Portrait: Displayed below name & introduction on mobile, centered with clean spacing */}
+            <div className="lg:hidden py-3 flex justify-center">
+              <HeroPortrait isMobile={true} />
+            </div>
 
             {/* Action buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -122,104 +176,14 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: Data Analytics Architecture Showcase Visual */}
+          {/* Right Column: Desktop Professional Portrait Showcase */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5"
+            className="hidden lg:flex lg:col-span-5 items-center justify-center lg:justify-end"
           >
-            <div className="bg-white rounded-xl border border-[#E7E5E4] p-6 shadow-sm space-y-5">
-              
-              {/* Card Header */}
-              <div className="flex items-center justify-between border-b border-[#E7E5E4] pb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-[#E7E5E4]"></span>
-                  <span className="w-3 h-3 rounded-full bg-[#E7E5E4]"></span>
-                  <span className="w-3 h-3 rounded-full bg-[#E7E5E4]"></span>
-                  <span className="ml-2 text-xs font-mono font-semibold text-[#78716C] uppercase tracking-wider">
-                    Analytics Workflow
-                  </span>
-                </div>
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#F5EFE6] text-[#78350F] font-semibold">
-                  END-TO-END
-                </span>
-              </div>
-
-              {/* Workflow stages representation */}
-              <div className="space-y-3">
-                
-                {/* Stage 1: Data Ingestion & Relational Prep */}
-                <div className="p-3 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] space-y-1.5">
-                  <div className="flex items-center justify-between text-xs font-semibold text-[#1C1917]">
-                    <div className="flex items-center gap-2">
-                      <Database className="w-3.5 h-3.5 text-[#78350F]" />
-                      <span>Data Ingestion & Cleaning</span>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#78716C]">Excel / SQL / Python</span>
-                  </div>
-                  <p className="text-[11px] text-[#57534E]">
-                    Structuring raw records, handling missing values, standardizing tabular schemas.
-                  </p>
-                </div>
-
-                {/* Stage 2: Exploratory Modeling & Analysis */}
-                <div className="p-3 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] space-y-1.5">
-                  <div className="flex items-center justify-between text-xs font-semibold text-[#1C1917]">
-                    <div className="flex items-center gap-2">
-                      <LineChart className="w-3.5 h-3.5 text-[#6D28D9]" />
-                      <span>Exploratory & KPI Analysis</span>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#78716C]">Trends / Patterns / Anomalies</span>
-                  </div>
-                  {/* Subtle clean SVG trend visual without fake numbers */}
-                  <div className="h-8 w-full flex items-end gap-1.5 pt-1">
-                    <div className="w-1/6 bg-[#E7E5E4] h-3 rounded-t-sm" />
-                    <div className="w-1/6 bg-[#E7E5E4] h-5 rounded-t-sm" />
-                    <div className="w-1/6 bg-[#E8D5C4] h-4 rounded-t-sm" />
-                    <div className="w-1/6 bg-[#78350F] h-7 rounded-t-sm" />
-                    <div className="w-1/6 bg-[#6D28D9] h-6 rounded-t-sm" />
-                    <div className="w-1/6 bg-[#78350F] h-8 rounded-t-sm" />
-                  </div>
-                </div>
-
-                {/* Stage 3: Dashboard & Business Reporting */}
-                <div className="p-3 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] space-y-1.5">
-                  <div className="flex items-center justify-between text-xs font-semibold text-[#1C1917]">
-                    <div className="flex items-center gap-2">
-                      <BarChart3 className="w-3.5 h-3.5 text-[#78350F]" />
-                      <span>Business Intelligence & Dashboards</span>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#78716C]">Power BI / Tableau</span>
-                  </div>
-                  <p className="text-[11px] text-[#57534E]">
-                    Interactive reports, category performance evaluation, and decision-ready dashboards.
-                  </p>
-                </div>
-
-                {/* Stage 4: Web Applications & Database Integration */}
-                <div className="p-3 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] space-y-1.5">
-                  <div className="flex items-center justify-between text-xs font-semibold text-[#1C1917]">
-                    <div className="flex items-center gap-2">
-                      <Code2 className="w-3.5 h-3.5 text-[#78350F]" />
-                      <span>Data-Driven Applications</span>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#78716C]">React / Express / MongoDB</span>
-                  </div>
-                  <p className="text-[11px] text-[#57534E]">
-                    Full-stack business tools with automated calculations and persistent database storage.
-                  </p>
-                </div>
-
-              </div>
-
-              {/* Bottom footer tag */}
-              <div className="pt-2 border-t border-[#E7E5E4] flex items-center justify-between text-[11px] text-[#78716C]">
-                <span>RajaRajeswari College of Eng.</span>
-                <span className="font-semibold text-[#78350F]">B.E. AIML &middot; 2027</span>
-              </div>
-
-            </div>
+            <HeroPortrait />
           </motion.div>
 
         </div>
