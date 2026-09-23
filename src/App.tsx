@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -8,7 +8,6 @@ import { AboutPage } from './pages/AboutPage';
 import { SkillsPage } from './pages/SkillsPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
-import { ContactPage } from './pages/ContactPage';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -25,7 +24,7 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contact" element={<Navigate to="/" replace />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </AnimatePresence>
