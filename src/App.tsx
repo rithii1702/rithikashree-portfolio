@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -13,7 +13,7 @@ import { ContactPage } from './pages/ContactPage';
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#FAF8F5] text-[#1C1917] flex flex-col selection:bg-[#78350F] selection:text-[#FAF8F5]">
+      <div className="min-h-screen bg-[#F5EFE6] text-[#241F1D] flex flex-col selection:bg-[#6F1D2A] selection:text-[#F5EFE6]">
         <ScrollToTop />
         <Navbar />
         <main className="flex-grow">
