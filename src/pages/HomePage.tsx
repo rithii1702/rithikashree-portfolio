@@ -29,7 +29,7 @@ export const HomePage: React.FC = () => {
       className="flex flex-col bg-[#F5EFE6] text-[#241F1D]"
     >
       {/* ======================================================== */}
-      {/* 1. HERO SECTION (Strong two-column, personal & elegant)  */}
+      {/* 1. HERO — MATCH REFERENCE (Two-column, personal & elegant)*/}
       {/* ======================================================== */}
       <section className="relative py-14 sm:py-18 lg:py-24 border-b border-[#D8CEC4] overflow-hidden bg-[#F5EFE6]">
         {/* Subtle background coordinate dot pattern */}
@@ -51,35 +51,35 @@ export const HomePage: React.FC = () => {
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="lg:col-span-7 space-y-6 sm:space-y-7"
             >
-              {/* Small label: 13-14px */}
+              {/* Small burgundy uppercase text */}
               <div className="inline-flex items-center gap-2">
                 <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] tracking-widest uppercase">
                   AI &middot; ML ENGINEERING &middot; 2026
                 </span>
               </div>
 
-              {/* Main heading: 50-58px desktop, 38-44px tablet, 32-38px mobile */}
+              {/* Large serif heading: 52-58px desktop, 38-44px tablet, 32-38px mobile */}
               <div className="space-y-3.5">
                 <h1 className="font-serif text-[34px] sm:text-[40px] md:text-[44px] lg:text-[54px] font-bold text-[#241F1D] tracking-tight uppercase leading-[1.08]">
                   {personal.name}
                 </h1>
 
-                {/* Short burgundy divider */}
+                {/* Short burgundy horizontal line */}
                 <div className="w-16 h-0.5 bg-[#6F1D2A]" />
 
-                {/* Sub-roles: clean sans / monospace combination */}
+                {/* Sub-roles */}
                 <div className="text-base sm:text-lg md:text-[20px] font-mono font-bold text-[#241F1D] tracking-wider uppercase space-y-1">
                   <div>AI &amp; ML STUDENT</div>
                   <div className="text-[#6F1D2A]">ASPIRING DATA ANALYST</div>
                 </div>
               </div>
 
-              {/* Description: 15-17px */}
+              {/* Description */}
               <p className="text-[15px] sm:text-base lg:text-[17px] text-[#6D625C] leading-relaxed max-w-xl">
                 Final-year Artificial Intelligence and Machine Learning student interested in Data Analytics, Machine Learning and building practical technology solutions.
               </p>
 
-              {/* Action Buttons: comfortable padding */}
+              {/* Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <Link
                   to="/projects"
@@ -101,7 +101,7 @@ export const HomePage: React.FC = () => {
                 </a>
               </div>
 
-              {/* Social Links */}
+              {/* Below buttons: Social Links */}
               <div className="pt-2 flex items-center gap-6 text-sm text-[#6D625C]">
                 <a
                   href={personal.linkedin}
@@ -136,7 +136,7 @@ export const HomePage: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Right Column: Tall Vertical Portrait (400-450px wide, 550-620px high) */}
+            {/* Right Column: Actual Uploaded Photo with Reference Styling */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -145,7 +145,7 @@ export const HomePage: React.FC = () => {
             >
               <div className="relative w-[310px] sm:w-[350px] lg:w-[420px] xl:w-[440px] max-w-full">
                 
-                {/* Behind the photo: subtle decorative circles & data grid */}
+                {/* Behind the photo: subtle decorative circles & data dot grid */}
                 <div 
                   className="absolute -inset-4 sm:-inset-6 rounded-3xl border border-[#D8CEC4] bg-white/40 pointer-events-none -z-10"
                   style={{
@@ -155,11 +155,11 @@ export const HomePage: React.FC = () => {
                   }}
                 />
 
-                {/* Thin decorative circle shapes */}
+                {/* Soft beige circular shape & thin burgundy rings */}
                 <div className="absolute -top-6 -right-6 w-36 h-36 rounded-full border border-[#6F1D2A]/15 pointer-events-none -z-10" />
                 <div className="absolute -bottom-8 -left-8 w-44 h-44 rounded-full border border-[#6F1D2A]/10 pointer-events-none -z-10" />
 
-                {/* Thin botanical line flourish */}
+                {/* Fine botanical line art flourish */}
                 <svg 
                   className="absolute -top-10 -left-10 w-28 h-28 pointer-events-none opacity-25 select-none -z-10 hidden sm:block" 
                   viewBox="0 0 100 100" 
@@ -172,18 +172,18 @@ export const HomePage: React.FC = () => {
                   <path d="M 68 32 Q 80 25, 88 35 Q 75 42, 68 32 Z" fill="#6F1D2A" fillOpacity="0.08" />
                 </svg>
 
-                {/* Delicate corner data crosshairs */}
+                {/* Delicate corner crosshairs */}
                 <div className="absolute -top-3 -left-3 text-[#6F1D2A]/40 font-mono text-xs select-none pointer-events-none">+</div>
                 <div className="absolute -bottom-3 -right-3 text-[#6F1D2A]/40 font-mono text-xs select-none pointer-events-none">+</div>
 
-                {/* Top-right subtle quote badge: "Turning data into insights and ideas into impact." */}
-                <div className="absolute -top-6 -right-3 sm:-right-5 max-w-[220px] px-3.5 py-2 bg-white/95 backdrop-blur-xs rounded-xl border border-[#D8CEC4] shadow-xs select-none hidden sm:block z-10">
+                {/* Small quote: "Turning data into insights and ideas into impact." */}
+                <div className="absolute -top-6 -right-3 sm:-right-5 max-w-[220px] px-3.5 py-2.5 bg-white/95 backdrop-blur-xs rounded-xl border border-[#D8CEC4] shadow-xs select-none hidden sm:block z-10">
                   <p className="text-[11px] sm:text-xs text-[#6D625C] italic leading-snug">
                     &ldquo;Turning data into insights and ideas into impact.&rdquo;
                   </p>
                 </div>
 
-                {/* Clean Professional Photo Crop - Tall Vertical Portrait with Thin Burgundy Border */}
+                {/* Tall Portrait Image with Thin Burgundy Border */}
                 <div className="relative rounded-2xl overflow-hidden border border-[#6F1D2A]/40 bg-white p-1.5 shadow-md">
                   <div className="relative rounded-xl overflow-hidden w-full h-[450px] sm:h-[490px] lg:h-[570px] xl:h-[590px] bg-[#F5EFE6]">
                     <img
@@ -196,7 +196,7 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Bottom-left phrase: "good ideas better tomorrow" */}
+                {/* "good ideas better tomorrow" text */}
                 <div className="absolute -bottom-5 -left-3 sm:-left-5 px-4 py-2 bg-white/95 backdrop-blur-xs rounded-xl border border-[#D8CEC4] shadow-xs select-none z-10">
                   <p className="font-serif italic text-xs sm:text-[13px] text-[#6F1D2A] leading-tight">
                     &ldquo;good ideas,<br />
@@ -213,94 +213,96 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 2. AT A GLANCE STRIP (ONE large horizontal container)    */}
+      {/* 3. FOUR-ITEM INFORMATION STRIP (ONE rounded container)   */}
       {/* ======================================================== */}
-      <section className="border-b border-[#D8CEC4] bg-white py-12 sm:py-14 md:py-18">
+      <section className="py-10 sm:py-14 bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#D8CEC4]">
-            
-            {/* 01: Final Year */}
-            <div className="py-5 sm:py-2 sm:px-7 first:pl-0 space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
-                  01
-                </span>
-                <GraduationCap className="w-5 h-5 text-[#6F1D2A]" />
+          <div className="rounded-2xl border border-[#D8CEC4] bg-white p-7 sm:p-9 lg:p-10 shadow-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#D8CEC4]">
+              
+              {/* COLUMN 01: FINAL YEAR */}
+              <div className="py-5 sm:py-2 sm:px-7 first:pl-0 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
+                    01
+                  </span>
+                  <GraduationCap className="w-5 h-5 text-[#6F1D2A]" />
+                </div>
+                <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
+                  FINAL YEAR
+                </h3>
+                <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
+                  B.E. Artificial Intelligence<br className="hidden sm:inline" />
+                  and Machine Learning
+                </p>
               </div>
-              <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
-                FINAL YEAR
-              </h3>
-              <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
-                B.E. Artificial Intelligence<br className="hidden sm:inline" />
-                and Machine Learning
-              </p>
-            </div>
 
-            {/* 02: Focus */}
-            <div className="py-5 sm:py-2 sm:px-7 space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
-                  02
-                </span>
-                <Target className="w-5 h-5 text-[#6F1D2A]" />
+              {/* COLUMN 02: FOCUS */}
+              <div className="py-5 sm:py-2 sm:px-7 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
+                    02
+                  </span>
+                  <Target className="w-5 h-5 text-[#6F1D2A]" />
+                </div>
+                <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
+                  FOCUS
+                </h3>
+                <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
+                  Data Analytics<br />
+                  Machine Learning<br />
+                  Real-world Solutions
+                </p>
               </div>
-              <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
-                FOCUS
-              </h3>
-              <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
-                Data Analytics<br />
-                Machine Learning<br />
-                Real-world Solutions
-              </p>
-            </div>
 
-            {/* 03: Toolkit */}
-            <div className="py-5 sm:py-2 sm:px-7 space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
-                  03
-                </span>
-                <Wrench className="w-5 h-5 text-[#6F1D2A]" />
+              {/* COLUMN 03: TOOLKIT */}
+              <div className="py-5 sm:py-2 sm:px-7 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
+                    03
+                  </span>
+                  <Wrench className="w-5 h-5 text-[#6F1D2A]" />
+                </div>
+                <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
+                  TOOLKIT
+                </h3>
+                <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
+                  Python &middot; SQL &middot; Excel<br />
+                  Power BI &middot; GitHub<br />
+                  VS Code
+                </p>
               </div>
-              <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
-                TOOLKIT
-              </h3>
-              <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
-                Python &middot; SQL &middot; Excel<br />
-                Power BI &middot; GitHub<br />
-                VS Code
-              </p>
-            </div>
 
-            {/* 04: Open To */}
-            <div className="py-5 sm:py-2 sm:px-7 last:pr-0 space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
-                  04
-                </span>
-                <Sparkles className="w-5 h-5 text-[#6F1D2A]" />
+              {/* COLUMN 04: OPEN TO */}
+              <div className="py-5 sm:py-2 sm:px-7 last:pr-0 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider">
+                    04
+                  </span>
+                  <Sparkles className="w-5 h-5 text-[#6F1D2A]" />
+                </div>
+                <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
+                  OPEN TO
+                </h3>
+                <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
+                  Internships<br />
+                  Entry-level opportunities<br />
+                  Real-world projects
+                </p>
               </div>
-              <h3 className="font-serif text-[20px] sm:text-[21px] lg:text-[22px] font-bold text-[#241F1D] uppercase tracking-wide">
-                OPEN TO
-              </h3>
-              <p className="text-[15px] sm:text-base lg:text-[16px] text-[#6D625C] leading-relaxed">
-                Internships<br />
-                Entry-level opportunities<br />
-                Real-world projects
-              </p>
-            </div>
 
+            </div>
           </div>
         </div>
       </section>
 
       {/* ======================================================== */}
-      {/* 3. WHAT I ENJOY BUILDING (40-46px desktop, 3 spacious)   */}
+      {/* 4. WHAT I ENJOY BUILDING (3 equal cards, exact match)    */}
       {/* ======================================================== */}
-      <section className="py-18 md:py-24 border-b border-[#D8CEC4] bg-[#F5EFE6]">
+      <section className="py-16 md:py-22 border-t border-[#D8CEC4] bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          {/* Section Header */}
+          {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D8CEC4] pb-5">
             <div>
               <span className="text-xs sm:text-[13px] font-mono font-bold text-[#6F1D2A] uppercase tracking-wider block mb-1.5">
@@ -315,10 +317,10 @@ export const HomePage: React.FC = () => {
             </span>
           </div>
 
-          {/* Three Spacious Cards */}
+          {/* Three Equal Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             
-            {/* 01: DATA ANALYSIS */}
+            {/* CARD 01: DATA ANALYSIS */}
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
@@ -340,7 +342,7 @@ export const HomePage: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* 02: DATA VISUALIZATION */}
+            {/* CARD 02: DATA VISUALIZATION */}
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
@@ -362,7 +364,7 @@ export const HomePage: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* 03: INTELLIGENT SYSTEMS */}
+            {/* CARD 03: INTELLIGENT SYSTEMS */}
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
@@ -389,9 +391,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 4. CURRENTLY FOCUSED ON / OPEN TO (Readable 15-16px pills)*/}
+      {/* 5. CURRENTLY FOCUSED ON / OPEN TO (Two-column section)   */}
       {/* ======================================================== */}
-      <section className="py-16 md:py-20 border-b border-[#D8CEC4] bg-white">
+      <section className="py-16 md:py-20 border-t border-[#D8CEC4] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
             
@@ -439,9 +441,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ======================================================== */}
-      {/* 5. FINAL CTA (Wide rounded panel, warm beige tint & BR)  */}
+      {/* 6. FINAL CTA (ONE wide rounded rectangular CTA panel)    */}
       {/* ======================================================== */}
-      <section className="py-18 md:py-26 bg-[#F5EFE6]">
+      <section className="py-16 md:py-24 border-t border-[#D8CEC4] bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl border border-[#D8CEC4] bg-gradient-to-br from-white via-[#FAF6F0] to-[#F5ECE5] p-8 sm:p-12 md:p-16 shadow-xs overflow-hidden">
             
@@ -450,7 +452,7 @@ export const HomePage: React.FC = () => {
               BR
             </div>
 
-            {/* Subtle decorative botanical / data artwork on the right */}
+            {/* Subtle decorative botanical line art on the right */}
             <div className="absolute right-0 top-0 bottom-0 w-1/3 pointer-events-none opacity-20 hidden md:block select-none overflow-hidden">
               <svg 
                 viewBox="0 0 300 400" 
@@ -481,18 +483,22 @@ export const HomePage: React.FC = () => {
                 LET&apos;S BUILD SOMETHING MEANINGFUL
               </span>
 
-              {/* Large heading: 38-44px desktop */}
-              <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[38px] lg:text-[42px] font-bold text-[#241F1D] tracking-tight uppercase leading-[1.14]">
-                CURIOUS BY NATURE.<br />
-                BUILDING WITH PURPOSE.
-              </h2>
+              {/* Large serif heading: Curious by nature. Building with purpose. */}
+              <div>
+                <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[38px] lg:text-[42px] font-bold text-[#241F1D] tracking-tight leading-[1.16]">
+                  Curious by nature.<br />
+                  Building with purpose.
+                </h2>
+                {/* Short burgundy underline */}
+                <div className="w-16 h-0.5 bg-[#6F1D2A] mt-3" />
+              </div>
 
-              {/* Description text: 15-17px */}
+              {/* Center description text */}
               <p className="text-[15px] sm:text-base lg:text-[17px] text-[#6D625C] leading-relaxed">
                 &ldquo;I&apos;m always excited to learn, collaborate and work on projects that create real impact.&rdquo;
               </p>
 
-              {/* Buttons with comfortable sizing */}
+              {/* Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <Link
                   to="/projects"
@@ -509,6 +515,13 @@ export const HomePage: React.FC = () => {
                   <span>ABOUT ME</span>
                   <ArrowRight className="w-4 h-4 text-[#6F1D2A]" />
                 </Link>
+              </div>
+
+              {/* Small handwritten-style text */}
+              <div className="pt-2 select-none">
+                <p className="font-serif italic text-xs sm:text-[13px] text-[#6F1D2A] leading-tight">
+                  &ldquo;better ideas, a brighter tomorrow&rdquo;
+                </p>
               </div>
             </div>
 
