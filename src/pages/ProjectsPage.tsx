@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Github, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Github, CheckCircle2, ExternalLink } from 'lucide-react';
 import { portfolioData, ProjectItem } from '../data/portfolioData';
 import { 
   pageVariants, 
@@ -82,16 +82,35 @@ export const ProjectsPage: React.FC = () => {
                   >
                     <div>
                       {/* Small project number: 01 — PROJECT */}
-                      <div className="text-[12px] sm:text-[13px] font-mono font-bold text-[#78350F] tracking-wider uppercase mb-1.5">
-                        {project.number} &mdash; PROJECT
+                      <div className="flex flex-wrap items-center gap-2 text-[12px] sm:text-[13px] font-mono font-bold tracking-wider uppercase mb-1.5">
+                        <span className="text-[#78350F]">{project.number} &mdash; PROJECT</span>
+                        {project.category && (
+                          <>
+                            <span className="text-[#D8CEC4]">&bull;</span>
+                            <span className="text-[#6F1D2A]">{project.category}</span>
+                          </>
+                        )}
+                        {project.liveUrl && (
+                          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10.5px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-300/80">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                            LIVE
+                          </span>
+                        )}
                       </div>
 
-                      {/* Project title */}
-                      <h2 className="font-serif text-2xl sm:text-[26px] md:text-[28px] font-bold text-[#1C1917] tracking-tight hover:text-[#78350F] transition-colors uppercase leading-tight">
-                        <Link to={`/projects/${project.slug}`}>
-                          {project.title}
-                        </Link>
-                      </h2>
+                      {/* Project title & Subtitle */}
+                      <div>
+                        <h2 className="font-serif text-2xl sm:text-[26px] md:text-[28px] font-bold text-[#1C1917] tracking-tight hover:text-[#78350F] transition-colors uppercase leading-tight">
+                          <Link to={`/projects/${project.slug}`}>
+                            {project.title}
+                          </Link>
+                        </h2>
+                        {project.subtitle && (
+                          <p className="text-xs sm:text-[13px] font-mono text-[#78350F] font-semibold tracking-wide uppercase mt-1">
+                            {project.subtitle}
+                          </p>
+                        )}
+                      </div>
                     </div>
 
                     {/* Short professional description */}
@@ -132,6 +151,14 @@ export const ProjectsPage: React.FC = () => {
                         </ul>
                       </div>
                     )}
+
+                    {/* REPOSITORY ASSET NOTICE (e.g. .pbix / .xlsx) */}
+                    {project.repoFileNotice && (
+                      <div className="flex items-start gap-2.5 px-3.5 py-2.5 rounded-lg bg-[#FAF8F5] border border-[#E7E5E4] text-[12px] sm:text-[13px] font-mono text-[#78350F]">
+                        <span className="font-bold shrink-0">📁 Repo Asset:</span>
+                        <span className="text-[#57534E]">{project.repoFileNotice}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* 2. IMAGE PREVIEW SECTION */}
@@ -165,26 +192,54 @@ export const ProjectsPage: React.FC = () => {
                       isEven ? 'lg:col-start-7 lg:row-start-2' : 'lg:col-start-1 lg:row-start-2'
                     }`}
                   >
+                    {project.liveUrl ? (
+                      <>
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13.5px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/live"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>Live Demo ↗</span>
+                        </a>
+
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#FAF8F5] hover:bg-[#F5EFE6] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4] text-xs sm:text-[13.5px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/gh"
+                          >
+                            <Github className="w-3.5 h-3.5" />
+                            <span>GitHub ↗</span>
+                          </a>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13.5px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/gh"
+                          >
+                            <Github className="w-4 h-4" />
+                            <span>View Project on GitHub</span>
+                            <ExternalLink className="w-3.5 h-3.5 opacity-80 group-hover/gh:translate-x-0.5 group-hover/gh:-translate-y-0.5 transition-transform" />
+                          </a>
+                        )}
+                      </>
+                    )}
+
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs sm:text-[13.5px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/btn"
+                      className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider rounded-lg transition-colors text-[#78350F] hover:underline group/btn"
                     >
-                      <span>View Project</span>
+                      <span>Case Study</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                     </Link>
-
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#FAF8F5] hover:bg-[#F5EFE6] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4] text-xs sm:text-[13.5px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs group/gh"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>GitHub</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover/gh:translate-x-0.5 transition-transform" />
-                      </a>
-                    )}
                   </div>
 
                 </div>

@@ -4,10 +4,12 @@ export interface ProjectItem {
   slug: string;
   title: string;
   subtitle: string;
+  category?: string;
   shortDescription: string;
   overview: string;
   problem: string;
   solution: string;
+  ragFeature?: string;
   technologies: string[];
   keyFeatures: string[];
   resumePoints: string[];
@@ -16,6 +18,8 @@ export interface ProjectItem {
   outcome?: string;
   image: string;
   githubUrl?: string;
+  liveUrl?: string;
+  repoFileNotice?: string;
 }
 
 export interface SkillGroup {
@@ -136,76 +140,113 @@ export const portfolioData: PortfolioData = {
       number: '01',
       slug: 'data-detective',
       title: 'DATA DETECTIVE AI',
-      subtitle: 'Intelligent Data Analysis & Automated Exploration Platform',
+      subtitle: 'AI-Powered Data Analytics & RAG Dataset Exploration Platform',
+      category: 'AI | Data Analytics | Data Science',
       shortDescription:
-        'An intelligent data analysis platform that helps users upload datasets, explore their data, perform exploratory data analysis and generate meaningful insights.',
+        'An AI-powered data analysis platform that helps users upload datasets, explore and analyze data, generate visualizations and insights, and interact with their data using natural language through a RAG-based AI assistant.',
       overview:
-        'Data Detective AI is a data analysis platform designed to simplify dataset exploration, exploratory data analysis, visualization and insight generation. It provides an intuitive and intelligent interface where users can upload tabular datasets, examine automated exploratory data profiles, clean missing values, visualize distributions, and generate meaningful analytical insights.',
+        'Data Detective AI is an AI-powered data analytics platform that helps users upload datasets, explore and clean data, perform exploratory data analysis, generate visualizations, and obtain meaningful insights. The platform features a Retrieval-Augmented Generation (RAG) interaction layer, allowing users to ask natural-language questions about their uploaded dataset and receive context-aware responses grounded in the available data.',
       problem:
-        'Raw datasets frequently arrive with missing values, inconsistent column types, and hidden patterns that demand hours of manual coding and repetitive exploratory data analysis routines before analysts can extract actionable takeaways.',
+        'Analyzing raw datasets often requires multiple manual steps, including checking data quality, performing EDA, creating visualizations, and interpreting results.',
       solution:
-        'Engineered an integrated AI-assisted data analytics application combining an interactive web interface with backend data processing services. The system automates dataset uploading, schema profiling, missing value diagnostics, interactive charting, and automated insight generation to accelerate exploratory data workflows.',
-      technologies: ['React', 'Node.js', 'Express', 'Python', 'Data Analysis'],
+        'Built Data Detective AI to bring dataset processing, EDA, visualization, automated insights, and AI-assisted analysis into a single platform.',
+      ragFeature:
+        'Implemented a RAG-based AI interaction layer that retrieves relevant information from the uploaded dataset/context before generating responses, allowing users to ask questions about their data using natural language.',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Node.js',
+        'Express',
+        'RAG',
+        'Gemini AI',
+        'Data Analytics',
+      ],
       keyFeatures: [
-        'Dataset Upload: Seamless CSV file intake with automated parsing and structure detection',
-        'Automated Data Exploration: Instant statistical profiling, column distributions, and metric summaries',
-        'Insight Generation: Automated analytical insights identifying key trends and data observations',
-        'Data Cleaning: Missing value detection and dataset sanitization tools',
-        'Interactive Visualizations: Dynamic charts for category distributions, correlations, and metric comparisons',
+        'Dataset upload and analysis with automated parsing and structure detection',
+        'Automated EDA, statistical summaries, and metric comparisons',
+        'Missing-value and duplicate detection with automated data cleaning tools',
+        'Data visualization with dynamic interactive charts',
+        'Automated insights and data storytelling identifying key trends',
+        'AI-powered data interaction with conversational assistance',
+        'RAG-based contextual question answering over uploaded datasets',
+        'Gemini API integration for grounded generative intelligence',
+        'Dataset management and exportable analytical reports',
       ],
       highlightsList: [
-        'Dataset Upload',
-        'Automated Data Exploration',
-        'Insight Generation',
+        'Dataset Upload & Analysis',
+        'Automated EDA & Cleaning',
+        'Interactive Data Visualizations',
+        'RAG-Based Contextual Q&A',
+        'Gemini AI Integration',
       ],
       resumePoints: [
-        'Developed Data Detective AI, an intelligent data analysis platform to simplify dataset exploration and uncover actionable patterns.',
-        'Implemented automated exploratory data analysis workflows and interactive visualization to detect statistical trends and anomalies.',
+        'Designed and developed the responsive web interface using React, TypeScript, and modern UI components.',
+        'Engineered the end-to-end data analytics workflow including CSV processing, missing-value detection, and dynamic charting.',
+        'Implemented the RAG-based AI interaction layer with Node.js, Express, and Google Gemini API to query uploaded datasets via natural language.',
+        'Connected frontend components with backend data processing services through modular REST APIs.',
       ],
-      highlight: 'Dataset Upload · Automated Data Exploration · Insight Generation',
+      highlight: 'RAG Contextual Q&A · Automated EDA · Gemini AI · Data Visualizations',
       outcome:
-        'Provides an intuitive, end-to-end interface for data analysts and teams to go from raw CSV files to interactive exploration, automated data quality assessment, and AI-generated insights without tedious manual setup.',
+        'Created an interactive analytics platform that combines traditional data-analysis workflows with AI-assisted dataset exploration.',
       image: '/projects/data-detective.png',
       githubUrl: 'https://github.com/rithii1702/data-detective-ai',
+      liveUrl: 'https://data-detective-ai.vercel.app',
     },
     {
       id: 'bagbill',
       number: '02',
       slug: 'bagbill',
       title: 'BAGBILL',
-      subtitle: 'Digital Billing & Calculation Business System',
+      subtitle: 'Digital Billing & Business Management',
+      category: 'Full-Stack | Web App | Business System',
       shortDescription:
-        'A digital billing and calculation system designed to help businesses manage bag sales, billing information, GST calculations and invoice records digitally.',
+        'Full-stack billing application that digitizes invoice creation, product management, GST calculations, business settings, and billing records.',
       overview:
-        'BagBill is a comprehensive digital billing and record management system developed to replace manual paper-based business billing. The application streamlines end-to-end business transactions: from creating GST-compliant customer invoices with automated line-item calculations to managing sequential numbering, party ledgers, and downloadable invoices.',
+        'BagBill is a full-stack digital billing and business management application designed to help businesses create, manage, and organize invoices, products, parties, and billing records digitally instead of relying on manual bill books. It provides a complete workflow from automated GST calculations and invoice preview to sequential numbering and persistent party transaction records.',
       problem:
         'Manual billing and paper-based record keeping create significant overhead for businesses. They frequently lead to calculation errors, manual GST calculation mismatches, sequence misallocations, difficulty tracking customer payment balances, and lost paper records.',
       solution:
-        'Engineered an integrated digital billing system utilizing React on the frontend, supported by Node.js and Express REST APIs. The platform automates all tax and pricing computations, enforces sequential invoice numbering, tracks client credit/debit in a dedicated Party Ledger, and produces instant invoice summaries.',
-      technologies: ['React', 'Node.js', 'Express'],
+        'Engineered an integrated full-stack digital billing system with React, TypeScript, and Vite on the frontend and Node.js, Express, and MongoDB Atlas on the backend. The platform automates GST and price calculations, generates sequential invoice numbers, manages customer ledgers, and provides instant invoice summaries.',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Node.js',
+        'Express.js',
+        'MongoDB Atlas',
+        'REST APIs',
+        'Render',
+        'Vercel',
+      ],
       keyFeatures: [
-        'GST invoice generation with automated line-item tax calculations',
-        'Sequential invoice numbering system',
-        'Bill Book for complete transaction history',
-        'Party Ledger for tracking customer and vendor balances',
-        'Product Management module with pricing records',
-        'Interactive business dashboard & calculation summary',
+        'Digital invoice creation with live preview and automated calculations',
+        'Product and party management with customer ledgers and rate tracking',
+        'Automated GST/tax calculation supporting CGST, SGST, IGST, and round-offs',
+        'Centralized Bill Book with billing history and status filtering',
+        'Business settings and customizable invoice preferences',
+        'Persistent data storage backed by MongoDB Atlas cloud database',
+        'Full-stack REST API architecture connecting frontend and backend services',
+        'Instant PDF invoice generation and export capabilities',
       ],
       highlightsList: [
-        'GST Billing & Invoicing',
-        'Sequential Numbering System',
-        'Party Ledger & Records',
+        'Digital Invoice Creation',
+        'Product & Party Management',
+        'GST/Tax Calculation',
+        'MongoDB Atlas Database',
+        'Full-Stack REST APIs',
       ],
       resumePoints: [
-        'Developed BagBill, a digital billing and calculation application to replace manual business billing and record management.',
-        'Implemented GST invoice generation, automated calculations, payment tracking, and sequential invoice numbering.',
-        'Built Bill Book, Party Ledger, and Product Management modules with Express and Node.js REST APIs.',
+        'Architected and built BagBill, a full-stack digital billing web application using React, TypeScript, Vite, and Tailwind CSS.',
+        'Engineered backend REST APIs with Node.js and Express to manage invoices, products, parties, and business settings.',
+        'Designed persistent database schemas with MongoDB Atlas for reliable transaction history and party ledger accounting.',
+        'Implemented automated GST/tax calculation engines, sequential bill numbering, and dynamic invoice generation.',
       ],
-      highlight: 'GST Billing · Sequential Numbering · Party Ledger',
+      highlight: 'Digital Invoicing · GST Calculations · MongoDB Atlas · REST APIs',
       outcome:
-        'Digitalizes traditional paper billing, eliminating calculation discrepancies, enforcing sequential invoice integrity, and providing instant ledger visibility for business owners.',
+        'Eliminates paper bill books and manual calculation errors, accelerates invoice generation, and gives business owners instant visibility into billing records, outstanding balances, and GST summaries.',
       image: '/projects/bagbill.png',
       githubUrl: 'https://github.com/rithii1702/BagBill',
+      liveUrl: 'https://bag-bill-iota.vercel.app',
     },
     {
       id: 'ecommerce-sales',
@@ -213,71 +254,85 @@ export const portfolioData: PortfolioData = {
       slug: 'ecommerce-sales',
       title: 'E-COMMERCE SALES ANALYSIS',
       subtitle: 'Sales Performance, Revenue Trends & Business Insights',
+      category: 'Data Analytics',
       shortDescription:
-        'A data analysis and visualization project focused on understanding sales performance, revenue trends, products and business insights.',
+        'Excel-based sales analysis exploring revenue, product performance, customer purchasing patterns, trends, KPIs, Pivot Tables, charts, and business insights.',
       overview:
-        'This project focuses on turning raw e-commerce transaction records into strategic business intelligence. Utilizing Excel for data cleaning and preliminary modeling alongside Power BI for dynamic visualization, the analysis reveals product sales distributions, customer buying cycles, and key revenue indicators.',
+        'E-Commerce Sales Analysis is an in-depth data analytics project focused on turning raw transactional records into actionable business intelligence using Microsoft Excel. Utilizing structured data cleaning, Pivot Tables, dynamic charts, and executive KPI summaries, the analysis reveals product sales distributions, seasonal revenue trends, and customer buying cycles. The complete Excel .xlsx project file is available in the GitHub repository.',
       problem:
-        'Modern e-commerce platforms generate high volumes of transactional records across diverse product lines and regions. Without centralized reporting and KPI visualization, businesses struggle to recognize seasonal sales trends and evaluate product performance.',
+        'Modern e-commerce platforms generate high volumes of transactional records across diverse product lines and regions. Without structured reporting and dynamic KPI visualization, businesses struggle to recognize seasonal sales trends, evaluate product margin performance, and understand customer purchasing habits.',
       solution:
-        'Executed rigorous data cleaning and structuring in Excel, followed by the development of an interactive Power BI dashboard highlighting key performance indicators, revenue movements, product rankings, and purchase patterns to drive data-driven decision-making.',
-      technologies: ['Excel', 'Power BI'],
+        'Conducted end-to-end data cleaning, data normalization, and statistical modeling in Microsoft Excel. Developed interactive Pivot Tables, calculated fields, and multi-chart dashboards to extract actionable trends in revenue, order volumes, and customer behavior.',
+      technologies: ['Microsoft Excel', 'Pivot Tables', 'Data Analysis', 'KPI Dashboards'],
       keyFeatures: [
-        'Data cleaning and preparation of transactional e-commerce records in Excel',
-        'Revenue trend analysis across operational cycles',
-        'Product performance evaluation and category breakdown',
-        'Sales pattern identification and customer purchasing behavior',
-        'Interactive KPI dashboard visualizing core business metrics in Power BI',
+        'Complete .xlsx Excel workbook with formulas, Pivot Tables, and charts available on GitHub',
+        'Data cleaning, transformation, and structuring of raw transactional e-commerce records',
+        'Revenue trend analysis and monthly/quarterly sales performance evaluation',
+        'Pivot Table breakdown analyzing category sales, product rankings, and profit margins',
+        'Customer purchasing pattern discovery and order distribution modeling',
+        'Executive KPI dashboard visualizing core business metrics and financial insights',
       ],
       highlightsList: [
-        'Sales Performance',
-        'Revenue Analysis',
-        'Business Insights',
+        'Complete .xlsx File on GitHub',
+        'Pivot Tables & Dynamic Charts',
+        'Revenue & Profit Margin KPIs',
+        'Customer Purchasing Trends',
       ],
       resumePoints: [
-        'Analyzed e-commerce sales data to identify revenue trends, product performance, and sales patterns.',
-        'Built interactive dashboards to visualize key performance indicators and derive data-driven business insights.',
+        'Analyzed e-commerce transactional data using Microsoft Excel to uncover revenue trends, product rankings, and seasonal buying patterns.',
+        'Structured complex datasets using Pivot Tables, VLOOKUP/INDEX-MATCH, and custom formulas for granular business intelligence.',
+        'Designed interactive executive dashboards highlighting core financial KPIs, sales distributions, and category performance.',
+        'Documented analysis methodology and published the complete workbook (.xlsx) to GitHub for public review and reproducibility.',
       ],
-      highlight: 'Sales Performance · Revenue Analysis · Business Insights',
+      highlight: 'Excel .xlsx on GitHub · Pivot Tables · Revenue Analysis · Business KPIs',
       outcome:
-        'Delivered executive-level clarity into top revenue contributors, cyclical purchasing behaviors, and high-margin product categories through interactive Power BI reports.',
+        'Delivered executive-level clarity into top revenue contributors, category profitability, and customer purchasing behaviors through dynamic Excel dashboards. The complete .xlsx workbook is hosted and documented on GitHub.',
       image: '/projects/ecommerce-sales.png',
+      githubUrl: 'https://github.com/rithii1702/ecommerce-sales-analysis',
+      repoFileNotice: 'Complete Excel .xlsx project file is available in the GitHub repository.',
     },
     {
       id: 'pizza-dashboard',
       number: '04',
       slug: 'pizza-dashboard',
-      title: 'PIZZA SALES DASHBOARD',
-      subtitle: 'Interactive Restaurant Sales Analytics & Order Trends',
+      title: 'PIZZA SALES ANALYSIS',
+      subtitle: 'Power BI Dashboard & Restaurant Performance Analytics',
+      category: 'Data Analytics',
       shortDescription:
-        'An interactive Power BI dashboard analyzing pizza orders, revenue, product performance and sales trends.',
+        'Interactive Power BI dashboard analyzing pizza sales performance, product trends, revenue, and business KPIs.',
       overview:
-        'A dedicated business intelligence project developed in Power BI to evaluate the operational and sales performance of a restaurant business. The dashboard synthesizes order transactions to identify best-selling menu items, customer size preferences, peak ordering periods, and category revenue share.',
+        'Pizza Sales Analysis is a dedicated business intelligence project developed in Power BI to evaluate the operational and sales performance of a restaurant business. The dashboard synthesizes order transactions to identify best-selling menu items, customer size preferences, peak ordering periods, and category revenue share. The complete .pbix Power BI project file is available in the GitHub repository.',
       problem:
         'Restaurant managers need precise visibility into customer demand cycles, peak ordering times, and underperforming menu categories to optimize staffing, manage ingredient inventory, and maximize daily revenue.',
       solution:
-        'Analyzed comprehensive sales records and created a dynamic, interactive Power BI dashboard delivering clear visibility into revenue performance, order volume patterns, best-selling products, and peak operational windows.',
-      technologies: ['Power BI'],
+        'Analyzed comprehensive sales records and created a dynamic, interactive Power BI dashboard with DAX calculations and customized KPI metrics, delivering clear visibility into revenue performance, order volume patterns, best-selling products, and peak operational windows.',
+      technologies: ['Power BI', 'DAX', 'Data Analytics', 'Business Intelligence'],
       keyFeatures: [
-        'Revenue analysis across order cycles and pizza categories',
-        'Order volume trends and peak order periods identification',
-        'Customer preferences breakdown by pizza size and crust type',
-        'Product performance ranking highlighting best-selling items',
-        'Interactive dashboard controls for filtering and deep-dive analysis',
+        'Interactive Power BI dashboard with dynamic filtering and KPI metric cards',
+        'Complete .pbix Power BI project file available directly in the GitHub repository',
+        'Revenue and order volume analysis across peak operational hours and days',
+        'Customer preference breakdown by pizza category, size, and quantity',
+        'Best-selling and worst-selling product performance rankings',
+        'Interactive slicers and date filtering for deep-dive operational analysis',
       ],
       highlightsList: [
-        'Sales Analysis',
-        'Revenue Insights',
-        'Product Performance',
+        'Complete .pbix File on GitHub',
+        'Interactive Power BI Dashboard',
+        'Revenue & Order Trend KPIs',
+        'Peak Operational Hours Analysis',
       ],
       resumePoints: [
-        'Analyzed sales data to evaluate revenue, order trends, customer preferences, and product performance.',
-        'Built an interactive Power BI dashboard highlighting best-selling products, peak order periods, and category performance.',
+        'Built an end-to-end Power BI analytics dashboard to evaluate restaurant sales performance, revenue drivers, and order volumes.',
+        'Engineered DAX measures to calculate average order value, total revenue, pizza category market share, and peak sales periods.',
+        'Visualized menu item performance to pinpoint best-selling vs underperforming products and size preferences.',
+        'Published the complete Power BI project (.pbix) and analytical dataset to GitHub for full transparency and reproducibility.',
       ],
-      highlight: 'Sales Analysis · Revenue Insights · Product Performance',
+      highlight: 'Power BI .pbix on GitHub · DAX Measures · Peak Hours Analysis · Revenue KPIs',
       outcome:
-        'Enabled management to pinpoint peak order hours, optimize kitchen staffing schedules, and tailor inventory purchases based on proven customer size and flavor preferences.',
+        'Enabled management to pinpoint peak order hours, optimize kitchen staffing schedules, and tailor inventory purchases based on proven customer size and flavor preferences. The full .pbix Power BI model is available in the GitHub repository.',
       image: '/projects/pizza-sales.png',
+      githubUrl: 'https://github.com/rithii1702/pizza-sales-analysis',
+      repoFileNotice: 'Complete .pbix Power BI project file is available in the GitHub repository.',
     },
   ],
 
