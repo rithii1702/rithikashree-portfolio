@@ -184,19 +184,58 @@ export const ProjectDetailPage: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* AI / RAG Feature (if present) */}
-        {project.ragFeature && (
+        {/* Dynamic Data-Driven Architecture (if present) */}
+        {project.dataDrivenHighlight && (
           <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
-              <Sparkles className="w-4 h-4" />
-              <span>AI / RAG Feature</span>
+              <span className="w-2 h-2 rounded-full bg-[#78350F]" />
+              <span>Real Dataset Processing &bull; Zero Mock Data</span>
             </div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
-              Retrieval-Augmented Generation (RAG)
+              Dynamic, Data-Driven Architecture
+            </h3>
+            <p className="text-[15px] sm:text-[16px] text-[#57534E] leading-relaxed">
+              {project.dataDrivenHighlight}
+            </p>
+          </motion.div>
+        )}
+
+        {/* AI / RAG Feature (if present) */}
+        {project.ragFeature && (
+          <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
+              <Sparkles className="w-4 h-4" />
+              <span>AI / RAG Architecture</span>
+            </div>
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
+              Retrieval-Augmented Generation (RAG) System
             </h3>
             <p className="text-[15px] sm:text-[16px] text-[#57534E] leading-relaxed">
               {project.ragFeature}
             </p>
+
+            {project.ragWorkflow && project.ragWorkflow.length > 0 && (
+              <div className="pt-2">
+                <div className="text-xs font-mono font-bold text-[#78716C] uppercase tracking-wider mb-3">
+                  RAG Execution Pipeline
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {project.ragWorkflow.map((step, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3.5 rounded-xl bg-[#FAF8F5] border border-[#E7E5E4] flex items-start gap-2.5"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-[#78350F] text-white text-[11px] font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">
+                        {idx + 1}
+                      </span>
+                      <span className="text-xs sm:text-[13px] font-medium text-[#1C1917]">
+                        {step}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
 

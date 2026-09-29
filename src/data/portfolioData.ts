@@ -10,6 +10,8 @@ export interface ProjectItem {
   problem: string;
   solution: string;
   ragFeature?: string;
+  ragWorkflow?: string[];
+  dataDrivenHighlight?: string;
   technologies: string[];
   keyFeatures: string[];
   resumePoints: string[];
@@ -143,51 +145,65 @@ export const portfolioData: PortfolioData = {
       subtitle: 'AI-Powered Data Analytics & RAG Dataset Exploration Platform',
       category: 'AI | Data Analytics | Data Science',
       shortDescription:
-        'An AI-powered data analysis platform that helps users upload datasets, explore and analyze data, generate visualizations and insights, and interact with their data using natural language through a RAG-based AI assistant.',
+        'AI-powered data analysis platform with dynamic dataset analysis, automated insights, visualizations, and RAG-based AI interaction.',
       overview:
-        'Data Detective AI is an AI-powered data analytics platform that helps users upload datasets, explore and clean data, perform exploratory data analysis, generate visualizations, and obtain meaningful insights. The platform features a Retrieval-Augmented Generation (RAG) interaction layer, allowing users to ask natural-language questions about their uploaded dataset and receive context-aware responses grounded in the available data.',
+        'Data Detective AI is an AI-powered data analysis platform that enables users to upload datasets, explore and clean data, generate dynamic visualizations and automated insights, and interact with their uploaded data using a RAG-based AI assistant. Built on a strictly data-driven architecture, the application starts in an intentional empty state and analyzes actual user-uploaded CSV datasets dynamically—computing health scores, missing values, duplicates, and EDA metrics without relying on static or mock data.',
       problem:
-        'Analyzing raw datasets often requires multiple manual steps, including checking data quality, performing EDA, creating visualizations, and interpreting results.',
+        'Users need an easier way to explore and understand complex datasets without spending hours writing repetitive exploratory data analysis code, configuring visualization scripts, or relying on canned static dashboards that fail on actual data.',
       solution:
-        'Built Data Detective AI to bring dataset processing, EDA, visualization, automated insights, and AI-assisted analysis into a single platform.',
+        'Built Data Detective AI as a web-based AI data analysis platform that processes uploaded datasets and provides dynamic analysis, visualizations, automated insights, and natural-language interaction grounded directly in the user’s real data.',
+      dataDrivenHighlight:
+        'The application has been engineered to be strictly data-driven: when no dataset has been uploaded, the platform displays an intentional empty state prompting the user to upload a CSV. Dashboard metrics, charts, health scores, missing values, duplicate counts, and AI recommendations are never populated with fake values—all insights are dynamically generated only after a real dataset is uploaded and processed.',
       ragFeature:
-        'Implemented a RAG-based AI interaction layer that retrieves relevant information from the uploaded dataset/context before generating responses, allowing users to ask questions about their data using natural language.',
+        'Features a Retrieval-Augmented Generation (RAG) AI interaction layer integrated with the Google Gemini API. When users ask questions, the system retrieves relevant structural and statistical context directly from the uploaded dataset, ensuring responses are context-aware and strictly grounded in the user’s actual data rather than hallucinated.',
+      ragWorkflow: [
+        'User uploads dataset',
+        'Dataset is processed',
+        'Relevant information is retrieved',
+        'User asks a question',
+        'Relevant dataset context is provided to the AI',
+        'AI generates a context-aware response',
+      ],
       technologies: [
         'React',
         'TypeScript',
         'Node.js',
         'Express',
-        'RAG',
         'Gemini AI',
+        'RAG',
         'Data Analytics',
+        'REST API',
       ],
       keyFeatures: [
-        'Dataset upload and analysis with automated parsing and structure detection',
-        'Automated EDA, statistical summaries, and metric comparisons',
-        'Missing-value and duplicate detection with automated data cleaning tools',
-        'Data visualization with dynamic interactive charts',
+        'CSV dataset upload with automated schema parsing and structure detection',
+        'Dynamic dataset exploration and automated EDA',
+        'Missing-value analysis and duplicate-row detection',
+        'Dataset quality and health score analysis',
+        'Automated data cleaning and sanitization',
+        'Dynamic data visualizations with interactive Recharts',
         'Automated insights and data storytelling identifying key trends',
         'AI-powered data interaction with conversational assistance',
         'RAG-based contextual question answering over uploaded datasets',
-        'Gemini API integration for grounded generative intelligence',
-        'Dataset management and exportable analytical reports',
+        'Gemini AI integration for grounded generative intelligence',
+        'Dataset-aware AI assistant with zero mock-data dependencies',
+        'Analysis generated dynamically and exclusively from user-uploaded data',
       ],
       highlightsList: [
-        'Dataset Upload & Analysis',
-        'Automated EDA & Cleaning',
-        'Interactive Data Visualizations',
-        'RAG-Based Contextual Q&A',
-        'Gemini AI Integration',
+        'Upload and analyze real datasets',
+        'Automated EDA and data-quality analysis',
+        'Dynamic visualizations and insights',
+        'RAG-based AI data interaction',
+        'Dataset-aware AI assistant',
       ],
       resumePoints: [
-        'Designed and developed the responsive web interface using React, TypeScript, and modern UI components.',
-        'Engineered the end-to-end data analytics workflow including CSV processing, missing-value detection, and dynamic charting.',
-        'Implemented the RAG-based AI interaction layer with Node.js, Express, and Google Gemini API to query uploaded datasets via natural language.',
-        'Connected frontend components with backend data processing services through modular REST APIs.',
+        'Architected Data Detective AI, a full-stack data analytics platform featuring automated EDA, dynamic visualizations, and RAG-based AI interaction.',
+        'Engineered a data-driven React/TypeScript frontend with zero-mock empty states, dynamically computing health scores, missing values, and charts upon dataset upload.',
+        'Implemented a Node.js/Express backend integrating Google Gemini API and a custom RAG retrieval pipeline for context-grounded dataset Q&A.',
+        'Built automated data cleaning routines, duplicate-row detection, and interactive Recharts visualizations for rapid exploratory analysis.',
       ],
-      highlight: 'RAG Contextual Q&A · Automated EDA · Gemini AI · Data Visualizations',
+      highlight: 'Upload Real Data · Automated EDA · RAG Contextual Q&A · Dynamic Visualizations',
       outcome:
-        'Created an interactive analytics platform that combines traditional data-analysis workflows with AI-assisted dataset exploration.',
+        'Delivers an interactive, data-driven analytics platform that turns raw user-uploaded CSV datasets into clean data profiles, dynamic visualizations, and context-aware AI insights without any reliance on synthetic or static mock data.',
       image: '/projects/data-detective.png',
       githubUrl: 'https://github.com/rithii1702/data-detective-ai',
       liveUrl: 'https://data-detective-ai.vercel.app',
