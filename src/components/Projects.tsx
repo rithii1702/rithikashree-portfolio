@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Github, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Github, CheckCircle2, ExternalLink } from 'lucide-react';
 import { portfolioData, ProjectItem } from '../data/portfolioData';
 
 export const Projects: React.FC = () => {
@@ -38,8 +38,14 @@ export const Projects: React.FC = () => {
                       isEven ? 'lg:col-start-7 lg:row-start-1' : 'lg:col-start-1 lg:row-start-1'
                     }`}
                   >
-                    <div className="text-xs font-mono font-bold text-[#78350F] tracking-wider uppercase mb-1">
-                      {project.number} &mdash; PROJECT
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-[#78350F] tracking-wider uppercase mb-1">
+                      <span>{project.number} &mdash; PROJECT</span>
+                      {project.liveUrl && (
+                        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10.5px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-300/80">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                          LIVE
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-[#1C1917] tracking-tight uppercase">
                       <Link to={`/projects/${project.slug}`}>
@@ -99,28 +105,43 @@ export const Projects: React.FC = () => {
 
                   {/* Buttons */}
                   <div
-                    className={`order-3 lg:col-span-6 pt-4 border-t border-[#E7E5E4] flex items-center gap-3 ${
+                    className={`order-3 lg:col-span-6 pt-4 border-t border-[#E7E5E4] flex flex-wrap items-center gap-3 ${
                       isEven ? 'lg:col-start-7 lg:row-start-2' : 'lg:col-start-1 lg:row-start-2'
                     }`}
                   >
-                    <Link
-                      to={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#78350F] hover:text-[#612A0C]"
-                    >
-                      <span>View Project</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#78350F] hover:bg-[#612A0C] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        <span>Live Demo ↗</span>
+                      </a>
+                    )}
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1C1917] hover:text-[#78350F]"
+                        className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs ${
+                          project.liveUrl
+                            ? 'bg-white hover:bg-[#FAF8F5] text-[#1C1917] hover:text-[#78350F] border border-[#E7E5E4]'
+                            : 'bg-[#78350F] hover:bg-[#612A0C] text-white'
+                        }`}
                       >
                         <Github className="w-3.5 h-3.5" />
-                        <span>GitHub</span>
+                        <span>GitHub ↗</span>
                       </a>
                     )}
+                    <Link
+                      to={`/projects/${project.slug}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#78350F] hover:text-[#612A0C] px-2 py-2"
+                    >
+                      <span>View Details</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
 
                 </div>

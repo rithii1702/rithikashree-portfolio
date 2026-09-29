@@ -189,10 +189,10 @@ export const ProjectDetailPage: React.FC = () => {
           <motion.div variants={fadeInUp} className="bg-white rounded-2xl border border-[#E7E5E4] p-6 sm:p-7 md:p-8 shadow-xs space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#78350F] uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-[#78350F]" />
-              <span>Real Dataset Processing &bull; Zero Mock Data</span>
+              <span>{project.slug === 'bagbill' ? 'Real Billing Workflow • Clean Initial State' : 'Real Dataset Processing • Zero Mock Data'}</span>
             </div>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
-              Dynamic, Data-Driven Architecture
+              {project.slug === 'bagbill' ? 'Clean State Architecture & Production Data Integrity' : 'Dynamic, Data-Driven Architecture'}
             </h3>
             <p className="text-[15px] sm:text-[16px] text-[#57534E] leading-relaxed">
               {project.dataDrivenHighlight}
