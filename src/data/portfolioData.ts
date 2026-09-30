@@ -138,8 +138,73 @@ export const portfolioData: PortfolioData = {
 
   projects: [
     {
-      id: 'data-detective',
+      id: 'bagbill',
       number: '01',
+      slug: 'bagbill',
+      title: 'BAGBILL — DIGITAL BILLING & BUSINESS RECORD SYSTEM',
+      subtitle: 'Digital Billing & Business Record System',
+      category: 'Full-Stack | Business System | Web Application',
+      shortDescription:
+        'A full-stack digital billing and business record management system built for a real bag-selling business. It replaces handwritten bill-book records with digital billing, invoice generation, party management, product management, payment tracking, reports, and persistent business records.',
+      overview:
+        'BagBill is a full-stack digital billing and business record management system built for a real bag-selling business. It replaces handwritten bill-book records with digital billing, invoice generation, party management, product management, payment tracking, reports, and persistent business records. Built with React, TypeScript, Vite, Node.js, Express, and MongoDB, the system provides a complete workflow from itemized billing and automated GST calculations to customer ledgers and instant PDF invoice downloads—all operating on a clean empty-state architecture where new users start fresh with their own real business records.',
+      problem:
+        'Manual handwritten bill books and paper registers lead to calculation mistakes, inaccurate GST computations, invoice sequence errors, misplaced receipts, and tedious payment tracking for customer balances.',
+      solution:
+        'Built a comprehensive digital billing and business record management platform featuring automated price and GST calculations, sequential invoice generation, customer party ledgers, product management, business analytics, and instant PDF invoice downloads.',
+      dataDrivenHighlight:
+        'BagBill features a clean empty-state experience with zero mock, demo, sample, or seeded business records. The database and interface start completely fresh, enabling business owners to configure their profile and record their own real-world parties, products, bills, and payments with full persistence in MongoDB Atlas.',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Tailwind CSS',
+        'Node.js',
+        'Express.js',
+        'MongoDB',
+        'Mongoose',
+        'REST APIs',
+        'Recharts',
+        'jsPDF',
+      ],
+      keyFeatures: [
+        'Digital bill creation with automatic calculations',
+        'GST calculation and invoice generation',
+        'Sequential invoice numbering',
+        'Bill Book and transaction history',
+        'Party management and Party Ledger',
+        'Product management',
+        'Payment tracking',
+        'Dashboard and business reports',
+        'PDF invoice generation',
+        'Persistent MongoDB storage',
+        'REST API based backend',
+        'Clean empty-state experience with NO mock/demo business data',
+        'New users start with an empty system and add their own real business records',
+      ],
+      highlightsList: [
+        'Digital bill creation & auto calculations',
+        'GST calculation & sequential invoices',
+        'Party management & Party Ledger',
+        'Dashboard & business reports',
+        'Clean empty-state with MongoDB persistence',
+      ],
+      resumePoints: [
+        'Architected and built BagBill, a full-stack digital billing and business record management system using React, TypeScript, Vite, and Tailwind CSS.',
+        'Engineered backend REST APIs with Node.js, Express, and Mongoose for sequential invoice generation, party ledgers, product management, and business reports.',
+        'Designed persistent MongoDB Atlas schemas ensuring data integrity, payment tracking (paid/partial/unpaid), and automated GST computations.',
+        'Delivered a clean empty-state production architecture with zero mock or demo records, enabling real business users to manage their own transactions.',
+      ],
+      highlight: 'Digital Invoicing · GST Calculations · MongoDB Atlas · REST APIs',
+      outcome:
+        'Eliminates manual paper bill books and calculation errors, accelerates invoice generation, and gives business owners instant visibility into billing records, outstanding balances, GST summaries, and customer ledgers.',
+      image: '/projects/bagbill.png',
+      githubUrl: 'https://github.com/rithii1702/BagBill',
+      liveUrl: 'https://bag-bill-iota.vercel.app',
+    },
+    {
+      id: 'data-detective',
+      number: '02',
       slug: 'data-detective',
       title: 'DATA DETECTIVE AI',
       subtitle: 'AI-Powered Data Analytics & RAG Dataset Exploration Platform',
@@ -207,66 +272,6 @@ export const portfolioData: PortfolioData = {
       image: '/projects/data-detective.png',
       githubUrl: 'https://github.com/rithii1702/data-detective-ai',
       liveUrl: 'https://data-detective-ai.vercel.app',
-    },
-    {
-      id: 'bagbill',
-      number: '02',
-      slug: 'bagbill',
-      title: 'BAGBILL',
-      subtitle: 'Digital Billing & Calculation',
-      category: 'Full-Stack | Web App | Business System',
-      shortDescription:
-        'A digital billing and calculation platform designed to replace manual bill-book based billing, with business settings, invoice management, automated calculations, GST/tax handling, and persistent billing records.',
-      overview:
-        'BagBill is a digital billing and calculation platform designed to replace manual bill-book based billing with a centralized digital ledger. Built with React, TypeScript, Vite, Node.js, Express, and MongoDB Atlas, the platform starts with a clean state and enables businesses to configure their profile, create GST invoices, calculate bag quantities and rates, apply taxes, maintain persistent records, and export invoices as PDF.',
-      problem:
-        'Manual billing and paper-based record keeping create significant overhead for businesses. They frequently lead to calculation errors, manual GST calculation mismatches, sequence misallocations, difficulty tracking customer payment balances, and lost paper records.',
-      solution:
-        'Engineered an integrated full-stack digital billing system with React, TypeScript, and Vite on the frontend and Node.js, Express, and MongoDB Atlas on the backend. The platform automates GST and price calculations, generates sequential invoice numbers, manages customer ledgers, and provides instant invoice summaries.',
-      dataDrivenHighlight:
-        'BagBill launches in an intentional clean state with zero automatically displayed fake/mock billing data. Users configure their business profile and generate real billing records on demand: entering bag/item quantities and rates, automatically calculating totals and GST/tax, managing invoice numbering and business preferences, maintaining persistent records, viewing bill history, and printing or downloading PDF invoices.',
-      technologies: [
-        'React',
-        'TypeScript',
-        'Vite',
-        'Node.js',
-        'Express.js',
-        'MongoDB Atlas',
-        'Tailwind CSS',
-        'REST APIs',
-        'jsPDF',
-      ],
-      keyFeatures: [
-        'Clean initial state with zero automatically displayed mock data',
-        'Digital billing workflow with bag quantities, rates, and itemized rows',
-        'Automated bill calculations for line items, discounts, and round-offs',
-        'Comprehensive GST/tax calculations supporting CGST, SGST, IGST, and RCM',
-        'Configurable business profile and customizable invoice preferences',
-        'Automated sequential invoice numbering starting from INV-00001',
-        'Centralized digital Bill Book for searching, sorting, and viewing saved bills',
-        'Party management and customer transaction ledger tracking',
-        'Instant PDF invoice generation, download, and browser printing',
-        'Persistent storage with client-side caching and MongoDB Atlas backend integration',
-      ],
-      highlightsList: [
-        'Digital billing workflow',
-        'Automated bill calculations',
-        'GST/tax calculation',
-        'Business and invoice settings',
-        'Persistent billing records',
-      ],
-      resumePoints: [
-        'Architected and built BagBill, a full-stack digital billing web application using React, TypeScript, Vite, and Tailwind CSS.',
-        'Engineered backend REST APIs with Node.js and Express to manage invoices, products, parties, and business settings.',
-        'Designed persistent database schemas with MongoDB Atlas for reliable transaction history and party ledger accounting.',
-        'Implemented automated GST/tax calculation engines, sequential bill numbering, and dynamic invoice generation.',
-      ],
-      highlight: 'Digital Invoicing · GST Calculations · MongoDB Atlas · REST APIs',
-      outcome:
-        'Eliminates paper bill books and manual calculation errors, accelerates invoice generation, and gives business owners instant visibility into billing records, outstanding balances, and GST summaries.',
-      image: '/projects/bagbill.png',
-      githubUrl: 'https://github.com/rithii1702/BagBill',
-      liveUrl: 'https://bag-bill-iota.vercel.app',
     },
     {
       id: 'ecommerce-sales',
